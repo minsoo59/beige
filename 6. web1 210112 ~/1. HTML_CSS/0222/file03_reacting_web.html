@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reacting web</title>
+    <style>
+        body,
+        html {
+            all: unset;
+        }
+
+        #box {
+            width: 100%;
+            height: 500px;
+            background-color: lightskyblue;
+        }
+        /* In case there is the media device is 'screen' and than the min-width is 1200px.
+         미디어 장치가 스크린 장치이면서 너비가 1200px 이상인 경우 */
+        @media screen and (min-width:1200px) {
+            #box {
+                background-color:lightsteelblue;
+            }
+        }
+        /* In case there is the media device is 'screen' and than min-width is 600px and less than max-width is 1199px.
+        미디어 장치가 스크린 장치이면서 최대 너비가 1199px이하이고 최소 너비가 600px인 경우 */
+        @media screen and (max-width:1199px) and (min-width:600px){
+            #box {
+                background-color: mediumaquamarine;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+</body>
+
+</html>

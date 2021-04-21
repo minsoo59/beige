@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorChange</title>
+    <style>
+        #list > div {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            line-height: 100px;
+            text-align: center;
+            font-size: 1.5em;
+            float: left;
+            margin: 10px;
+            color: white;
+        }
+        ul > li > a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="courses">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>jQuery</li>
+        <li>Portfolio</li>
+    </ul>
+    <script>
+        // 내부문자가 HTML인 요소의 글자 색상을 파란색으로 바꾸고
+        // 그 요소 다음에 나오는 요소의 글자 색을 빨간색으로 바꾸는 js프로그램 작성
+        let childNode = document.getElementById("courses").children;
+        for (let k = 0; k < childNode.length; k++) {
+            if (childNode[k].innerHTML == "HTML") {
+                childNode[k].style.color = "blue";
+                childNode[k].nextElementSibling.style.color = "red";
+            }
+        }
+    </script>
+    <hr>
+    <ul>
+        <li><a href="http://www.google.com">Google</a></li>
+        <li><a href="http://www.naver.com">Naver</a></li>
+        <li><a href="http://www.daum.net">Daum</a></li>
+        <li><a href="http://www.facebook.com">Facebook</a></li>
+        <li><a href="http://www.twitter.com">Twitter</a></li>
+    </ul>
+    <script>
+        // HTML문서내에 있는 모든 링크를 찾아 그 링크를 클릭했을 때
+        // 새로운 창에서 열리도록 js 프로그램 작성
+
+        // let links = document.links;
+        for (let i = 0; i < document.links.length; i++) {
+            document.links[i].setAttribute("target", "_blank");
+        };
+
+    </script>
+    <hr>
+    <div id="list">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <script>
+        // HTML문서내에 2초마다 첫 번째 요소를 마지막 요소로 이동시키는 js프로그램 작성
+        let rolling11 = document.getElementById("list");
+
+        // 첫번째 자식요소
+        //  = rolling11.fristElementChild
+        // 마지막 요소 추가
+        //  = rolling11.appendChild()
+        window.setInterval(function(){
+            rolling11.appendChild(rolling11.firstElementChild);
+        },2000);
+    </script>
+</body>
+
+</html>

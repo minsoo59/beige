@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector</title>
+    <style>
+        /* <!-- descendant selector 후손 선택자 --> */
+        body li{
+            /* li element of descendant element of body element select */
+            background-color: navy;
+        }
+        /* <!-- child selector 자식 선택자 --> */
+        ul > li{
+            /* li element select li element of ul element */
+            color: yellow;
+
+        }
+
+        ol > li{
+            /* li element select li element of ol element */
+            color: white;
+        }
+
+
+        /*  동위 선택자 */
+        .choice + li {
+            /* Reference that represent weight of font */
+            /* 해당 클래스 기준으로 한칸 뒤 */
+            font-weight: bold;
+        }
+
+        .choice3 + li {
+            font-weight: bold;
+        }
+        .choice2 ~ li {
+            /* 해당 클래스 기준으로 뒤에 모든게 바뀜 */
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li class="choice3">Item 1</li>
+        <li class="choice">Item 2</li>
+        <li >Item 3</li>
+        <li>Item 4</li>
+    </ul>  
+<hr>
+    <ol>
+        <li>Item 1</li>
+        <li class="choice2">Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+
+</body>
+</html>

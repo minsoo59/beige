@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table, td, th{
+            border: 1px solid black;
+            /* 테두리간의 간격을 줄인다 */
+            border-collapse: collapse;
+        }
+        thead > tr:nth-of-type(1){
+            font-weight: bold;
+        }
+
+        tbody > tr:hover > td {
+            background-color: darkgray;
+        }
+        tbody > tr:nth-of-type(odd){
+            background-color: darkkhaki;
+        }
+    </style>
+</head>
+<body>
+    <h1>SBS 아카데미 웹 퍼블리싱 수강 여부</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>이름</td>
+                <td>HTML</td>
+                <td>CSS</td>
+                <td>JavaScript</td>
+                <td>jQuery</td>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>김철수</td>
+                <td>O</td>
+                <td>O</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+            <tr>
+                <td>이영희</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+            </tr>
+            <tr>
+                <td>홍길동</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

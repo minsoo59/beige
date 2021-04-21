@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery - html</title>
+    <link rel="stylesheet" href="/2. JS/css/reset.css" />
+    <link rel="stylesheet" href="/2. JS/css/theme.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+      #items > li {
+        margin: 10px;
+        background-color: #888;
+        padding: 10px;
+      }
+      ul {
+        border: 5px solid gold;
+        padding: 10px;
+      }
+    </style>
+    <!-- items -->
+    <script>
+      $(function () {
+        let $items = $("#items > li");
+        // $items 요소의 모든 li 요소에 "Item"내부 문자를 설정
+        $items.html("Item ");
+        // $items 요소의 li 요소, 각각 내부 문자에 인덱스 번호 추가
+        // 제이쿼리에 함수가 들어갈때는 대부분 이렇게 처리함
+        $items.html(function (index, oldHtml) {
+          $(this).html(oldHtml + index);
+        });
+
+        // 높이 설정
+        // $items.height("80px");
+        $items.height(function (index, height) {
+          $(this).height(height + index * 20); // px단위 생략
+        });
+      });
+    </script>
+    <!-- items2 -->
+    <script>
+      $(function () {
+        // 1. 문서 객체 조작
+
+        // 1. 문서 객체 생성 - jQuery 함수를 통해서 생성
+        // <h1> Hello world!</h1> 인 요소를 생성
+        // - 요소를 생성했더라도 바로 출력되는 것이 아니다.
+
+        $("<h1>Hello world!</h1>");
+
+        // 2. 문서 객체 삽입
+        //  a.선택한 문서 객체를 특정 요소에 삽입
+        //    ex) '사과'를 "바구니"에 넣는다.
+        let $items2 = $("#items2");
+        // 새로운 li 요소를 생성
+        let firstChild = $("<li>Item 0 (prepend)</li>");
+        // 새로운 li 요소를 #itme2 의 첫번째 자식 요소로 추가(삽입)
+        firstChild.prependTo($items2);
+
+        // 새로운 li 요소를 생성
+        let lastChild = $("<li>Item 2 (append)</li>");
+        // 새로운 li 요소를 #itme2 의 마지막 자식 요소로 추가(삽입)
+        lastChild.appendTo($items2);
+
+        // 새로운 div 요소를 생성
+        let beforeSibling = $("<div>Before</div>").css(
+          "border",
+          "5px solid yellowgreen"
+        );
+        // 새로운 div 요소를 #item2의 이전 형제 요소로 추가(삽입)
+        beforeSibling.insertBefore($items2);
+
+        // 새로운 div 요소를 생성
+        let nextSibling = $("<div>After</div>").css("border", "5px solid cyan");
+        // 새로운 div 요소를 #item2의 다음 형제 요소로 추가(삽입)
+        nextSibling.insertAfter($items2);
+      });
+    </script>
+    <!-- items3 -->
+    <script>
+      $(function () {
+        // b. 선택한 문서 객체에 특정 요소를 삽입
+        //   ex) "바구니"에 '사과'를 넣는다.
+        let $item3 = $("#items3");
+        //   추가할 새로운 요소를 생성
+        let firstChild = $("<li>Item 0 (prepend) </li>");
+        //   #itme3에 새로운 요소를 첫번째 자식 요소로 추가(삽입)
+        $item3.prepend(firstChild);
+
+        //   추가할 새로운 요소를 생성
+        let lastChild = $("<li>Item 2 (append) </li>");
+        //   #itme3에 새로운 요소를 마지막 자식 요소로 추가(삽입)
+        $item3.append(lastChild);
+        //   추가할 새로운div 요소를 생성
+        let prevSibling = $("<div>Before</div>").css(
+          "border",
+          "5px solid yellowgreen"
+        );
+        // #items3에 새로운 요소를 이전 형제 요소로 추가(삽입)
+        $item3.before(prevSibling);
+        //   추가할 새로운div 요소를 생성
+        let nextSibling = $("<div>After</div>").css("border", "5px solid cyan");
+        // #items3에 새로운 요소를 다음 형제 요소로 추가(삽입)
+        $item3.after(nextSibling);
+      });
+    </script>
+    <!-- items4 -->
+    <script>
+      $(function () {
+        // 3. 문서 객체 이동
+        // 선택한 문서 객체를 삽입 메서드를 통해 이동시킬 수 있다.
+        // 복제가 아닌 객체 자체가 이동이 되어진다.
+        let $item4 = $("#items4");
+
+        $item4.on("click", function () {
+          //$item4 요소를 클릭할 때마다 $item4 요소의 첫번째 자식요소를
+          // 마지막 자식 요소로 이동시키는 이벤트 핸들러
+          let first = $(this).children(":first");
+
+          first.appendTo(this); //   first.appendTo($item4); $item4.append(first);;
+        });
+
+        // 4. 문서 객체 제거
+        //  -remove : 선택한 문서 객체 제거
+        //  -empty : 선택한 문서 객체의 내부 문자 제거
+        //  5. 문서 객체 복사(복제)
+        //  -clone
+      });
+    </script>
+  </head>
+
+  <body>
+    <ul id="items">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <hr />
+    <ul id="items2">
+      <li>Item 1 (base)</li>
+    </ul>
+    <hr />
+    <ul id="items3">
+      <li>Item 1 (base)</li>
+    </ul>
+    <hr />
+    <ul id="items4">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </body>
+</html>

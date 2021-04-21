@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        #container {
+            width: 500px;
+
+            border: 10px solid white;
+            border-radius: 10px;
+            margin: 10px auto;
+
+            overflow: hidden;
+        }
+
+        #slide {
+            width: 500%;
+
+            position: relative;
+            left: 0;
+        }
+
+        #slide>li {
+            float: left;
+
+            width: 20%;
+            padding: 0;
+        }
+
+        #slide>li>img {
+            display: block;
+            width: 100%;
+        }
+
+    </style>
+
+    <script>
+        $(function () {
+            $slide = $("#slide");
+            $container = $("#container");
+
+                function reapeatSlide() {
+                    $slide.children(":first").removeAttr("style")
+                    $slide.removeAttr("style").append($slide.children(":first"));
+                };
+            function doSlide() {
+                $slide.css({ transitionDuration: "1000ms", left: "-100%" })
+                $slide.children(":first").css({transitionDuration: "1000ms", visibility: "hidden" , opacity: 0 })
+                setTimeout(reapeatSlide, 1000);
+            }
+
+            $container.hover(
+                () => clearInterval(timer),
+                // The reason that timer put in again is apply to mouseenter event when it happened again
+                () => timer = setInterval(doSlide, 2000)
+            );
+
+            let timer = setInterval(doSlide, 2000);
+
+            // $container.on({
+            //     mouseenter : function(){
+            //         // console.log("mouseenter!!");
+            //         clearInterval(timer);
+            //     },
+
+            //     mouseleave : function(){
+            //         // console.log("mouseleave!!");
+            //         timer = setInterval(doSlide, 2000);
+            //     }
+            // });
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="slide">
+            <li><img src="../../images/slide-11.png"></li>
+            <li><img src="../../images/slide-12.png"></li>
+            <li><img src="../../images/slide-13.png"></li>
+            <li><img src="../../images/slide-14.png"></li>
+            <li><img src="../../images/slide-15.png"></li>
+        </ul>
+    </div>
+</body>
+
+</html>

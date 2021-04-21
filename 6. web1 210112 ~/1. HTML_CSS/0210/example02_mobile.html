@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- The 'meta' tag that designate the browser information on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <style>
+        #container {
+            /* position: relative; */
+            /* The hidden that out of 범위 */
+            /* overflow: hidden; */
+        }
+        header>h1,
+        nav,
+        footer,
+        aside {
+            font-size: 2.4em;
+            font-weight: 900;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        header {
+            background-color: skyblue;
+            /* The position value set up 'relative' for designate by containing block of #menu element */
+            position: relative;
+        }
+
+        #menu {
+            /* The position value set up 'Absolute' for place middle of right that bace header area */
+            position: absolute;
+
+            width: 30px;
+            height: 30px;
+
+            right: 30px;
+            top:50%;
+            margin-top: -15px;
+
+            border:none;
+            background-color: transparent;
+            padding: 0;
+            outline: none;
+
+            background: url("../images/2x/baseline_dashboard_black_24dp.png");
+        }
+        #menu >span {display: none;}
+        nav, article {
+            border-bottom: 1px solid skyblue;
+        }
+        aside {
+            position: absolute;
+            width: 35%;
+            background: rgb(0, 0, 0, 0.6);
+
+            color: white;
+
+            top: 60px;
+            right: 0;
+            bottom: 0;
+
+            /* display: none; */
+        }
+        article{
+            padding: 1em;
+        }
+
+        article > h2 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.3em;
+        }
+        article > p {
+            line-height: 1.4em;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- The free mobile icon image homepage : material design search and menu-resources -->
+    <!-- Pixel don't use it on Android -->
+    <div id="container">
+        <header>
+            <h1>Mobile Header</h1>
+            <button id="menu"><span>Toggle Menu</span></button>
+        </header>
+        <nav>Navigation</nav>
+        <aside>Side bar</aside>
+        <article>
+            <h2>Content Title</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </article>
+        <footer>footer</footer>
+    </div>
+</body>
+
+</html>

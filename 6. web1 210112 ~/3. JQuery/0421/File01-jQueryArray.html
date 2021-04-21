@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+
+    <script>
+      $(function () {
+        let $items = $("#list1 > li");
+        // jQuery 객체는 다수의요소를 저장하고 관리할 수 있다.
+
+        // 따라서 jQuery 메서드를 통해서 모든 요소들을 한 번에 조작할 수 있다.
+        $items.css({
+          padding: "1em",
+          backgroundColor: "#555",
+          margin: "1em",
+        });
+        //   .width((index) => {
+        //     // $items객체 내의 각 요소별로 너비를 설정할 함수
+        //     // 따라서 함수의 반환 값 : 요소에 설정될 너비
+        //     return (index + 1) * 100;
+        //   })
+        //   .height((index) => {
+        //     return (index + 1) * 100;
+        //   });
+        //   width 메서드와 height 메서드처럼 각각의 요소마다
+        // 수행하는 함수가 많이 있는 경우 이를 한번에 처리하는 것이 좋다.
+        $items.each((index, item) => {
+          // jQuery 객체 내의 모든 요소 별로 수행할 함수
+          // 매개변수
+          // index : 요소의 인덱스 item : 요소의 element 객체
+          let value = (index + 1) * 100;
+          $(item).width(value).height(value);
+        });
+        //   ============================================
+        // jQuery 함수를 통해서도 each 메서드를 호출할 수 있다.
+        //  selector.each(function([index],[item]){...}))
+        // $.each(selector, function([index],[item]){...}))
+        $.each($items, (index, item) => {
+          $(item).css("padding-left", (index + 1) * 50);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul id="list1">
+      <li>Item 0</li>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+  </body>
+</html>

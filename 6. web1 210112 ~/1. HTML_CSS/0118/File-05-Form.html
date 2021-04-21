@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form tag -->
+    <!-- get: Represent just like that user write contents in address represent line -->
+    <!-- post : There is not limit input of letter length 
+                and also there is not what user write -->
+    <!-- action : server 주소 -->
+    <form action="/server/login" method="GET">
+        <!-- id : identipitcation of tag -->
+        <!-- name reference is what user write -->
+        <label for="input_id">ID :  </label> 
+        <input type="text" name="ID" id="input_id" placeholder="Please Enter ID"><br>
+        PW : <input type="password" name="PassWord" placeholder="Please Enter PassWord"><br>
+        <input type="submit" name="Submit">
+
+        <!-- if you for reference value of label reference designate by id value, -->
+        <!-- 묶인다. by one of family -->
+        <label for="input_Yes"> Yes </label>        
+        <input type="checkbox" id="input_Yes" value="X"> 
+    </form>            
+
+</body>
+</html>

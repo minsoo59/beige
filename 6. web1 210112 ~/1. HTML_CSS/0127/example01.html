@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table, td, th{
+            border: 1px solid black;
+            /* Reduce gap of between border. */
+            border-collapse: collapse;
+        }
+        /* it select odd element of tr element in tobody element. */
+        tbody > tr:nth-of-type(odd){
+            background-color: darkkhaki;
+        }
+
+        /* it write CSS block in back-ground color designating by darkgray in which mouse pointer going up over tr element in 'tbody' element   */
+        tbody > tr:hover > td {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>SBS 아카데미 웹 퍼블리싱 수강 여부</h1>
+    <table>
+        <!-- Title area -->
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>HTML</th>
+                <th>CSS</th>
+                <th>Javascript</th>
+                <th>jQuery</th>
+            </tr>
+        </thead>
+        <!-- Main text area -->
+        <tbody>
+            <tr>
+                <td>김철수</td>
+                <td>O</td>
+                <td>O</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+            <tr>
+                <td>이영희</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+            </tr>
+            <tr>
+                <td>홍길동</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/theme.css">
+    <title>js_event</title>
+</head>
+
+<body>
+    <h1 id="Hello">Hello!!</h1>
+    <h1 id="nice">nice!!</h1>
+    <script>
+        // #Hello 요소를 클릭하면 글자의 색을 빨간색으로 바뀌는 js프로그램 작성.
+        let hello = document.getElementById("Hello");
+        // #nice 요소를 클릭하면 글자의 색을 빨간색으로 바뀌는 js프로그램 작성.
+        let nice = document.getElementById("nice");
+
+        // event name : click
+        // event property : onclick
+
+        function eventHandler() {
+            // hello.style.color = "red";
+            // 이벤트가 발생한 요소의색을 설정하려면 this를 활용하자
+            this.style.color = "red";
+        }
+        //because handler code go over it, write not 소괄호
+        hello.onclick = eventHandler;
+        nice.onclick = eventHandler;
+
+    </script>
+    <hr>
+    <h1 id="Hello2">Hello22!!</h1>
+    <script>
+        // #Hello2를 클릭하면 사라지도록 프로그램을 작성
+
+        let hello2 = document.getElementById("Hello2");
+
+        hello2.onclick = function () {
+            //이벤트 핸들러 : hello2의 요소를 클릭했을 때 수행할 함수
+            this.style.display = "none";
+        }
+    </script>
+
+
+</body>
+
+</html>

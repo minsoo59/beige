@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../2. JS/css/reset.css" />
+    <link rel="stylesheet" href="../../2. JS/css/theme.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>move</title>
+    <!-- box -->
+    <style>
+      #box {
+        width: 780px;
+        margin: 10px auto;
+      }
+      #box::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      #box > li {
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: #888;
+        margin: 30px;
+
+        font-size: 4em;
+        font-weight: 900;
+        line-height: 200px;
+        text-align: center;
+      }
+    </style>
+    <!-- rolling -->
+    <style>
+      #container {
+        width: 300px;
+        height: 2em;
+        border: 1px solid white;
+        overflow: hidden;
+
+        margin: 3em auto;
+      }
+
+      #rolling {
+        margin: 0;
+        /* Set up relative value for move up element. */
+        position: relative;
+        top: 0;
+        /* percentage : The standard that contants area of containing block */
+        /* top: -100%; */
+
+        /* transition-duration: 1400ms; */
+      }
+
+      #rolling > li {
+        height: 2em;
+        padding-left: 1em;
+        line-height: 2em;
+      }
+    </style>
+    <!-- box js -->
+    <script>
+      $(function () {
+        let $boxes = $("#box");
+
+        // 일정시간마다
+        setInterval(function () {
+          $boxes.append($boxes.children(":first"));
+        }, 1500);
+      });
+    </script>
+    <!-- rolling js -->
+    <script>
+      $(function () {
+        let $rolling = $("#rolling");
+
+        setInterval(function () {
+          $rolling.css({
+            top: "-100%",
+            transitionDuration: "400ms",
+          });
+          setTimeout(function () {
+            $rolling.append($rolling.children(":first")).removeAttr("style");
+          }, 400);
+        }, 2000);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="box">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </div>
+    <hr />
+    <div id="container">
+      <ul id="rolling">
+        <li>1. Time is gold.</li>
+        <li>2. No sweat, no sweet.</li>
+        <li>3. Asking coasts nothing.</li>
+        <li>4. Step by stey goes a long way.</li>
+        <li>5. You will never know until you try.</li>
+      </ul>
+    </div>
+  </body>
+</html>

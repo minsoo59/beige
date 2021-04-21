@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/theme.css">
+    <title>a conditional sentence</title>
+</head>
+
+<body>
+    <pre><script>
+        // Write Javascript program to print and review whether ramdom number is positive or negative.   
+        let num = 12;
+
+        if (num > 0) {
+            document.writeln("Positive number!");
+        } else if (num < 0) {
+            document.writeln("Nagative number!");
+        } else /*if(num == 0)*/{ // don't need to write it because only one things,in case upper contional sentence all false
+            document.writeln("This number is " + num)
+        }
+    </script></pre>
+
+    <pre><script>
+        // Write Javascript program to print and review whether ramdom number is evens or odds and 0.
+        let numb = 2345;
+
+        if (numb == 0) {
+            document.writeln("This numb is " + numb);
+        } else if (numb % 2 == 0) {
+            document.writeln("A evens number!");
+        } else {
+            document.writeln("A odds number!");
+        } 
+    </script></pre>
+
+
+    <pre><script>
+        let numbe = 17;
+
+        //when it has ramdom number,
+        //print "Fizz", if it has multiple of 3
+        //print "Buzz", if it has multiple of 7
+        // Print "FizzBuzz", if it has multiple of 3 and 7
+        // in case except number, Write javascript program right now
+        if (numbe % 3 == 0 && numbe % 5 == 0) {
+            document.writeln("FizzBuzz");
+        } else if (numbe % 5 == 0) {
+            document.writeln("Buzz");
+        } else if (numbe % 3 == 0) {
+            document.writeln("Fizz");
+        } else {
+            document.writeln("This numbe is " + numbe);
+        }
+    </script></pre>
+
+    <pre><script>
+        let a = [67, 60, 60];
+
+        let avg = (a[0] + a[1] + a[2]) / a.length;
+        if (avg >= 90) {
+            document.writeln("A = " + avg)
+        } else if (avg >= 80 && avg <= 90) {
+            document.writeln("B = " + avg)
+        } else if (avg >= 70 && avg <= 80) {
+            document.writeln("C = " + avg)
+        } else if (avg >= 60 && avg <= 70) {
+            document.writeln("D = " + avg)
+        } else {
+            document.writeln("E = " + avg)
+        }
+    </script></pre>
+
+    <pre><script>
+        let b = 47;
+
+        if (b >= 60 && b > 90) {
+            document.writeln("장학금수여 and 합격!")
+        } else if (b >= 60) {
+            document.writeln("합격!")
+        } else {
+            document.writeln("불합격!")
+        }
+    </script></pre>
+
+    <pre><script>
+        const grade = [1, 2, 3];
+        let c = 76;
+        let gra = grade[2];
+
+        if (c >= 85 && gra == 3) {
+            document.writeln("3학년 우등생!")
+        } else if (c >= 75) {
+            document.writeln("우등생!")
+        }  
+    </script></pre>
+
+
+</html>

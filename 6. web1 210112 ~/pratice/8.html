@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+    <style>
+        ul>strong {
+            color: green;
+        }
+
+        ul > #ol1 >li:first-child,
+        ul > #ol2 >li:nth-child(4){
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SBS 아카데미 교육 과정</h1>
+
+    <ul>
+        <strong>
+            <li>웹 퍼블리싱 과정</li>
+        </strong>
+        <ol id="ol1">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+        </ol>
+
+        <strong>
+            <li>프로그래밍 과정</li>
+        </strong>
+        <ol id="ol2">
+            <li>C</li>
+            <li>C++</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>Andriod</li>
+        </ol>
+
+    </ul>
+</body>
+
+</html>

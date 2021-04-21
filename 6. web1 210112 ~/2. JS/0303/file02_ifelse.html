@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre><script>
+        // 제어문 : Flow of program for take it
+        // 조건문 -> it use cord when it take cord to do as 조건 조건에 따라 수행되는 코드를 제어할 때 사용.
+        // 반복문 -> The cord use it repeat to do when it control.코드를 반복 수행되도록 제어할 때 사용.
+
+        // 조건문 종류 : if, if-else, if-elseif, switch
+
+        // if문 : In case 조건식 is true, it use cord do when it take  코드가 수행되도록 제어할 때 사용.
+        // if(조건식)...
+        var a = 40;
+        if (a > 10 && a < 50) {
+            document.writeln("a가 10보다 큽니다.");
+            document.writeln("a가 50보다 작습니다.");
+        }
+
+        // if-else : 조건식의 결과에 따라 수행되는 코드를 제어할 때 사용.
+        // if(조건식){ In case the block to do is true true 일 경우 수행될 블록 }else{ false인 경우 수행될 블록 }
+        var b = 10;
+        if (b > 10) {
+            document.writeln("b가 10보다 큽니다.");
+        } else {
+            document.writeln("b가 50보다 작습니다.");
+        }
+        // The control of if문 is not taken.
+        document.writeln("프로그램 종료");
+
+
+        // if-elseif문 : else문은 조건식을 가질 수 없으며, 추가적으로 조건식을 작성할 때 사용되는 조건식이다.
+        // -> else if(조건식){...}
+        // if(조건식){...}else if(조건식2){} 
+        // 다수의 조건에 따라 사용되는 조건문.
+
+        let d = 10;
+        if (d > 10) {
+            document.writeln("d가 10보다 큽니다.");
+        } else if (d < 10) {
+            document.writeln("d가 10보다 작습니다.");
+        } else {
+            document.writeln("d가 10과 같습니다.");
+        }
+
+    </script></pre>
+</body>
+
+</html>

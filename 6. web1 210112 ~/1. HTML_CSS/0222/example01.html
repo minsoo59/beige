@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/theme.css">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <title>example01</title>
+    <style>
+        /* Common block or mobile layout of all layout make on style sheet */
+        /* The basic condition make it because the mobile layout simple than another layout */
+        #header,
+        #nav,
+        #sidebar,
+        #content,
+        #footer {
+            box-sizing: border-box;
+            border: 5px solid gray;
+            font-size: 1.4em;
+            font-weight: bold;
+            line-height: 2em;
+            margin-bottom: 10px;
+            padding: 20px;
+        }
+
+        #sidebar {
+            position: fixed;
+            width: 150px;
+            right: -150px;
+            top: 0;
+            bottom: 0;
+        }
+
+        #wrap {
+            height: 500px;
+        }
+
+        /* getting change width */
+        /* In case 768px <= width <= 1199px  */
+        @media screen and (min-width:768px) and (max-width:1199px) {
+            #wrap-container {
+                overflow: hidden;
+            }
+
+            #sidebar {
+                position: static;
+                float: left;
+                width: 200px;
+                height: 500px;
+                margin-right: 10px;
+            }
+
+            #wrap {
+                float: left;
+                width: 100%;
+                height: 500px;
+                margin-right: -210px;
+            }
+
+            #content {
+                margin-right: 210px;
+                height: 100%;
+            }
+        }
+
+        /* Fixed width : width >= 1200px*/
+        @media screen and (min-width:1200px) {
+            #wrap-container::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            #container {
+                width: 1200px;
+                margin: 0 auto;
+            }
+
+            #sidebar {
+                position: static;
+                width: 200px;
+                margin-right: 10px;
+            }
+
+            #sidebar,
+            #wrap {
+                float: left;
+            }
+
+            #wrap {
+                width: 990px;
+            }
+
+            #sidebar {
+                height: 500px;
+            }
+
+            #content {
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 반응형 웹 -->
+    <!-- The web get provide service 하나의 코드로 다양한 미디어 또는 해상도에 맞게 -->
+    <!-- mobile : 0 <= width < 768px -->
+    <!-- Getting change width : 768px <= width < 1200px -->
+    <!-- fixed width : 1200px <= width -->
+    <div id="container">
+        <!-- header area -->
+        <header id="header">Header</header>
+        <!-- navigation area -->
+        <nav id="nav">Navigation</nav>
+        <!-- sidebar + body area -->
+        <div id="wrap-container">
+            <aside id="sidebar">sidebar</aside>
+            <!-- body -->
+            <div id="wrap">
+                <article id="content">Content</article>
+            </div>
+            <!--#content-->
+        </div>
+        <!--/#wrap-container-->
+        <!-- footer -->
+        <footer id=footer>Footer</footer>
+    </div>
+    <!--#container-->
+</body>
+
+</html>

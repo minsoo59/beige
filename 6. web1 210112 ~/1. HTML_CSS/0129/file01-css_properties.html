@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS properties</title>
+    <style>
+        body{ 
+            all: unset;
+        }
+        #big-box {
+            width: 400px;
+            height: 400px;
+            background-color: yellowgreen;
+
+            /* Setup border  */
+            border: 1px solid yellowgreen;
+
+            /* padding : inner white space */
+            /* it's same that how to designate 'margin property value' */
+            /* padding: 50px; */
+
+            /* percent of padding */
+            /* Percent value is designated width of parent element */
+            padding: 10%;
+
+
+            /* box-sizing : content-box, border-box */
+            /* 구글 관리자모드 들어가서 박스모델 보면 거기에 이해편함. */
+        }
+        #small-box {
+            /* Percent value is designated width of parent element  */
+            width: 50%;
+
+            /* Percent value is designated height of parent element  */
+            height: 50%;
+            background-color: gold;
+
+            /* margin -> outter white space of element */
+            /* Outter white space designate direction of all */
+            /* margin: 50px; */
+            /* Designated outter white space of Top-botton, right-left direction */
+            /* margin: 30px 50px; */
+            /* it can also designate each other */
+            /* Designated by clockwise in which top is frist */
+            /* margin: 10px 20px 30px 40px; */
+
+            /* margin-direction */
+            /* direction : top right botton left */
+            /* Designate direct each other, it can designate white space what you want */
+
+            /* designate percent of white space */
+            /* Content width of parent element from baced designate percent value    */
+            /* margin: 10%; */
+            /* if it use 'auto' of 'margin property', is placed middle of left-right. */
+            /* it's not apply top-botton */
+            /* margin: 20px auto; */
+
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div id="big-box">
+        <div id="small-box">
+
+        </div>
+    </div>
+</body>
+</html>

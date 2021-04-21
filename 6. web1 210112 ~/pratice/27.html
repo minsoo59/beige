@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <title>Document</title>
+
+
+    <style>
+        header,
+        nav,
+        aside,
+        #content,
+        footer {
+            border: 10px solid gray;
+            padding: 0.4em;
+            box-sizing: border-box;
+            margin: 10px;
+        }
+
+        #wrap {}
+
+        aside {
+            width: 200px;
+            float: left;
+            height: 200px;
+            margin-right: 10px;
+        }
+
+        #wrap::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <div id="wrap">
+        <aside>Sidebar</aside>
+        <div id="wrap_container">
+            <article id="content">Content</article>
+        </div>
+    </div>
+    <footer>Footer</footer>
+</body>
+
+</html>

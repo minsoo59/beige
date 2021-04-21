@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+            // 브라우저에 스크롤이벤트 발생시, 일정 높이가 됐을때
+            // 스크롤의 남은 높이를 계산하여 새로운 h1요소가 추가되도록 프로그램 작성
+            $(window).on("scroll",function () {
+                // 남은 스크롤 영역 = 문서의 전체 높이 - (스크롤된 높이 + 뷰포트의 높이)
+                let height = $(document).height() - ($(window).scrollTop() + $(window).height());
+                if (height < 100){
+                    $("<h1> </h1>").html("Newwwwwwwwwwwwwwwwww content!").appendTo($(document.body))
+                };
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+</body>
+</html>

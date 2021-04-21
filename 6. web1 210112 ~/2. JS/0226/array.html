@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <title>array</title>
+</head>
+<body>
+    <pre><script>
+        //the name of students 선언 a variable saved each other.
+        // -> it get tough to control and non-effectional because variable is too much.
+        // it's difficult to search selected data.
+        // because fixid number, it can't against if number of data changes.
+        
+        var stuname1 = "stu1";
+        var stuname2 = "stu2";
+        var stuname3 = "stu3";
+        var stuname4 = "stu4";
+        var stuname5 = "stu5";
+        var stuname6 = "stu6";
+        var stuname7 = "stu7";
+        var stuname8 = "stu8";
+        var stuname9 = "stu9";
+        var stuname10 = "stu10";
+
+        // -> how to matter of up for 해결 array
+        // array : multiple data set.
+        // array 리터럴 : The letter for make array ( [] )
+        // array element : the saved data in array, array category
+        // array index : it was against number at element of array, the number increase from 0 by 1
+        var stunames = ["stu1", "stu2","stu3","stu4","stu5","stu6","stu7","stu8","stu9","stu10",]
+        // The elements saved in array print all.
+        document.writeln(stunames);
+
+        // it print the select element placed
+        // Selected place is saved by index,
+        // it write with index operator([]) at right side of array name 
+        // Index is the number that start from 0 by 1
+        //  0 <= index < element number
+        document.writeln(stunames[3]);
+
+        // The array is one of object type.
+        // The object is data type that have a function and property
+
+        // The property that saving element number of array function 
+        //  + length property
+        //  How to use
+        // it write . behind array
+        document.writeln("student.length : " + stunames.length);
+
+    </script></pre>
+</body>
+</html>

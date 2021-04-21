@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideMenu</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <style>
+        #container {
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        #header {
+            background-color: maroon;
+            /* #toggle-button의 기준영역으로 설정 */
+            position: relative;
+        }
+
+        #header>h1 {
+            font-size: 2.4em;
+            font-weight: 900;
+            color: white;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        #toggle-button {
+            width: 30px;
+            height: 30px;
+
+            /* for plaed up-right side of #header   */
+            /* position property value sep up absolute */
+            position: absolute;
+
+            top: 50%;
+            right: 20px;
+            margin-top: -15px;
+
+            border: none;
+            background: transparent;
+            outline: none;
+            cursor: pointer;
+
+            background: url("/images/1x/baseline_dashboard_white_24dp.png") no-repeat center / cover;
+        }
+
+        #toggle-button>span {
+            display: none;
+        }
+
+        /* Navigation */
+        #nav {
+            border-bottom: 1px solid maroon;
+        }
+
+        #nav::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #nav>ul>li {
+            float: left;
+            width: 25%;
+
+            /* 구분선의 기준영역 */
+            position: relative;
+        }
+
+        #nav>ul>li>a {
+            display: block;
+
+            text-decoration: none;
+            color: black;
+
+            line-height: 2em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* nav 내의 구분선 */
+        #nav>ul>li:not(:first-child)::before {
+            content: "";
+            display: block;
+
+            position: absolute;
+
+            top: 0.4em;
+            bottom: 0.4em;
+            border-left: 1px solid maroon;
+        }
+
+        /* sidebar */
+        #sidebar {
+            position: absolute;
+            width: 40%;
+
+            top: 60px;
+            bottom: 0;
+            right: 0;
+            right: -40%;
+            background-color: rgba(0, 0, 0, 0.3);
+
+            transition-duration: 400ms;
+        }
+
+        #sidebar>ul>li>a {
+            display: block;
+
+            text-decoration: none;
+            color: white;
+
+            font-size: 1.3em;
+            font-weight: bold;
+            line-height: 1em;
+            padding: 1em;
+        }
+
+        /* Contents */
+        #content {
+            padding: 1em;
+        }
+
+        #content>h2 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.7em;
+        }
+
+        #content>p {
+            line-height: 1.3em;
+            margin-bottom: 1em;
+        }
+
+        #footer {
+            border-top: 1px solid maroon;
+            padding: 1em;
+        }
+
+        #footer>strong {
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- header -->
+        <header id="header">
+            <h1>Mobile Web</h1>
+            <button id="toggle-button"><span>Sidebar Menu Button</span></button>
+        </header>
+        <!-- Navi -->
+        <nav id="nav">
+            <ul>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#CSS">CSS</a></li>
+                <li><a href="#JS">JS</a></li>
+                <li><a href="#JQuery">JQuery</a></li>
+            </ul>
+        </nav>
+        <!-- Side bar -->
+        <aside id="sidebar">
+            <ul>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#CSS">CSS</a></li>
+                <li><a href="#JS">JS</a></li>
+                <li><a href="#JQuery">JQuery</a></li>
+            </ul>
+        </aside>
+        <!-- Contents -->
+        <article id="content">
+            <h2>
+                What is Lorem Ipsum?
+            </h2>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </article>
+        <!-- footer -->
+        <footer id="footer">
+            <strong>Footer : </strong>
+            Donate Bitcoin: 16UQLq1HZ3CNwhvgrarV6pMoA2CDjb4tyF
+        </footer>
+    </div>
+    <script>
+        const toggleButton = document.getElementById("toggle-button");
+        const sidebar = document.getElementById("sidebar");
+        // 플래그 변수(flag variable) : 상태를 표현하는 변수
+        let isToggle = false;
+        function togbunHandler() {
+            if (isToggle) {
+                sidebar.removeAttribute("style");
+                // isToggle = false;
+
+            } else {
+                sidebar.style.right = "0";
+                // isToggle = true;
+            }
+
+            isToggle = !isToggle;
+        }
+        function init() {
+            toggleButton.addEventListener("click", togbunHandler);
+        };
+        init();
+    </script>
+</body>
+
+</html>

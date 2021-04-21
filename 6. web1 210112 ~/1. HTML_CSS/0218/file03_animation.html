@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/theme.css">
+    <title>animation property</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+
+            position: fixed;
+            top: 10px;
+            left: 10px;
+
+            animation-name: move;
+            animation-duration: 1s;
+            /* effect order */
+            animation-direction: alternate;
+            /* effect count */
+            animation-iteration-count: infinite;
+            /*it is same function that 'transition-timing-function'  */
+            animation-timing-function: ease-in;
+            
+        }
+
+        /* for make that more various and complicated effect than transition property */
+        /* animation property use */
+        /* before animation property use, it define to will be moved by what effect */
+        @keyframes move {
+            0% {
+                top: 10px;
+                left: 10px;
+            }
+
+            50% {
+                top: 200px;
+            }
+
+            100% {
+                left: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

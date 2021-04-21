@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <title>Mobile site</title>
+    <style>
+
+        #container {
+            /* designate containing black of #asdie */
+            position: relative;
+            /* Because scroll is made that #asdie get out of #container area */
+            /* In case it get out of area, which hide it */
+            overflow: hidden;
+        }
+
+        #header {
+            background-color: maroon;
+            /* for designate by containing block of #menu */
+            /* Position value set up 'relative' */
+            position: relative;
+        }
+
+        #header > h1 {
+            color: white;
+            font-size: 2.2em;
+            font-weight: 900;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        #menu {
+            /* for placed middle of right side by bace area of #header  */
+            /* Position value set up 'absolute' */
+            position: absolute;
+
+            width: 40px;
+            height: 40px;
+            /* Placed middle of right side  */
+            right: 10px;
+            top: 50%;
+            margin-top: -25px;
+
+            /* Reset border style that seted up basic of button element*/
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            outline: none;
+
+            /* menu button icon */
+            background: url(../images/2x/baseline_dashboard_white_24dp.png);
+
+        }
+        /* It remains inner text of button for improve web accessibility, Set up on display 보이지 않도록 */
+        #menu > span { display: none;}
+
+        #nav {
+            border-bottom: 1px solid maroon;
+        }
+
+        #nav>ul::after { content: ""; display: block; clear: both;}
+
+        #nav > ul > li {
+            /* Set up float property for array all of item 모든 항목이 나란히 나열을 하기 위해서 */
+            float: left;
+            /* Containing block by baced it set up percentage value */
+            width: 25%;
+            /* Position proeprty set up for designate by containing block of 구분선 */
+            position: relative;
+        }
+
+        #nav > ul > li > a {
+            /* Display property set up block form for made by button form of 'a element' */
+            display: block;
+            text-align: center;
+            line-height: 2em;
+            text-decoration: none;
+            color: black;
+        }
+        /* The 구분선 that well be entering Between kind of item */
+        #nav > ul > li::before {
+            content: "";
+            /* Baced li element place left side */
+            position: absolute;
+            left: -1px;
+            top: 0.5em;
+            bottom: 0.5em;
+            width: 1px;
+            border-left: 1px solid maroon;
+        }
+
+        #aside {
+            position: absolute;
+            box-sizing: border-box;
+            width: 200px;
+
+            top: 60px;
+            right: 0;
+            bottom: 0;
+
+            padding: 2em;
+            margin-right: -200px;
+
+            background-color: rgb(0, 0, 0,0.5);
+        }
+
+        #aside > ul > li > a {
+            display: block;
+            line-height: 2.4em;
+
+            text-decoration: none;
+            color: white
+        }
+
+        #content {
+            padding: 1em;
+            border-bottom: 1px solid maroon;
+        }
+
+        #content > h4 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.6em;
+        }
+
+        #content > p {
+            line-height: 1.6;
+            margin-bottom: 0.6em;
+        }
+
+        #footer {
+            padding: 1em;
+            line-height: 1.6;
+        }
+        #footer > strong {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+            <h1>Mobile Web</h1>
+            <button id="menu"><span>Menu</span></button>
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="#HTML">HTML</a></li>
+                <li><a href="#CSS">CSS</a></li>
+                <li><a href="#Javascript">Javascript</a></li>
+                <li><a href="#jQuery">jQuery</a></li>
+            </ul>
+        </nav>
+        <aside id="aside">
+            <ul>
+                <li><a href="#HTML">HTML</a></li>
+                <li><a href="#CSS">CSS</a></li>
+                <li><a href="#Javascript">Javascript</a></li>
+                <li><a href="#jQuery">jQuery</a></li>
+            </ul>
+        </aside>
+        <article id="content">
+            <h4>Content Title</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </article>
+        <footer id="footer">
+            <strong>Footer:</strong>
+            asdasdasdasdasdasdasdas
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 2em;
+            padding: 6em;
+            background: url(../picture/꽃을문꽃_오른쪽.jpg) no-repeat center top / cover fixed;
+        }
+
+        #content {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        #content>h2 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 0.8em;
+        }
+
+        #content>p {
+            line-height: 1.6;
+        }
+        /* 오버레이 */
+        #overlay {
+            position: fixed;
+            top: 0; bottom: 0; left: 0; right: 0;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        /* 윈도우 모달 */
+        #window {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* it's for comeing middle that transform: translate(-50%,-50%) */
+            /* In case using  in translate function 백분율 값을 사용할 경우 */
+            /* #window 요소의 크기를 기준으로 값을 반환 받아 사용하게 된다. */
+            /* 따라서 Window 요소의 크기가 바뀌더라도 중앙에 되도록 할 수 있다. */
+            transform: translate(-50%,-50%);
+
+            width: 600px;
+            padding: 0em 0.5em;
+            background-color: #ccc;
+            border-radius: 6px;
+        }
+
+        #window > h3 {
+            background-color: gray;
+            color: white;
+            font-size: 1.6em;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 6px;
+            padding: 0.5em 1em;
+        }
+
+        #window > p {
+            line-height: 1.6;
+            margin: 0.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- overlay layor -->
+    <div id="overlay">
+        <!-- THe layor on the webpage -->
+        <div id="window">
+            <h3>Alert!</h3>
+            <p>조너선 앨런 리섬 ( 영어: Jonathan Allen Lethem , 1964년 2월 19일 ~ )은 미국의 SF 소설가이다. 데뷔작인 장편소설 《총, 그리고 행사 음악》이 로커스상을
+                수상하고 네뷸러상 후보에 올라 유명해졌다. 이후 《고독의 요새》, </p>
+        </div>
+    </div>
+    <!-- body -->
+    <article id="content">
+        <h2>조너선</h2>
+        <p>조너선 앨런 리섬 ( 영어: Jonathan Allen Lethem , 1964년 2월 19일 ~ )은 미국의 SF 소설가이다. 데뷔작인 장편소설 《총, 그리고 행사 음악》이 로커스상을 수상하고
+            네뷸러상 후보에 올라 유명해졌다. 이후 《고독의 요새》, 《머더리스 브루클린</p>
+    </article>
+</body>
+
+</html>

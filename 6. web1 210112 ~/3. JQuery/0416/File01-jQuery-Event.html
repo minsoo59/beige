@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- on method의 활용 -->
+    <script>
+        $(function () { 
+            // JQuery event
+            // JQuery 객체는 이벤트 이름으로 된 메서드를 가지고 있으며
+            // 인자 값으로 이벤트 핸들러를 받아서 연결한다
+            let $hello = $("#hello"); 
+
+            $hello.click(function(){
+                // This is event handler
+                $(this).css("background-color","navy");
+            });
+            $hello.on("click",function(){
+                $(this).css("font-size","2em");
+            });
+            // But you should use method "on". becoz able to use multiple event.
+            $hello.on({
+                "mouseenter" : function(){
+                    $(this).css("color","gold");
+                },
+                // it able to write without ''
+                mouseleave : function(){
+                    $(this).removeAttr("style");
+                }
+            })
+         })
+    </script>
+    <!--  -->
+    <style>
+    .up{ font-size: 2em;
+    }
+    </style>
+    <script>
+        $(function(){
+            let $hi = $("#hi"); 
+            $hi.hover(
+                // mouseenter
+                function(){
+                    $(this).css("background-color","yellowgreen")
+                    // .addClass("up");
+                },
+                function(){
+                    // mouseleave
+                    $(this).removeAttr("style")
+                    // .removeClass("up");
+                }
+            );
+            $hi.hover(function(){
+                // mouseenter & mouseleave event handler
+                // 두 이벤트가 동일한 핸들러를 사용할 경우 하나의 핸들러만 인자값으로 전달한다.
+                $(this).toggleClass("up");
+            });
+
+        })
+    </script>
+</head>
+<body>
+    <h1 id="hello">Hello world!!!!!!!!!</h1>
+    <hr>
+    <h1 id="hi">Hi, jquery</h1>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agasignment</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+</head>
+
+<style>
+    
+    #container {
+        background-color: cornflowerblue;
+        height: 2em;
+        border: 1px solid white;
+        overflow: hidden;
+        border-radius: 10px;
+
+    }
+
+    #rolling {
+        position: relative;
+        top: 0;
+        margin: 0;
+    }
+
+    #rolling>li {
+        height: 2em;
+        padding-left: 1em;
+        line-height: 2em;
+    }
+</style>
+<script>
+    window.addEventListener("load", function () {
+
+        let liList = document.getElementById("rolling");
+        let count = liList.childElementCount;
+        let step = 1;
+        let duration = 200;
+        let INTERVAL_TIME = 2000;
+        let onMouse = false;
+
+        function mouseOverHandler(){
+            clearInterval(timer);
+            onMouse = true;
+        };
+        function mouseOutHandler(){
+            setInterval(interVal, INTERVAL_TIME);
+            onMouse = false;
+        };
+
+        function mouse(){
+            if(liList){
+                liList.addEventListener("mouseover", mouseOverHandler);
+                liList.addEventListener("mouseleave", mouseOutHandler);
+            };
+        };
+        function changeList(){
+            window.setTimeout(function () {
+                liList.appendChild(liList.firstElementChild);
+                liList.removeAttribute("style");
+            }, duration);
+        };
+        let timer = window.setInterval(interVal, 2000);
+        function interVal(){
+            liList.style.top = "-100%";
+            liList.style.transitionDuration = duration + "ms";
+            step++;
+            changeList();
+            mouse();
+        }
+    });
+</script>
+
+<body>
+    <div id="container">
+        <ul id="rolling">
+            <li>1. Time is gold.</li>
+            <li>2. No sweat, no sweet.</li>
+            <li>3. Asking costs nothing.</li>
+            <li>4. Step by step goes a long way.</li>
+            <li>5. You will never know until you try.</li>
+        </ul>
+    </div>
+</body>
+
+</html>

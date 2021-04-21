@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>example01_Memu_bar</title>
+    <style>
+        #menu_bar {
+            /* Width sep up contents 맞춰서 */
+            /* Be careful because might be not supported by browser */
+            width: max-content;
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.5em;
+            font-family: Tahoma, sans-serif;
+        }
+
+        #menu_bar>li {
+            /* Set up float property for place to array all 'li properties' */
+            float: left;
+            background-color: #eee;
+            border: 1px solid #999;
+
+        }
+
+        #menu_bar>li:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+
+        #menu_bar>li:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+
+        /*Select element to except last child element of menu_bar element  */
+        #menu_bar>li:not(:last-child) {
+            border-right: none;
+        }
+
+        #menu_bar>li>a {
+            /* a element for use like bottom designate 'block' form */
+            display: block;
+            padding: 10px 16px;
+            text-decoration: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="menu_bar">
+        <li><a href="#home">home</a></li>
+        <li><a href="#HTML">HTML</a></li>
+        <li><a href="#CSS">CSS</a></li>
+        <li><a href="#Javascript">Javascript</a></li>
+        <li><a href="#jQuery">jQuery</a></li>
+    </ul>
+</body>
+
+</html>

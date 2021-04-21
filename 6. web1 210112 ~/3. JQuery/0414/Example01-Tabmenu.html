@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/css/reset.css" /> -->
+    <link rel="stylesheet" href="/2. JS/css/reset.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Tab-menu</title>
+    <style>
+      #tab-container {
+        width: 250px;
+        margin: 10px auto;
+      }
+      #tab-menu > li {
+        float: left;
+        /* 넓이 반절반절씩 차지하기 위해 */
+        width: 50%;
+        box-sizing: border-box;
+
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px 0;
+        /* border: 2px solid #ccc; */
+        /* 기본 스타일은 비활성화를 기준으로 작성. */
+        background-color: #ccc;
+        color: #999;
+        border-bottom: 2px solid #aaa;
+
+        cursor: pointer;
+      }
+      /* #tab-menu 요소의 자식 요소 중 on 클래스인 요소 */
+      /* 활성화된 탭 메뉴 */
+      #tab-menu > li.on {
+        background-color: white;
+        color: black;
+
+        border: 2px solid #aaa;
+        border-bottom: none;
+
+        cursor: default;
+      }
+
+      .tab-content {
+        padding: 1.2em;
+        line-height: 1.6;
+
+        border: 2px solid #aaa;
+        border-top: none;
+
+        /* 기본적으로 비활성화를 기준 */
+        display: none;
+      }
+      /* .tab-content.on인 요소 */
+      /* 활성화된 탭 메뉴와 연관된 컨텐츠를 활성화 */
+      .tab-content.on {
+        display: block;
+      }
+    </style>
+    <script>
+      $(function () {
+        let $tabContent = $(".tab-content");
+
+        $("#tab-menu>li").on("click", function () {
+          // 이미 활성화된 탭 메뉴를 클릭했을 경우 이벤트 핸들러 동작시킬 필요없음.
+          // 따라서 .on클래스 추가여부 검사
+          let $this = $(this);
+          if ($this.is(".on")) return;
+
+          //   $this.addClass("on");
+          // 클릭한 요소 추가 형제클래스 제거
+          $this.addClass("on").siblings().removeClass("on");
+          // 전체를 제거하고 클릭한 요소만 넣는 방식
+          let contentId = $this.data("content");
+          $tabContent.removeClass("on").filter(contentId).addClass("on");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="tab-container">
+      <!-- tab menu button -->
+      <ul id="tab-menu">
+        <li class="on" data-content="#tab-content-front">Front-end</li>
+        <li data-content="#tab-content-back">Back-end</li>
+      </ul>
+
+      <!-- Each other list -->
+      <ul id="tab-content-front" class="tab-content on">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>jquery</li>
+      </ul>
+      <ul id="tab-content-back" class="tab-content">
+        <li>PHP</li>
+        <li>ASP</li>
+        <li>JSP</li>
+        <li>MySQL</li>
+      </ul>
+    </div>
+    <!--tab-container-->
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Input form tag </title>
+</head>
+<body>
+        <!-- input form -->
+        <!-- the form which is inputed by users -->
+        <!-- login -->
+        <!-- Join -->
+        <!-- write -->
+        <!-- order /  -->
+
+        <!-- Form tag : the tag which write for input tag -->
+        <!-- method reference : How to deliver date of server -->
+        <!-- GET : limited length, Be seen you inputed value in address -->
+        <!-- POST : Not limited length, Not Be seen you inputed value in address -->
+        <form action="server/">
+            <!-- Tag is inputed by users -->
+            <!-- placeholder is anoounced user what inputed it-->
+            <!-- autocomplete reference : whether(여부) auto complete  -->
+            <!-- required : Write select necessary element -->
+                User name <input type="text" placeholder="Plz enter Name" name="username" autocomplete="off" required>
+                User password <input type="password" placeholder="password" name="userPassword" id="" required>
+<hr>
+            <!-- Radio button : The button sellect most of one  -->
+            <!-- How to collect Most of something 으로 one group : Use values of same name element -->
+            <!-- Because not be inputed element like text of top, -->
+            <!-- Designate delivered values at server though value reference -->
+            <!-- 따라서 Same name reference deliver value of selected element-->
+            <!-- Values of selected element deliver same name reference 중에 -->
+            <!-- label tag : The tag is for represet text into input form -->
+            <!-- for 속성을 통해서 input 요소를 지정하면 해당 요소를 체크 또는 포커싱 할 수 있다. -->
+                <label for="Radio1"> Radio 1 </label>  
+                <input type="radio" name="radioBtn" value="Yes" id="Radio1"><br>
+                <label for="Radio2"> Radio 2 </label>
+                <input type="radio" name="radioBtn" value="No" id="Radio2">
+<hr>
+            <!-- fieldset : 입력 양식 내의 그룹을 표현하기 위한 태그 -->
+            <fieldset>
+                <!-- legend : 그룹의 이름(제목) -->
+                <legend> 이용약관 </legend>
+                    <label for="agree1"> 동의 </label>
+                    <input type="radio" name="whetherAgree" value="Yes" id="agree1">
+                    <label for="agree2"> 미동의 </label>
+                    <input type="radio" name="whetherAgree" value="No" id="agree2">
+            </fieldset>    
+<hr>    
+            <!-- checkbox : the button can be selected multiple button. -->
+            <!-- if checkbox also write group, you would input values of same name elements -->
+                Check Box1  <input type="checkbox" name="checkBox" value="check1" id=""> <br>
+                Check Box2  <input type="checkbox" name="checkBox" value="check2" id=""> <br>
+                Check Box3  <input type="checkbox" name="checkBox" value="check3" id=""> <br>
+<hr>
+                File <input type="file" name="" id=""> <br>
+<hr>                
+
+            <label for=""> Option : </label>
+            <!-- select : 드롭다운 양식을 만들기 위한 태그 -->
+            <select name="option" id="option">
+                <!-- option tag : 드롭 다운 양식 내의 하나의 값으 ㄹ의미하는 태그 -->
+                <option value="op1">option1</option>
+                <option value="op2">option2</option>
+                <option value="op3">option3</option>
+                <option value="op4">option4</option>
+            </select>
+<hr>
+            <label for="textarea">textarea : </label><br>
+            <!-- 높이는 정해졌다고해서 그 후에 안써지는게 아니라
+            그후에 스크롤생기면서 계속 쓸수 있음. -->
+            <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+
+            <!-- 내가 사용하는 이미지로 버튼만들고 싶을때 사용. -->
+            <!-- CSS를 통해 꾸밀수 있다. -->
+            <input type="button" value="">
+
+
+            <!-- submit : it deliver that you input values by specific place.-->
+               <input type="submit" value="OK"> 
+<hr>
+            <!-- reset : Reset selected values all. -->
+            <!-- It's not all delete, return reset status -->
+               <input type="reset" value="all reset">
+        </form>
+
+<!-- delete one line key : Ctrl + Shift + K -->
+<!-- 
+            <label for="input_oo">label</label> 
+            <input type="checkbox" name="ooooooo" id="input_oo"> checkbox
+            <input type="email" name="asdasde" id=""> email
+            <input type="image" src="../images/rainbow-bird.png" alt=""><br>
+            <input type="month" name="asdasd" id="">month<br>
+            <input type="date" name="asdadwq" id="">date<br>
+            <input type="datetime" name="qweqe3" id="">datetime<br>
+            <input type="datetime-local" name="qwww" id="">datetime-loacl<br>
+            <input type="color" name="addddddd" id="">color<br>
+            <input type="number" name="" id="">number<br>
+            <input type="hidden" name="">hidden<br>
+            <input type="range" name="" id="">range<br>
+            <input type="search" name="" id="">search<br>
+            <input type="tel" name="" id="">tel<br>
+            <input type="time" name="" id="">time<br>
+            <input type="url" name="" id="">url<br>
+            <input type="week" name="" id="">week<br> 
+-->
+</body>
+</html>

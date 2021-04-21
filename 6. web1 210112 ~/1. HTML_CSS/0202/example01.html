@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            margin: 20px auto;
+
+            padding: 20px;
+            /* Designate that size include border and inner space
+            테두리와 내부여백을 포함한 크기를 지정한다. */
+            box-sizing: border-box;
+        }
+
+        #circle {
+            /* The percentage value that it baced width of 'container' element contents area 
+            #contatiner 요소 컨텐츠 영역의 너비를 기준으로 백분율한 값. */
+            width: 100%;
+            /* The percentage value that it baced hegiht of 'container' element contents area 
+            #contatiner 요소 컨텐츠 영역의 높이를 기준으로 백분율한 값. */
+            height: 100%;
+            background-color: white;
+            /* The percentage value that it baced size of 'circle' element contents area */
+            border-radius: 50%;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="circle"></div>
+    </div>
+</body>
+</html>

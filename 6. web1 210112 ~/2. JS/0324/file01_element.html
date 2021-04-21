@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../JS/script.js"></script>
+    <title>element</title>
+
+</head>
+<body>
+    <ul id="list">
+        <li>Item1</li>
+        <li>Item2</li>
+        <li class="choice">Item3</li>
+        <li>Item4</li>
+        <li>Item5</li>
+        <li>Item6</li>
+    </ul>
+    <script>
+        // element 객체의 자식 노드 관련 속성
+        let list = document.getElementById("list");
+
+        log("child count = " + list.childElementCount);
+
+        // let childNodes = list.childNodes;
+        // log(childNodes);
+        let children = list.children;
+        log(children);
+
+        // 첫번째 자식 요소 노드
+        let firstNode = list.firstElementChild;
+        log(firstNode);
+        // 마지막 자식 요소 노드
+        let lastNode = list.lastElementChild;
+        log(lastNode);
+        // =====================================================
+        log('========================================');
+        // 형제 요소 노드
+        let choiceNode = document.querySelector(".choice");
+        log(choiceNode);
+
+        // 이전 형제 요소 노드
+        let prevNode = choiceNode.previousElementSibling;
+        let prevNNode = choiceNode.previ
+        log(prevNode);
+
+        // 다음 형제 요소 노드
+        let nextNode = choiceNode.nextElementSibling;
+        log(nextNode);
+
+        // 부모 요소 노드
+        let parentNode = choiceNode.parentElement;
+        log(parentNode);
+
+        // ===================================================
+
+        // 복제
+        let cloneNode = choiceNode.cloneNode(true);
+        // class 속성 제거
+        cloneNode.removeAttribute("class");
+        // #list 에 추가
+        list.appendChild(cloneNode);
+        // nextNode가 #list 마지막으로 옮겨진다.
+        list.appendChild(nextNode);
+    </script>
+        
+</body>
+</html>

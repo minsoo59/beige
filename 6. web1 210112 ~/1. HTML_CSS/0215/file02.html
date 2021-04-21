@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <title>file02</title>
+    <style>
+        #header > h1{
+            font-size: 2.6em;
+            font-weight: 900;
+            padding: 0.6em;
+            text-shadow: 4px 4px 4px rgba(0 ,0, 0, 0.5);
+        }
+        #nav {
+            background-color: #888;
+            box-shadow: 0 4px 4px rgba(0 ,0, 0, 0.5);
+        }
+        #nav > ul:first-child{float: left;}
+        #nav > ul:last-child{float: right;}
+        #nav > ul > li {float: left;}
+        #nav > ul > li > a{
+            display: block;
+            padding: 1em;
+            text-decoration: none;
+            color: white;
+        }
+        #nav::after, #wrap-container::after { 
+            content: ""; display: block; clear: both;}
+
+        #aside {
+            width: 200px;
+            float: left;
+            margin-top: 1em;
+        }
+        #aside > ul > li > a {
+            display: block;
+            padding: 0.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+        }
+        #aside > ul > li > a:hover {
+            background-color: gray;
+            color: white;
+        }
+        #wrap {
+        /* 2. #wrap 의 너비를 뷰포트의 너비만큼 지정 */
+            width: 100%;
+            /* 3. 사이드바와 나란히 배치하기 위해 flaot속성 지정 */
+            float: left;
+
+            /* 3-1. 사이드바와 나란히 배치하기 위해서 #wrap의 영역을 화면 밖으로 밀어낸다 */
+            margin-right: -200px;
+        }
+        #wrap > #content {
+            /* 4. #wrap의 영역이 화면에서 벗어나기 때문에 content의 영역도 벗어나게 된다. */
+            margin-right: 200px;
+            padding: 1em;
+            border-left: 1px solid gray;
+        }
+        #wrap > #content > h4{
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.6em;
+        }
+
+        #wrap > #content > p{
+            line-height: 1.6;
+        }
+        #wrap-container {
+            overflow: hidden;
+        }
+        #footer {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Fluid Layout</h1>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="#HOME">HOME</a></li>
+            <li><a href="#HTML">HTML</a></li>
+            <li><a href="#CSS">CSS</a></li>
+            <li><a href="#Javascript">Javascript</a></li>
+            <li><a href="#jquery">jQuery</a></li>
+        </ul>
+        <ul>
+            <li><a href="#LOGIN">Login</a></li>
+            <li><a href="#SIGNUP">Sign up</a></li>
+        </ul>
+    </nav>
+    <div id="wrap-container">
+        <aside id="aside">
+            <ul>
+                <li><a href="#HOME">HOME</a></li>
+                <li><a href="#HTML">HTML</a></li>
+                <li><a href="#CSS">CSS</a></li>
+                <li><a href="#Javascript">Javascript</a></li>
+                <li><a href="#jQuery">jQuery</a></li>
+            </ul>
+        </aside>
+        <div id="wrap">
+            <article id="content">
+                <h4>Content Title</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </article>
+        </div> <!--#wrap-->
+    </div><!--#wrap-container-->
+    <footer id="footer">
+        &copy;2020-2021 SBS Academy Gwanju
+    </footer>
+</body>
+</html>

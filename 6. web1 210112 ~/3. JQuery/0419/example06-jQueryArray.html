@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery_Array</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script>
+        $(function(){
+            $items = $("list1 > li");
+            // jQuery 객체에는 다수의 요소를 포함하고 있기 때문에
+            // jQuery 객체의 메서드를 통해서 한번에 처리를 할 수 있다.
+            $items.css("background-color", "green")
+            // $items.width(function(index){
+            //     return 100*(index+1);
+            // })
+
+            // 그러나 다수의 속성을 모두 각각 처리하려고 하면
+            // 코드가 복잡해짐.. 함수호출이 많아짐.
+            // -> each 메서드
+            $items.each(function(index, item) {
+                let $items = $(item);
+
+                $items.width((index+1)*100).height((index+1)*100);
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="list1">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>link-selector</title>
+    <style>
+        /* link selector */
+        a:link{
+            color: red;
+        }
+        a:visited{
+            color: yellow;
+        }
+
+        /* letter selector */
+        #content::first-letter {
+            /* 1.5배 */
+            font-size: 1.5em;
+        }
+        #content::first-line {
+            font-weight: bold;
+        }
+        /* 전후the front and the rear letter selector */
+        /* = virtual element selector */
+        /* Content properties is esential(필수적) properties */
+        #items > li::before {
+            content: "<NEW>" ;
+            font-size: 0.8em;
+        }
+        #items > li::after {
+            content: " ♥"
+        }
+        /* React letter selector */
+        /* it changes letter color if you drag it by mouse */
+        #content::selection {
+            color: yellowgreen;
+        }
+        /* Negative selector */
+        /* :not(The Movement be objected to what you want) */
+        #items >li:not(:first-child) {
+            /* background-color: yellowgreen; */
+            border-top: 1pt solid black;
+            /* you given that do it, it is applied 'border-line' except 'top-line'. */
+        }
+    </style>
+</head>
+<body>
+    <!-- link selector -->
+    <!-- : link -> 'href element' of 'A tag' represent designated element. -->
+    <!-- : visited -> It represent already visited element through href element of 'A tag' -->
+    <a href="htmp://www.naver.com">네이버</a>    
+    <a href="https://www.daum.net/">다음</a>
+    <a href="https://www.google.co.kr/">구글</a>
+    <a href="https://www.nate.com/">네이트</a>
+    <hr>
+
+    <!-- Letter selector -->
+    <!-- https://www.lipsum.com/ -->
+    <!-- ::first-letter -> First letter select -->
+    <!-- ::first-line -> First line select on browser. -->
+    <p id="content">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <hr>
+    <!-- the front and the rear letter selector -->
+    <!-- virtual element selector -->
+    <ul id="items">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+    </ul>
+</body>
+</html>

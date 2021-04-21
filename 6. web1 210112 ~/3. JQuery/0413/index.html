@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="KO">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        #container {
+            /* Set up width for print image */
+            width: 800px;
+
+            border: 10px solid white;
+
+            margin: 10px auto;
+            overflow: hidden;
+
+            position: relative;
+            left: 0;
+        }
+        #slide::after{
+            display: block; content: ""; clear: both;
+        }
+        #slide {
+            /* Width 400px setup for array li element */
+            width: 500%;
+        }
+
+        #slide>li {
+            /*Float left set up for array image */
+            float: left;
+
+            /* #slide 요소의 너비를 기준으로 LI의 수만큼 나눈값을 퍼센트로 설정*/
+            width: 20%;
+        }
+
+        #slide>li>img {
+            display: block;
+            /* #slide 요소의 너비를 기준으로 LI의 수만큼 나눈값을 퍼센트로 설정*/
+            width: 100%;
+        }
+    </style>
+    <script>
+        $(function(){
+            var $slide = $("slide");
+            var count = $slide.children().length;
+            var i = 1;
+            setInterval(function(){
+                $slide.css("left", (-100*i)+"%");
+            i++;
+            if(i == count) i = 0;
+            },1500);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="slide">
+            <li><img src="/images/dist-photo-71.jpg"> </li>
+            <li><img src="/picture/꽃을문꽃_오른쪽.jpg" alt="photo"> </li>
+            <li><img src="/picture/꽃을문꽃_오른쪽.jpg" alt="photo"> </li>
+            <li><img src="/picture/꽃을문꽃_오른쪽.jpg" alt="photo"> </li>
+            <li><img src="/picture/꽃을문꽃_오른쪽.jpg" alt="photo"> </li>
+        </ul>
+    </div>
+</body>
+
+</html>

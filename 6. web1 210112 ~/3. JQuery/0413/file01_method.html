@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>jQuery - element method</title>
+
+    <script>
+        $(function(){
+           var $items = $("items > li");
+           $items.css({
+               backgroundColor: "#888",
+               padding:"10px",
+               margin:"10px"
+            }).height(function(index, height){
+                // index : jQuery 객체 내의 인덱스
+                // height : 해당 요소의 높이
+
+                $(this).height((index+1)*10+"px");
+                
+            }).width(function(index, width){
+                
+                $(this).width((index+1)*10+"px");
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="items">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+        <li>item 6</li>
+    </ul>
+</body>
+</html>

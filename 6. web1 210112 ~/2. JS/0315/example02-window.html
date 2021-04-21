@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <title>window</title>
+</head>
+
+<body>
+    <pre><script>
+        // Print number that increase from 1 more 1 about 2 seconds on console 
+        //2초 간격으로 1부터 1씩 
+        var i = 1;
+        let seti = window.setInterval(function () {
+            console.log("i : " + i);
+            i++;
+        }, 1000);
+        window.clearInterval(seti);
+    </script></pre>
+
+    <pre><script>
+        let x = 2;
+        let setX = window.setInterval(function () {
+            console.log("x : " + x);
+            x += 2;
+            if (x > 10) { x = 2; };
+        }, 2000);
+        window.clearInterval(setX);
+    </script></pre>
+
+    <pre><script>
+        // The timer resist to increse 1 second from 1 on console
+        let k = 1;
+        let setK = window.setInterval(function () {
+            console.log("k : " + k);
+            k++;
+            if (k > 10) { window.clearInterval(setK) };
+        }, 1000);
+    </script></pre>
+
+    <pre><script>
+        // Write program 콘솔 메서드를 이용해 2초에 하나씩 메시지 다섯개를 콘솔창에 띄우고 종료하는
+        const ar = ["1. Time is gold", "2. No sweat, no sweet", "3. Asking costs nothings", "4.Step by step goes a long way.", "5. You will never know until you try"];
+        let z = 0;
+        let setZ = window.setInterval(function () {
+            console.log(ar[z]);
+            z++;
+
+            if (x > ar.length) { window.clearInterval(setZ) };
+        }, 2000)
+    </script></pre>
+</body>
+
+</html>

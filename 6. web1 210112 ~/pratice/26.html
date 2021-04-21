@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <style>
+        #header {
+            color: white;
+            font-weight: 900;
+            font-size: 2.2em;
+            text-align: center;
+            background-color: maroon;
+            padding: 0.5em;
+        }
+
+        #nav {
+            width: 100%;
+            float: left;
+            border-bottom: 1px solid maroon;
+        }
+
+        #nav>ul>li {
+            float: left;
+            width: 25%;
+            position: relative;
+
+        }
+
+        #nav>ul>li::before {
+            content: "";
+            position: absolute;
+            left: -2px;
+            top: 0.5em;
+            bottom: 0.5em;
+            width: 1px;
+            border-right: 1px solid maroon;
+        }
+
+        #nav>ul>li>a {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: black;
+            line-height: 2em;
+        }
+
+        #nav::after, #wrap::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #sideBar {
+            position: absolute;
+            box-sizing: border-box;
+            top: 70px;
+            right: 0;
+            width: 200px;
+            bottom: 0;
+            padding: 2em;
+            background-color: rgb(0, 0, 0,0.5);;
+            /* display: none; */
+            margin-right: -200px;
+        }
+
+
+        #sideBar > ul > li > a{
+            display: block;
+            line-height: 2em;
+            text-decoration: none;
+            color: white;
+        }
+
+        #wrap {
+            padding: 1em;
+            border-bottom: 1px solid maroon;
+        }
+        #wrap > h3 {
+            font-size:1.6em;
+            padding-top: 1em;
+            margin-bottom: 0.6em;
+            font-weight: bold;
+        }
+        #wrap > p {
+            line-height: 1.4;
+            margin-bottom: 0.6em;
+        }
+        #footer {
+            padding: 1em;
+            text-align: center;
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header id="header">
+        <h1>Mobile Web</h1>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="#HTML">HTML</a></li>
+            <li><a href="#CSS">CSS</a></li>
+            <li><a href="#Javascipt">Javascipt</a></li>
+            <li><a href="#jQeury">jQeury</a></li>
+        </ul>
+    </nav>
+    <aside id="sideBar">
+        <ul>
+            <li><a href="#HTML">HTML</a></li>
+            <li><a href="#CSS">CSS</a></li>
+            <li><a href="#Javascipt">Javascipt</a></li>
+            <li><a href="#jQeury">jQeury</a></li>
+        </ul>
+    </aside>
+    <div id="wrap">
+        <h3>Why do we use it?</h3>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+            at its
+            layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+            opposed to
+            using 'Content here, content here', making it look like readable English. Many desktop publishing packages
+            and web
+            page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
+            many web
+            sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes
+            on
+            purpose (injected humour and the like).</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <footer id="footer">footer</footer>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/reset.css">
+
+</head>
+
+<body>
+    <pre><script>
+        let rect = {
+            width: 200,
+            height: 100,
+            getArea: function () {
+                // return 자신의 너비와 높이를 곱해서
+                return this.width * this.height;
+            }
+        };
+        document.writeln(rect.getArea());
+    </script></pre>
+
+    <pre><script>
+        let circle = {
+            radius: 9,
+
+            getCircumference: function () {
+                return this.radius * 2 * 3.14;
+            },
+            getArea: function () {
+                return this.radius * 2 * this.radius;
+            }
+        };
+        document.writeln("Circumference : "+circle.getCircumference());
+        document.writeln("Area : "+circle.getArea());
+
+
+    </script></pre>
+
+
+
+</body>
+
+</html>

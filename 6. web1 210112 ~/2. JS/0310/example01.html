@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre><script>
+        // Write javascript program that print the most value of element that saved in array
+
+        let arys = [34, 5, 76, 21, 4, 75, 56, 67, 76];
+        // for in 문
+        // The conditional 문 for ordered search array or object 배열 또는 객체를 순차탐색하기 위한
+
+        // The variable is for save max value
+        let max = 0;
+        for (var i in arys) {
+            document.write("index : " + i);
+            document.writeln(" -> " + arys[i]);
+            if (max < arys[i]) {
+                max = arys[i];
+            }
+        }
+        document.writeln(" MAX : " + max);
+    </script></pre>
+
+
+    <pre><script>
+        // Write the javsscript program that print index, after it find value 10 that save of elment in array.
+        let aryss = [4, 16, 22, 18, 9, 10, 7, 11];
+        for (let n in aryss){
+            if(aryss[n] == 10){
+                document.writeln("aryss value is "+aryss[n] +" and index is : "+n );
+                break;
+            }
+        }
+
+
+    </script></pre>
+
+</body>
+
+</html>

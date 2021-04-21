@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_box_model</title>
+    <style>
+        #box1 {
+            background-color: yellowgreen;
+            width: 120px;
+            height: 120px;
+            /* outside margin */
+            margin: 10px;
+            margin: 10px 20px 30px 40px;
+            /* This is direction that Top and down / right and left */
+            margin: 10px 20px;
+            margin: inherit;
+        }
+        #box2 {
+            background-color: gold;
+            width: 120px;
+            height: 120px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- The box model area is placed in element. -> content / border / padding / margin -->
+    <!-- property of boxmodel -> width / height / margin / padding / box-sizzing -->
+    <!-- width, height : ~~px, ~%, auto -> if the values of width and height is not set up, its value is same what it already did. -->
+    <!-- margin, padding : top right bottom left -> which direct is clockwise.-->
+    <!-- margin-direction, padding-direction : ~~px, ~%, auto, inherit -->
+    <div id="box1">
+        BOX
+    </div>
+    <div id="box2">
+        BOX
+    </div>
+
+
+</body>
+</html>

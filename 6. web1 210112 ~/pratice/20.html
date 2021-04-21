@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>20</title>
+    <style>
+        #container {
+            border: 1px solid black;
+            width: 440px;
+        }
+
+        #container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #container>div {
+            width: 200px;
+            height: 220px;
+            float: left;
+            margin: 10px;
+            text-align: center;
+        }
+
+        #container>div:nth-child(1)>div:nth-child(1) {
+            background-color: pink;
+            height: 100px;
+            margin-bottom: 20px;
+            line-height: 110px;
+        }
+
+        #container>div:nth-child(1)>div:nth-child(2) {
+            background-color: gold;
+            height: 100px;
+            line-height: 110px;
+        }
+
+        #container>div:nth-child(2) {
+            background-color: yellowgreen;
+            width: 200px;
+            height: 220px;
+            line-height: 220px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <div>pink</div>
+            <div>gold</div>
+        </div>
+        <div>yellowgreen</div>
+    </div>
+</body>
+
+</html>

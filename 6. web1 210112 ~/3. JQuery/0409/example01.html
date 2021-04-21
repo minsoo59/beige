@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu-dropDown</title>
+    <link rel="stylesheet" href="/6. web1 210112 ~/css/reset.css">
+    <link rel="stylesheet" href="/6. web1 210112 ~/css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        #container {
+            width: 600px;
+            border: 5px solid gold;
+            margin: 100px auto;
+            cursor: pointer;
+
+            position: relative;
+        }
+
+        #menu > a {
+            display: block;
+
+            padding: 20px 1em;
+            font-size: 1.2em;
+            font-weight: bold;
+
+            text-decoration: none;
+            color: white;
+        }
+
+        .dropdown{
+            position: absolute;
+            top: 105%;
+            background-color: #555;
+            border-radius: 8px;
+
+            display: none;
+        }
+
+        .dropdown > li {
+            padding: 10px 20px;
+        }
+        .on {
+            display: block;
+        }
+    </style>
+    <script>
+        $(function(){
+            var $menu = $("#menu > a");
+            var $dropdown = $(".dropdown");
+
+            $menu.on("click",function(){
+                // $dropdown.css("display", "block");
+                $dropdown.toggleClass("on");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="menu"><a href="#dropDown">menu-dropDown</a></div>
+        <ul class="dropdown">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>javascript</li>
+            <li>jQuery</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

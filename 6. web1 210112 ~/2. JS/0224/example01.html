@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- The tag is for write Javascript -->
+    <script>
+        // The area is for write javascript
+
+        // document object : The object use for print at documnet
+        // write method : The printing function or documnet object has 
+        
+        document.write("저는 김민수 입니다! 반갑습니다!");
+
+        // it has to write 큰따옴표로 묶어서 if printing data is character form.
+        document.write(123); //in case like number, just write
+    </script>
+    <hr>
+
+    <pre>
+        <script>
+            //The character is tough to express in 문자열
+            // 이스케이프 문자를 사용하면 해결된다.
+            document.writeln("My name is 'KIM'");
+            // document.writeln("My name is "KIM"");
+            // \n->개행 문자 \t-> 탭문자 \\->백슬래시 \'->작은따옴표 \''->큰따옴표
+            document.writeln("My name is \"KIM\" \nMy age is 31");
+            // typeof() -> the this 연산자 is for check data of type.
+        </script>
+    </pre>
+<hr>
+
+<pre>
+    <script>
+        // How to handle data
+        // how to keeping data and it control to simple
+        // it use 변수(variable)
+
+        // The program is not save result valus that 연산/처리/인력에 의해서 나온  
+        // After There is not using becasue it's not save.저장이 되지 않기 때문에 그 이후에 사용할 수 없다.
+        // it make variable of 명령어, The 명령어 that data saved at variable has to use 
+        
+        // it'd use variable, first of all has to 선언 
+        // how to 선언 variable
+        // var of keyword using, 식별자 write beyond var
+        
+        var num; // num 선언(it create variable)
+
+        // made variable 변수에 데이터 대입 
+        // how to put in it.
+        // 대입 operator(=) use, 
+        // it write that the variable saving data in left side operand and the value or the expression in right side operand 
+        //             -> because 우선순위 of 대입 operator is very low that, the expression of right worked all next, 
+        //                it put in result values.
+        num = 10 + 20;
+        document.writeln("Result is "+ num);
+        // it's carculated by after changed data that have a 식별자 if the expression have a 식별자
+        // 표현식에 식별자가 있으면 식별자가 가진 데이터로 바뀐 뒤에 연산된다.
+
+        console.log("10 + 20 = " +  num);
+
+        // variable 이니셜레이트
+        // 변수에 초기값을 대입하는 과정
+        // 변수 선언과 동시에 대입을 같이 진행.
+        var num2 = 20; //변수 num2를 선언함과 동시에, 데이터20을 대입.
+    </script>
+</pre>
+
+</body>
+</html>

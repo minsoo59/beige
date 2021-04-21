@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <script>
+        window.addEventListener("load",function(){
+            const liList = document.querySelectorAll("#courses > li");
+
+            // liList[0].addEventListener("click", function(){            });
+            // liList[1].addEventListener("click", function(){            });
+            // liList[2].addEventListener("click", function(){            });
+            // liList[3].addEventListener("click", function(){            });
+            // liList[4].addEventListener("click", function(){            });
+            
+            for(let i = 0; i < liList.length; i++){
+                liList[i].addEventListener("click", function(){
+                    // console.log(this);
+                    for(let j = 0; j < liList.length; j++){
+                        liList[j].removeAttribute("style");
+                    }
+
+                    this.style.color = "red";
+                    let prev = this.previousElementSibling;
+                    let next = this.nextElementSibling;
+                    // 검사
+                    if(prev) prev.style.color = "green";
+                    if(next) next.style.color = "blue";
+                });
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <ul id="courses">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>jQuery</li>
+        <li>Portfolio</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/theme.css">
+
+</head>
+
+<body>
+
+    <ul id="itme-list"></ul>
+    <script>
+        // items2 of element is by index in #itme-list element 
+        // Wirte program add one thing every second.1초에 하나씩 추가되도록 프로그램을 작성
+        const items2 = [
+            " Time is gold ",
+            " No sweat, no sweet ",
+            " Asking costs nothings ",
+            " Step by step goes a long way ",
+            " You will never know until you try "
+        ];
+        // Return #itme-list element 
+        let itmeList = document.getElementById("itme-list");
+        // index value
+        let iii = 0;
+        // every second
+        let timer9 = window.setInterval(function () {
+            // Create new index(li)
+            let liNode = document.createElement("li");
+            // Create text node
+            let liTextNode = document.createTextNode((iii + 1) + ". " + items2[iii]);
+            // Add liTextNode in new index(liNode)
+            liNode.appendChild(liTextNode);
+            // Add new index in #item-list element
+            itmeList.appendChild(liNode);
+            iii++;
+            if (iii == items2.length) { window.clearInterval(timer9) };
+        }, 1000);
+    </script>
+    <hr>
+    
+</body>
+
+</html>

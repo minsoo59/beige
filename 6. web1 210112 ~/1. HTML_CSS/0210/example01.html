@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <title>Document</title>
+    <style>
+        #contatiner {
+            width: 1080px;
+            margin: 0px auto;
+        }
+
+        /* Header area */
+        #header>h1 {
+            font-size: 2.4em;
+            font-weight: 900;
+            padding: 1em 1em;
+            text-shadow: 4px 4px 4px rgb(0, 0, 0, 0.4);
+        }
+
+        /* Navigation area */
+        #nav {
+            background-color: #555;
+            box-shadow: 4px 4px 4px rgb(0, 0, 0, 0.4);
+        }
+
+        #nav>ul:first-child {
+            float: left;
+        }
+
+        #nav>ul:last-child {
+            float: right;
+        }
+
+        /* Because it's not recogize by content, child element has 'float property'  */
+        /* Height set up through Virtual element selector  */
+        #nav::after, #wrap::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #nav>ul>li {
+            float: left;
+            /* The osition value set up 'relative' for designate containing block of contour(구분선) */
+            position: relative;
+        }
+
+        #nav>ul>li>a {
+            /* The display value set up 'block' for using 'A element' like button*/
+            display: block;
+            padding: 1.2em 2em;
+            text-decoration: none;
+            color: white;
+        }
+
+        #nav>ul>li>a:hover {
+            background-color: wheat;
+        }
+
+        /* The contour that will be place between item  */
+        #nav>ul>li:not(:first-child)::before {
+            content: "";
+            /* The position value set up 'absolute' for place left that baced 'li element' */
+            position: absolute;
+            top: 15px;
+            bottom: 15px;
+            left: 0;
+            border-left: 1px solid white;
+        }
+        /* This '#wrap' area is combine sidebar & contents area */
+        /* The sidebar area */
+        #sidebar {
+            width: 200px;
+            /* float property designate for place 나란히 content area and sidebar bar */
+            float: left;
+            padding-top: 1em;
+
+        }
+
+        #sidebar > ul > li > a {
+            /* The display vaule set up block for using 'A element' like button */
+            display: block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            color: black;
+        }
+        #sidebar > ul > li > a:hover{
+            background-color: #ccc;
+        }
+
+        #content {
+            float: left;
+            width: 880px;
+            border-left: 1px solid black;
+            /* The value of size value is seted up by content + padding + border, not contents value */
+            box-sizing: border-box;
+            padding: 1em;
+        }
+
+        #content > h2 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.7em;
+        }
+        #content > p {
+            margin-bottom: 0.7em;
+            line-height: 1.6em;
+        }
+
+        #footer {
+            background-color: #999;
+            height: 100px;
+            position: relative;
+        }
+
+        #copyright {
+            position: absolute;
+            right:20px;
+            top: 50%;
+            height: 16px;
+            margin-top: -8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- The block for fixed width of layout -->
+    <div id="contatiner">
+        <!-- Header area -->
+        <header id="header">
+            <!-- Header title -->
+            <h1>One-True Layout</h1>
+        </header>
+        <!-- Navigation area -->
+        <nav id="nav">
+            <!-- Left item-->
+            <!-- The service for provide is item -->
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#HTML">HTML</a></li>
+                <li><a href="#CSS">CSS</a></li>
+                <li><a href="#Javascript">Javascript</a></li>
+                <li><a href="#jQuery">jQuery</a></li>
+            </ul>
+            <!-- Right item -->
+            <!-- Related certification item -->
+            <ul>
+                <li><a href="#Signup">Sign up</a></li>
+                <li><a href="#Login">Login</a></li>
+            </ul>
+        </nav>
+        <!-- This '#wrap' area is combine sidebar & contents area -->
+        <div id="wrap">
+            <!-- Sidebar area -->
+            <asdie id="sidebar">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#HTML">HTML</a></li>
+                    <li><a href="#CSS">CSS</a></li>
+                    <li><a href="#Javascript">Javascript</a></li>
+                    <li><a href="#jQuery">jQuery</a></li>
+                </ul>
+            </asdie>
+            <!-- Contents area -->
+            <article id="content">
+                <!-- Contents title -->
+                <h2>What is Lorem Ipsum?</h2>
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </article>
+        </div> <!-- end of #wrap -->
+        <footer id="footer">
+            <div id="copyright">&copy; 2020-2021 SBS Academy Gwanju</div>
+        </footer>
+    </div> <!-- end of #contatiner -->
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop sentence</title>
+</head>
+
+<body>
+    <pre><script>
+        // 반복문 -> The thing it use when it control it does repeat.
+
+        document.writeln("asdaswqe");
+        document.writeln("asdaswqe");
+        document.writeln("asdaswqe");
+        document.writeln("asdaswqe");
+        document.writeln("asdaswqe");
+
+        // when it use same cord, it became simple if it use.
+        // it can repeat than what you want
+        document.writeln("====================================================");
+
+        for (var i = 0; i < 5; i++) {
+            document.writeln("loop");
+        }
+    </script></pre>
+
+    <hr>
+
+    <pre><script>
+        // while sentence -> The things is repeat for condional setence.
+
+        // 특정 조건일 때까지(to) 반복 수행 
+        // 특정 조건을 만족하는 동안(by) 반복 수행
+
+        // consist of while sentence
+        // while(conditional) {
+        // when it true, it will be does block
+        // if it will finish, conditional sentence would review again
+        //}
+        // The loop that print the a value decrease by -7 to 0
+        let a = 100;
+        while (a > 0) {
+            document.writeln(a);
+            a -= 7;
+        }
+    </script></pre>
+    <hr>
+    <pre><script>
+        // do-while sentence -> The thing is repeat for conditional setnence but it run once at least.
+        // consist of do-while
+        // do {
+        // cord that run repeatly
+        //} while(conditional);
+        let b = 1;
+        do {
+            document.writeln(b);
+            b++;
+        } while (b <= 10)
+    </script></pre>
+    <hr>
+    <pre><script>
+        // for sentence -> It's using control sentence when it handle of count or number.
+        // 특정횟수만큼 반복하기 위해서 카운팅을 진행해야하는데 
+        // - 카운팅 횟수를 저장하기 위한 변수
+        // - the 연산 for check to satisfied 횟수를.
+        // - the 연산 for do counting.
+        // 위의 3개가 필요하다
+
+        // consist of for sentence
+        // for( frist; conditional; after do ) { the cord that run repeatly }
+
+
+        // order 
+        //  frist -> conditonal -> true -> cord ( 명령어 or block ) -> after do -> conditional -> ...
+        //                      -> false -> loop done 
+
+        // first : for문 내에서 사용할 변수를 선언하는 표현식
+        //       : it must 선언과 동시에 초기화를
+        // conditional : for문이 반복 수행되는 조건식, true이면 수행, false면 종료
+        // after do : 반복 수행을 다하고 수행되는 명령어를 작성.
+
+        for (let c = 1; c <= 10; c++) {
+            document.writeln(c);
+        }
+    </script></pre>
+    <hr>
+    <pre><script>
+        // arrays
+        const numbers = [1, 2, 3, 4, 5];
+        document.writeln(numbers);
+        let total = numbers[0] + numbers[1] + numbers[2] + numbers[3] + numbers[4];
+        // for-in sentence -> 배열과 같은 객체의 순차 탐색을 하는 반복문
+        // for문을 이용해서 배열의 인덱스를 0부터 시작해서 배열원소에 접근하다.
+        for (let index = 0; index <= numbers.length - 1; index++){
+            document.writeln(numbers[index]);
+        }
+        //===============================================================
+        // 반복문을 이용하여 배열의 총합을 구한다.
+        let sum = 0;
+        for ( let i = 0; i < numbers.length; i++){
+            sum = sum + numbers[i];
+        }
+        document.writeln(sum);
+        </script></pre>
+
+    
+
+</body>
+
+</html>

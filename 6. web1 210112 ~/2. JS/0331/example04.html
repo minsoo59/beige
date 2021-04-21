@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <style>
+        #box {
+            width: 500px;
+            height: 500px;
+
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            const hello = document.getElementById("hello");
+
+            hello.addEventListener("click", function () {
+                // #hello 요소를 클릭하면 1초동안 화면 위로 올라가 사라지도록하는
+                //  program 작성
+
+                //  이동거리 = #hello 요소의 Y축 상의 거리 + #hello 요소의 높이
+                let dist = this.offsetTop + this.offsetHeight + 20;
+                this.style.transitionDuration = "1s";
+                this.style.transform = "translateY(-" + dist + "px)"
+
+                // *window객체나 element속성의 크기와 관련된 객체는 다 알고 있어야함!
+            });
+        });
+
+        //==============================================================================
+        let box = document.getElementById("box");
+
+        box.addEventListener("mouseenter",function(){
+            console.log("mouseover!");
+        });
+        box.addEventListener("mouseeleave",function(){
+            console.log("mouseeleave!");
+            
+        });
+        box.addEventListener("mouseover",function(){
+            console.log("mouseover!");
+            this.style.border = "5px solid orange";
+            
+        });
+        box.addEventListener("mouseout",function(){
+            console.log("mouseout!");
+            
+        });
+    </script>
+</head>
+
+<body>
+    <h1 id="hello">hello world!</h1>
+    <hr>
+    <div id="box">
+        <div></div>
+    </div>
+</body>
+
+</html>

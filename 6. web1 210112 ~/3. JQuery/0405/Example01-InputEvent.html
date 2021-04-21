@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exampl3 - Input Event </title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+
+        body{
+            background-color: #534292;
+            color: #79589f;
+        }
+        #container {
+            position: absolute;
+            width: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #wrap {
+            padding: 2em;
+            background-color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        #wrap > h1 {
+            font-size: 2em;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        #login-form > input {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+
+            /* 기본스타일제거 */
+            border: none;
+            outline: none;
+            padding: 0;
+            background-color: transparent;
+            border-radius: 4px;
+
+        }
+        #login-form > input:not(:last-child) {
+            border: 1px solid #aaa;
+            padding: 8px;
+            padding-left: 46px;
+            margin-bottom: 1em;
+        }
+
+        #account{
+            background: url("../../images/icon-account-18-2.png") no-reapeat 14px center;
+        }
+        #password{
+            background: url("../../images/icon-lock-18-2.png") no-reapeat 14px center;
+        }
+        #login{
+            width: 100%;
+            background-color: #79589f;
+            color: white;
+            font-size: 1.2em;
+            line-height: 2.4;
+        }
+        #signup{
+            background-color: #ddd;
+            padding: 2em;
+            border-radius: 0 0 4px 4px;
+            color: #666;
+            text-align: center;
+        }
+        #signup > a {
+            color: #79589f;
+        }
+        #forget {
+            padding: 1em;
+            text-align: center;
+        }
+        #forget > a {
+            color: white;
+        }
+        #alert {
+            position: absolute;
+
+            /* top:80px; */
+            left: 50%;
+            transform: translate(-50%);
+
+            background-color: mediumvioletred;
+
+            font-size: 1.2em;
+            padding: 0.6em 1em;
+            border-radius: 8px;
+            color: white;
+            /*  */
+            white-space: nowrap;
+
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+            top: -90px;
+            transition-duration: 400ms;
+        }
+    </style>
+
+<script>
+    window.addEventListener("load",function(){
+        const alert = document.getElementById("alert");
+        const account = document.getElementById("account");
+        const password = document.getElementById("password");
+        const loginForm = document.getElementById("login-form");
+        let timerId = 0;
+
+        loginForm.addEventListener("submit",function(event){
+            const minlength = 4;
+            if (account.value.length <= minlength) {
+                // if The filled in value on account than less 4 letters
+                // 알림창을 내려오게 하고
+                alert.innerHTML = "Your account must be longer than 4.";
+                alert.style.top = "80px";
+
+                // 이미 알림창이 보여지고 있는 경우에 
+                // submit버튼을 눌러서 조건을 만족하지 않은 경우
+                // 타이머를 갱신
+                if (timerId) window.clearTimeout(timerId);
+
+                // 일정시간뒤에 되돌린다.
+                timerId = window.setTimeout(function () {
+                    alert.removeAttribute("style");
+                    // 타이머의 동작이 끝나면 타이머의 id값을 0으로 설정
+                    timerId = 0;
+                }, 2000);
+
+                // 해당 요소에 포커싱이 되도록하는 메서드
+                account.focus();
+
+                event.preventDefault();
+                return;
+            }; //account
+
+            if (password.value.length <= minlength) {
+                // if The filled in value on password than less 4 letters
+                // 알림창을 내려오게 하고
+                alert.innerHTML = "Your password must be longer than 4.";
+                alert.style.top = "80px";
+
+                // 이미 알림창이 보여지고 있는 경우에 
+                // submit버튼을 눌러서 조건을 만족하지 않은 경우
+                // 타이머를 갱신
+                if (timerId) window.clearTimeout(timerId);
+
+                // 일정시간뒤에 되돌린다.
+                timerId = window.setTimeout(function () {
+                    alert.removeAttribute("style");
+                    // 타이머의 동작이 끝나면 타이머의 id값을 0으로 설정
+                    timerId = 0;
+                }, 2000);
+
+                // 해당 요소에 포커싱이 되도록하는 메서드
+                password.focus();
+
+                event.preventDefault();
+                return;
+            };//password
+        });
+});
+
+</script>
+</head>
+<body>
+    <!-- 알림창 -->
+    <div id="alert">Your account must be longer than more 4.</div>
+    <!-- 로그인 양식 작성, 사용자가 아이디와 암호를 4글자 이하로 입력했을 때, 오류를 발생하는 js 프로그램 작성 -->
+    <!-- Write login form, and when user fill in account and password than less 4 character, write js program error happening. -->
+
+        <div id="container">
+            <div id="wrap">
+                <h1>Log in your account</h1>
+                <form action="/sever" method="post" id="login-form">
+                    <!-- autocomplete 자동완성기능on/off -->
+                    <input type="text" name="account" id="account" autocomplete="off" placeholder="Please write ID here"><br>
+                    <input type="text" name="password" id="password" autocomplete="off" placeholder="Please write PW here"><br>
+                    <button type="submit" id="login">Login</button>
+                </form>
+            </div>
+                <div id="signup">Have no account? <a href="#signup">Sign up</a></div>
+                <div id="forget"><a href="#forget">Forget Your Password?</a></div>
+        </div>
+</body>
+</html>

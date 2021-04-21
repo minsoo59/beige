@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21</title>
+    <style>
+        #container {
+            width: 680px;
+            height: 460px;
+            margin: 20px auto;
+            border: 2px solid black;
+            text-align: center;
+        }
+        #container > div {
+            height: 200px;
+            margin: 20px;
+            line-height: 200px;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        #container > div:first-child{
+            background-color: greenyellow;
+        }
+        #container > div:nth-child(2) >div {
+            width: 200px;
+            height: 100%;
+            float: left;
+        }
+
+        #container > div:nth-child(2) > div:nth-child(1){
+            background-color: pink;
+            
+        }
+        #container > div:nth-child(2) > div:nth-child(2){
+            background-color: cyan;
+            margin: 0 20px;
+        }
+        #container > div:nth-child(2) > div:nth-child(3){
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>Yellowgreen</div>
+        <div>
+            <div>pink</div>
+            <div>cyan</div>
+            <div>gold</div>
+        </div>
+    </div>
+</body>
+</html>

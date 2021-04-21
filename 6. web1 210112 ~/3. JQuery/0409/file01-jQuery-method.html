@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>method</title>
+    <link rel="stylesheet" href="/6. web1 210112 ~/css/reset.css">
+    <link rel="stylesheet" href="/6. web1 210112 ~/css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- #items -->
+    <script>
+        $(function () {
+            // var itmes = document.querySelectorAll("#items > li");
+
+            // for(let i = 0; i < itmes.length; i++){
+            //     var item = itmes[i].getAttribute("data-index");
+
+            // }
+
+            var $items = $("#items > li");
+            $items.filter(function () {
+                var $this = $(this);
+                // data-index에서 'data-'은 생략
+                var index = $this.data("index");
+
+                console.log("index -> " + index);
+
+                // 데이터 속성을 추가
+                // "스크립트에서 추가된 데이터 속성"은 마크업에서 보여지지 않는다.
+                $this.data("content", "item:" + index);
+            });
+
+            $items.on("click", function () {
+                var content = $(this).data("content");
+                console.log("clicked -> " + content);
+            });
+        });
+    </script>
+
+    <!-- #hello1, #hello2 -->
+    <script>
+        $(function () {
+            var hellowButtons = $('#buttons > button');
+
+            hellowButtons.on('click', function () {
+                var forHello = $(this).data('for');
+
+                $("#" + forHello).css("color", "red");
+            });
+        })
+    </script>
+    <!-- toggle : 외투등에 다는 짤막한 막대 모양의 단추. 
+        on/off처럼 두 상태 중 하나를 선택하는데 쓰는키 -->
+    <script>
+        $(function () {
+            var $box = $("#box");
+
+            // css method
+            // 요소의 스타일을 설정/반환하기 위한 메서드
+            $box
+                .css("width", "200px")
+                .css("height", "200px")
+                .css("backgroundColor", "yellowgreen");
+
+            var obg = {
+                "width":"700px",
+                "height":"700px",
+                "background-color":"red"
+            }    
+            $box.on("click", function(){
+                //$(this).css(obj);
+                $(this).css({
+                // 속성 값에서 'px' 단위는 생략이 가능
+                // 따라서 특정 px로 설정 할 때, 문자열로 작성할 필요가 없다.
+                // +=, -= 연산자를 지원한다.
+                // witdh : 700,
+                width:"+=100", // 현재 width를 기준으로 +100px한 값으로 설정
+                // height : 700,
+                height : "+=100", // 현재 height를 기준으로 + 100px한 값으로 서렂ㅇ
+                backgroundColor:"yellowgreen",
+                borderRadius:"50%"
+                //문자열이 아닌 식별자로 두 단어로 된 속성을 작성할 경우
+                //두번째 단어부터는 첫글자를 대문자로 작성해야한다.
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <ul id="items">
+        <li data-index="0">Item 1</li>
+        <li data-index="1">Item 2</li>
+        <li data-index="2">Item 3</li>
+        <li data-index="3">Item 4</li>
+        <li data-index="4">Item 5</li>
+    </ul>
+
+    <hr>
+    <h1 id="hello1">Hello world!</h1>
+    <h1 id="hello2">Hello jQuery!</h1>
+    <div id="buttons">
+        <button id="hello1Btn" data-for="hello1">hello1</button>
+        <button id="hello2Btn" data-for="hello2">hello2</button>
+    </div>
+    <div id="box"></div>
+
+</body>
+
+</html>

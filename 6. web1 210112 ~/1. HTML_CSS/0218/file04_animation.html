@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/theme.css">
+    <title>Document</title>
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+        }
+        #box {
+            height: 100%;
+            position: relative;
+        }
+        #box > div {
+            width: 100px;
+            height: 200px;
+            border-radius: 10px;
+            background-color: gold;
+            color: midnightblue;
+            font-size: 1.5em;
+            font-weight: 900;
+            text-align: center;
+            line-height: 200px;
+
+            position: absolute;
+            top: 10px;
+            left: 10px;
+
+            animation-name: move;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes move{
+            from {
+                top: 10px;
+                left: 10px;
+                margin-top: 0;
+                margin-left: 0;
+            }
+            25% {
+                top: 10px;
+                left: 100%;
+                margin-top: 0;
+                margin-left:-110px;
+                background-color: yellowgreen;
+            }
+            50% {
+                top: 100%;
+                left: 100%;
+                margin-left: -110px;
+                margin-top: -210px;
+            }
+
+            75% {
+                top: 100%;
+                left: 10px;
+                margin-left: 0;
+                margin-top: -210px;
+
+            }
+
+            to {
+                top: 10px;
+                left: 10px;
+                margin-top: 0;
+                margin-left: 0;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box"> <div> box </div> </div>
+</body>
+</html>

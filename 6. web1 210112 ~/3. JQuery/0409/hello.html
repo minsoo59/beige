@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/6. web1 210112 ~/css/reset.css">
+    <link rel="stylesheet" href="/6. web1 210112 ~/css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        #container {
+            width: 500px;
+            /* #container1 요소 영역에 li 요소 하나만 표시되도록 */
+            /* 높이를 설정 */
+            height: 2em;
+            border: 10px solid gold;
+            margin: 50px auto;
+
+            overflow: hidden;
+        }
+        #rolling{
+            position: relative;
+            top: 0;
+        }
+        #rolling > li {
+            /* li 요소의 높이를 #container1 요소의 높이만큼 지정 */
+            height: 2em;
+
+            line-height: 2em;
+            padding-left: 1em;
+        }
+    </style>
+    <script>
+        $(function(){
+            var $rolling = $("#rolling");
+
+            var i = 1;
+            // 대부분 size, count, length에서 갯수를 찾을수 있다.
+            var count = $rolling.children().length;
+            console.log("count = "+count);
+            window.setInterval(function(){
+                $rolling.css('top',(-100*i) +'%');
+                i++;
+                if( i == count ) i=0;
+            },1500);
+        });
+    </script>
+    <style>
+        #container-picture{
+            align-items: center;
+            margin: 50px auto;
+            border: 10px solid white ;
+            /* li 요소 만큼 #contianer-picture요소의 너비를 설정. */
+            /* 즉 이미지 하나를 띄울 너비로 설정. */
+            width: 500px;
+            height: 280px;
+            
+            overflow: hidden;
+        }
+        
+        #slider{
+            /* #container-picture 요소의 너비가 이미지 하나의 너비와 같기떄문에
+            #slider의 너비를 컨테이닝 블록 요소의 너비 * 이미지의 수로 설정 
+            또는 (100 * 이미지의 수) */
+            
+            width: 300%; /* or 1500px */
+
+            /* margin-left: -500px; */
+        }
+        
+        #slider > img {
+            /* li 요소들을 나란히 나열하기 위해 float속성 설정 */
+            float: left;
+            width: 500px; /* or (100%/이미지의 수) */
+            height: 100%;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            var $slider = $("#slider");
+            var i = 1;
+            var count = $slider.children().length;
+            window.setInterval(function(){
+                $slider.css('margin-left',(-100*i)+"%");
+                i++
+                if ( i == count ) i = 0;
+            },1500);
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <ul id="rolling">
+            <li> 1. Time is gold.                       </li>
+            <li> 2. No sweat, no sweet.                 </li>
+            <li> 3. Asking coasts nothing.              </li>
+            <li> 4. Step by stey goes a long way.       </li>
+            <li> 5. You will never know until you try.  </li>
+        </ul>
+    </div>
+    <hr>
+    <div id="container-picture">
+        <div id="slider">
+            <img src="/6. web1 210112 ~/images/slide-11.png" alt="1">
+            <img src="/6. web1 210112 ~/images/slide-12.png" alt="2">
+            <img src="/6. web1 210112 ~/images/slide-13.png" alt="3">
+        </div>
+    </div>
+</body>
+</html>

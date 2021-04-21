@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>example02</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+        }
+        #container {
+            width: 1200px;
+            margin: 0px auto;
+        }
+        #header,
+        #nav,
+        #sidebar,
+        #content,
+        #footer {
+            border: 1px solid dimgray;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            box-sizing: border-box;
+        }
+        #sidebar {
+            /* Sep up 'float property' for place to apply '#content element' */
+            float: left;
+            width: 200px;
+            height: 580px;
+
+            background-color: dodgerblue;
+        }
+        #content {
+            float: left;
+            margin-left: 10px;
+            height: 580px;
+            width: 990px;
+
+            background-color: dodgerblue;
+        }
+        /* Becuz not be cognized child element by contents 
+        자식 요소들이 컨텐츠로 인식되지 않기때문에 */
+        /* Catch height though virtual element selector
+        가상 요소 선택자를 통해서 높이를 잡아준다. */
+        #wrap::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #footer {
+            background-color: firebrick;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fixed width layout -->
+    <div id="container">
+        <header id="header">header</header>
+        <nav id="nav">navigation</nav>
+        <section id="wrap">
+            <aside id="sidebar">sidebar</aside>
+            <article id="content">content</article>
+        </section>
+        <footer id="footer">footer</footer>
+    </div>
+</body>
+
+</html>

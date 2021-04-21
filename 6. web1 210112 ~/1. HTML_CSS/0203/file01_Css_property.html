@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css_properties</title>
+    <style>
+        #wrap {
+            border: 3px solid green;
+        }
+
+      
+        #wrap > img {
+            /* float property */
+            /* 부모 요소에서 부유하게 되므로 부모 요소의 컨텐츠로 인식x */
+            /* position:absolute difference 
+            -> keep the place(float) No keep the place(absolute) */
+            float: left;
+
+            /* 해결방법 */
+            /* 1. 부모요소에 높이 고정. height:400px*/
+            /* 2. 부모요소에 float 지정. float:left;*/
+            /* 3. 부모요소에 overflew 지정 
+            -> 부모가 자식을 컨텐츠로 인식을 하게됨. 단 후손은 포함x overflew:hidden*/
+            /* p 
+            /* 4. clear속성을 이용. */
+            /* clear: left; */
+        
+            /* 5. 가상요소 선택자 after이용 */
+            /* ::after {
+                content:"";
+                display:block;
+                clear:both;
+            } */
+        }
+
+        #wrap::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #wrap2 {
+            border: 3px solid gray;
+        }
+
+        
+
+        #wrap2 > div {
+            width: 100px;
+            height: 50px;
+            border: 3px solid navy;
+
+            float: right;
+        }
+        #wrap2::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #wrap2 > div:nth-child(1){
+            
+        }
+        #wrap2 > div:nth-child(){}
+        #wrap2 > div:nth-child(){}
+        
+        #items {
+            list-style-type: none;
+        }
+        #items > li{
+            width: 100px;
+            height: 50px;
+            background-color: green;
+            float: left;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <img src="../picture/11.jpg" alt="people" style="width: 50%;">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+            type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+            type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+            type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+            type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. </p>
+
+    </div>
+    <hr>
+    <div id="wrap2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <hr>
+
+    <ul id="items">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+
+</body>
+</html>

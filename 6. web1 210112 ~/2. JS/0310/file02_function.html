@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <!-- outter script file 불러오기 -->
+    <script src="../0310/script.js"></script>
+</head>
+
+<body>
+    <pre><script>
+        // function : 함수를 정의하기 위한 키워드, 함수의 타입
+        // parametar : 매개변수이며, 인자 값을 받기 위한 변수
+        // argument : 인자 값이며, 함수에 전달되는 ㄱ밧.
+        // return : 함수의 결과값을 의미한다.
+        // function call : 함수 호출, 정의된 함수를 실행한다.
+
+        // variable declaration
+        var hello;
+        // function declaration
+        // 함수를 정의한 것일뿐, it doesn't it by it calls호출하기 전까지는 실행되지 않는다.
+        function printHello() {
+            document.writeln("helloWorld!");
+        }
+
+        function printName(name) {
+            document.writeln("name : " + name);
+
+        }
+
+        //f(x) = x + 10
+        function f(x) {
+            // The keyword for return the result of function
+            return x + 10;
+        }
+
+        // fucntion call
+        // when it calls, Write all a square bracket.
+        printHello();
+
+        // 매개 변수(Parameter)가 있는 함수를 호출할 때는 인자값도 전달해야 한다.
+        printName("shushu");
+
+        // 함수의 이름만 작성하여 출력하는 경우, 코드가 출력된다.
+        let result = f;
+        document.writeln("Type of " + (typeof f));
+        document.writeln(result);
+
+        //오류발생
+        //아직 선언이 되지 않은 변수이기 때문에 사용불가.
+        // printAge(10);
+        //익명함수
+        // 함수의 이름이 없는 형태이며 변수에 저장되기 때문에 선언 이후부터 사용이 가능하다.
+
+        var printAge = function (age) {
+            document.writeln("Age : " + age);
+        }
+
+        // 외부 스크립트에 작성된 함수 호출.
+        writeToDocument("hello");
+        printWithValue("shushu", "js");
+
+        sayHello(33);
+        sayHello(11);
+
+        //Write javascript program to do return function that average of two number.
+        let res = getAverage(8,8);
+        document.writeln(res);
+
+        isEven(0);
+        isEven(1);
+        isEven(2);
+
+        let i = getItem(10);
+        document.writeln(i);
+
+    </script></pre>
+</body>
+
+</html>

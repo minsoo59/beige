@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* virtual가상 class */
+        /* The group is made from virtual class*/
+        /* 반응 selector */
+        /*  : hover : Select the element that mouse pointer go up*/
+        /*  : active : Select that clecked element by mouse pointer*/
+        li:active {
+            /*Clicked element select one of li element*/
+            color: red;
+        }
+        li:hover {
+            /*upper element select over mouse pointer of li element 
+            li요소 중 마우스 포인터가 올라간 요소를 선택 */
+            background-color: purple;
+        }
+
+        /* 상태 선택자 */
+        input:focus {
+            /*it select that Forced element of input element */
+            outline-color:red ;
+        }
+
+        /* 
+        it select that next label element of checked elemnet of input element 
+        input 요소 중 check 된 요소의 다음에 오는 label 요소를 선택 
+        */
+        input:checked + label {
+            font-weight: bold;
+            color: gold;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="choice3">Item 1</li>
+        <li class="choice">Item 2</li>
+        <li >Item 3</li>
+        <li>Item 4</li>
+    </ul>  
+<hr>
+    <ol>
+        <li>Item 1</li>
+        <li class="choice2">Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+<hr>
+<form action="/server" method="GET">
+    Name <br>
+    <input type="text"> <br>
+    Password <br>
+    <input type="text">
+    <input type="checkbox" name="check1" id="check1"> <label for="check1">Check</label>
+    <button type="submit">Submit</button>
+
+</form>    
+
+</body>
+</html>

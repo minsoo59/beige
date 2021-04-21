@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS property</title>
+    <style>
+        .em-font {
+            font-size: 2em;
+        }
+        .rem-font {
+            font-size: 2rem;
+        }
+        #header {
+            /* display : it's designating property that how to mark in view */
+            /* if it designate 'none value',because display is not marked, this written size is not assigned(할당하다) on browser.*/
+            /* display: none; */
+
+            /* visibility : it's designating property whether visible or not in view */
+            /* it given that invisible through 'hidden', the view is placed because display value is block. */
+            /* visibility: hidden; */
+
+            /* opacity : property is designated 'Opacity element'. */
+            /* because it's not 'hidden element', user can know it. */
+            /* opacity: 0; */
+        }
+    </style>
+</head>
+<body>
+    <!-- size unit -->
+    <!-- % : percent -->
+    <!-- px : pixel, implicit(절대적인) unit -->
+    <!-- em : It's standard of multiple(배수) unit at the font size of parent element -->
+    <!-- rem : It's standard of multiple unit at the font size of html element -->
+
+    <div class="em-font">
+        em font!
+        <div class="em-font">
+            em font!
+        </div>
+    </div>
+    <hr>
+    <div class="rem-font">
+        rem font!
+        <div class="rem-font">
+            rem font!
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="header">CSS property relative visible</h1>
+    <h2>display, visibility, opacity</h2>
+</body>
+</html>

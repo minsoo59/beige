@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>example03</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <style>
+        #container {
+            width: 1080px;
+            margin: 0px auto;
+        }
+        
+        #header > h1 {
+            font-size: 2.4em;
+            font-weight: 900;
+            padding: 1em 1em;
+            text-shadow: 4px 4px 3px rgb(0, 0, 0, 0.3);
+        }
+
+        #nav {
+            background-color: #333;
+            box-shadow: 4px 4px 3px rgb(0, 0, 0, 0.3);
+
+        }
+        #nav::after {content: "";display: block;clear: both;}
+        #nav>ul:first-child>li {float: left;}
+        #nav>ul:last-child>li {float: right;}
+        #nav>ul>li{float: left;}
+        #nav>ul>li>a{
+            /* a 요소를 버튼처럼 사용하기 위해서 block 형식으로 지정 */
+            display: block;
+            padding: 1.2em 2em;
+            text-decoration: none;
+            color: white;
+        }
+        #nav>ul>li a:hover{
+            background-color: #999;
+        }
+
+
+        /* sideBar */
+        #sidebar {
+            float: left;
+            width: 200px;
+            margin-top: 1em;
+        }
+        #sidebar > ul > li > a {
+            /* a요소를 버튼 처럼 사용하기 위해서 float 속성을 지정 */
+            display:block;
+            padding: 0.4em 1em;
+            text-decoration: none;
+            color: black;
+
+        }
+        #sidebar > ul > li > a:hover {
+            background-color: #999;
+        }
+        #content {
+            float: left;
+            width: 880px;
+            border-left: 1px solid #999;
+            padding: 2em;
+            box-sizing: border-box;
+
+        }
+
+        #content > h2 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.7em;
+        }
+
+        #content > p {
+            line-height: 1.6em;
+            margin-bottom: 1em;
+        }
+
+        #wrap::after {content: "";display: block;clear: both;}
+
+        #footer {
+            height: 80px;
+            line-height: 80px;
+            background-color: #999;
+            text-align: right;
+            padding-right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+            <h1>One-True Layout</h1>
+        </header>
+        <!-- Navigation area -->
+        <!-- GNB(Global Navigation Bar) -->
+        <!--    : The used menu bar by common  -->
+        <!-- 서비스를 구성하는 모든 페이지에서 공통적으로 사용하는 메뉴바 -->
+        <nav id="nav">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#HTML">HTML</a></li>
+                <li><a href="#CSS">CSS</a></li>
+                <li><a href="#Javascript">Javascript</a></li>
+                <li><a href="#jQuery">jQuery</a></li>
+            </ul>
+            <ul>
+                <li><a href="#Signup">Sign up</a></li>
+                <li><a href="#Login">Login</a></li>
+            </ul>
+        </nav>
+        <section id="wrap">
+            <aside id="sidebar">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#HTML">HTML</a></li>
+                    <li><a href="#CSS">CSS</a></li>
+                    <li><a href="#Javascript">Javascript</a></li>
+                    <li><a href="#jQuery">jQuery</a></li>
+                </ul>
+            </aside>
+            <article id="content">
+                <h2>What is Lorem Ipsum?</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing
+                    software like Aldus PageMaker including versions of Lorem Ipsum.</p><br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing
+                    software like Aldus PageMaker including versions of Lorem Ipsum.</p><br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing
+                    software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </article>
+        </section>
+        <footer id="footer">&copy;2020-2021 SBS Academy Gwanju</footer>
+    </div>
+</body>
+
+</html>

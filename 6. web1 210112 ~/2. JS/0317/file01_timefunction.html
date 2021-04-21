@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer_function</title>
+</head>
+
+<body>
+    <pre><script>
+        // Write program finish and bring up console window five messages that 콘솔 메서드를 이용해 2초에 하나씩
+        const ar =
+            [
+                "1. Time is gold",
+                "2. No sweat, no sweet",
+                "3. Asking costs nothings",
+                "4. Step by step goes a long way.",
+                "5. You will never know until you try"
+            ];
+        let z = 0;
+        // Write the function doing 2 seconds
+        let setZ = window.setInterval(function () {
+            // The function that doing in contant time
+            console.log(ar[z]);
+            z++;
+            if (z == ar.length) { window.clearInterval(setZ) };
+        }, 2000)
+    </script></pre>
+
+    <pre><script>
+        // Write program to be finish timer after 5 seconds, 
+        // it print increseing value to 1 from 1 every second on console window.
+        let x = 1;
+        let setX = window.setInterval(function () {
+            console.log("x = " + x);
+            x++;
+        }, 1000);
+
+        // it register for timer that be finished after 5 seconds registerd timer at up. 위에 등록된
+        window.setTimeout(function(){
+            window.clearInterval(setX);
+        },5000);
+    </script></pre>
+</body>
+
+</html>

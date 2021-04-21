@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <title>example02</title>
+
+    <style>
+        #header>h1 {
+            font-size: 2em;
+            font-weight: 900;
+            padding: 25px;
+
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #nav {
+            background-color: gray;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #nav>ul:first-child {
+            float: left;
+        }
+
+        #nav>ul:last-child {
+            float: right;
+        }
+
+        #nav>ul>li {
+            float: left;
+
+        }
+
+        #nav>ul>li>a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 1.5em 1em;
+        }
+
+        #nav>ul>li>a:hover {
+            background-color: royalblue;
+        }
+
+        #nav::after,
+        #wrap::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #wrap {
+            width: 100%;
+            float: left;
+            margin-right: -200px;
+        }
+
+        #sidebar {
+            float: left;
+            width: 200px;
+        }
+
+        #sidebar>ul>li>a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 1EM 1EM;
+        }
+
+        #sidebar>ul>li>a:hover {
+            background-color: #999;
+            transform: translate(-4px);
+            color: white;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        #content {
+            margin-right: 200px;
+            padding: 1em;
+            border-left: 1px solid #888;
+        }
+
+        #content>h2 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.6em;
+        }
+
+        #content>p {
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        #footer {
+            padding: 1.5em;
+            text-align: right;
+            font-style: italic;
+        }
+
+        /* 1200px  */
+        @media screen and (min-width:1200px) {
+            #container {
+                margin: 0 auto;
+                width: 1200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+            <h1>Responsive web</h1>
+        </header>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#javascript">Javascript</a></li>
+                <li><a href="#jQuery">jQuery</a></li>
+            </ul>
+            <ul>
+                <li><a href="#Login">Log in</a></li>
+                <li><a href="#Signup">Sign up</a></li>
+            </ul>
+        </nav>
+        <div id="wrap-container">
+            <asdie id="sidebar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#html">HTML</a></li>
+                    <li><a href="#css">CSS</a></li>
+                    <li><a href="#javascript">Javascript</a></li>
+                    <li><a href="#jQuery">jQuery</a></li>
+                </ul>
+            </asdie>
+            <div id="wrap">
+                <article id="content">
+                    <h2>What is Lorem Ipsum?</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                        type
+                        and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                        the
+                        leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s
+                        with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                        desktop
+                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                        type
+                        and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                        the
+                        leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s
+                        with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                        desktop
+                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                        type
+                        and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                        the
+                        leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s
+                        with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                        desktop
+                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </article>
+                <!--/#content-->
+            </div>
+            <!--/#wrap-->
+        </div>
+        <!--/#wrap-container-->
+        <footer id="footer">&copy;2020-2021 SBS Academy Gwangju.</footer>
+    </div>
+    <!--/#container-->
+</body>
+
+</html>

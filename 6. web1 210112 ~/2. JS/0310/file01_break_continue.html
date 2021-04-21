@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break, continue</title>
+
+</head>
+<body>
+    <pre><script>
+        // The keyword that controld flow of 반복문
+        // The flow of 반복문 get became also the block of from start to end.
+        // In the middle of running what do not need it more or when it come result what it want 수행 도중에 더이상 수행할 필요가 없거나 원하는 결과를 얻었을 때
+        // it wouldn't need it more.
+        // -> 반복문의 수행 여부는 is decided in 조건식 
+
+        // kind of it
+        // 1. break : the end of 반복문
+        // 2. continue : 남은 코드를 생략한다.
+
+        // if saved value at the variable Search find it of the value from 1 to 100, it do it print "Success"
+        let search = 8;
+        for (let n = 1; n <= 10; n++){
+            if (n == 8){
+                document.writeln("Success")
+                break;
+            }else {
+                document.writeln("..")
+            }
+        }
+        document.writeln("============================================")
+        for (let n = 1; n <= 10; n++){
+            if ( n != search){
+                document.writeln("..")
+                continue; //The function that skip code that don't need to get run that get write behind it 뒤에 있는 작성된 실행이 되어질 필요가 없는 코드를 생략하는 기능
+            }
+
+            document.writeln("Success");
+            break;
+        }
+
+
+
+
+    </script></pre>
+</body>
+</html>

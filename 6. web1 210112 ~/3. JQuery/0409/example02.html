@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdown2</title>
+    <link rel="stylesheet" href="/6. web1 210112 ~/css/reset.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    <style>
+        #header > h1 {
+            padding: 1.2em;
+            font-weight: bold;
+            font-size: 2em;
+
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #nav {
+            background-color: rgba(0, 0, 0, 0.3);
+            position: relative;
+
+            margin-bottom: 12px;
+        }
+
+        #nav::after, #wrap-container::after {
+            content: ""; display: block; clear: both;
+        }
+
+        #nav>ul:first-child {float: left;}
+        #nav>ul:last-child {float: right;}
+        #nav>ul>li {float: left;
+            position: relative;
+        
+        }
+
+        #nav>ul>li>a {
+            display: block;
+            padding: 1em;
+            text-decoration: none;
+            color: whitesmoke;
+
+        }
+
+        .dropdown {
+            /* for placed bottom baced by upper li element */
+            position: absolute;
+
+            top: 100%;
+            left: 0;
+
+            background-color: #555;
+            border-radius: 4px;
+            border: 2px solid whitesmoke;
+            display: none;
+        }
+        .dropdown > li > a {
+            display: block;
+
+            text-decoration: none;
+            color: whitesmoke;
+            padding: 0.4em 1em;
+
+            
+        }
+        #wrap-container {
+            overflow: hidden;
+        }
+
+        #sidebar, #wrap {float: left;}
+
+        #sidebar{
+            width: 200px;
+        }
+        #sidebar > ul > li > a {
+            display: block;
+
+            text-decoration: none;
+            color: black;
+            padding: 0.4em 1em;
+        }
+        #sidebar > ul > li > a:hover{
+            background-color: blue;
+        }
+
+        #wrap {
+            width: 100%;
+            margin-right: -200px;
+        }
+
+        #contents {
+            margin-right: 200px;
+
+            padding: 1em 2em;
+            border-left: 1px solid black;
+
+        }
+
+        #wrap>#contents>h4 {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+
+        #wrap>#contents>p {
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        #footer {
+            margin-right: 0.6em;
+            float: right;
+        }
+        .on {
+            display: block;
+        }
+    </style>
+    <script>
+        $(function(){
+            let $dropdown = $(".dropdown");
+    
+            $(".item-menu").on("click",function(){
+
+                // 클릭한 요소의 다음 형제요소노드
+                var $thisdropdown = $(this).next();
+                
+                // // 현재 메뉴가 보여지고 있으면
+                // if($thisdropdown.is(":visible")){
+                //     // on 클래스를 제거
+                //     $thisdropdown.removeClass("on");
+                // }else{
+                //     // 그렇지 않으면 기존 on 클래스 제거
+                //     $dropdown.removeClass("on");
+
+                //     // 현재 메뉴에 on 클래스 추가
+                //     $thisdropdown.addClass("on");
+                // }
+                if($thisdropdown.is(":hidden")){
+                    $dropdown.removeClass("on");
+
+                }
+                $thisdropdown.toggleClass("on");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <header id="header">
+        <h1>Dropdown Menu</h1>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="#HOME">HOME</a></li>
+            <li>
+                <a href="#HTML" class="item-menu">HTML</a>
+                <!-- HTML 하위의 dropdown menu -->
+                <ul class="dropdown">
+                    <li><a href="#Tutorial">Tutorial</a></li>
+                    <li><a href="Reference">Reference</a></li>
+                    <li><a href="Example">Example</a></li>
+                    <li><a href="FAQ">FAQ</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#CSS" class="item-menu">CSS</a>
+                <ul class="dropdown">
+                    <li><a href="#Tutorial">Tutorial</a></li>
+                    <li><a href="Reference">Reference</a></li>
+                    <li><a href="Example">Example</a></li>
+                    <li><a href="FAQ">FAQ</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#Javascript" class="item-menu">Javascript</a>
+                <ul class="dropdown">
+                    <li><a href="#Tutorial">Tutorial</a></li>
+                    <li><a href="Reference">Reference</a></li>
+                    <li><a href="Example">Example</a></li>
+                    <li><a href="FAQ">FAQ</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#jQuery" class="item-menu">jQuery</a>
+                <ul class="dropdown">
+                    <li><a href="#Tutorial">Tutorial</a></li>
+                    <li><a href="Reference">Reference</a></li>
+                    <li><a href="Example">Example</a></li>
+                    <li><a href="FAQ">FAQ</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+            <li><a href="#LOGIN">Login</a></li>
+            <li><a href="#SIGNUP">Sign up</a></li>
+        </ul>
+    </nav>
+    <div id="wrap-container">
+        <aside id="sidebar">
+            <ul>
+                <li><a href="#HOME">HOME</a></li>
+                <li><a href="#HTML">HTML</a></li>
+                <li><a href="#CSS">CSS</a></li>
+                <li><a href="#Javascript">Javascript</a></li>
+                <li><a href="#jQuery">jQuery</a></li>
+            </ul>
+        </aside>
+        <div id="wrap">
+            <article id="contents">
+                <h4> Why do we use it? </h4>
+                <p>
+                    It is a long established fact that a reader will be distracted by the readable content of a page
+                    when
+                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                    distribution
+                    of
+                    letters, as opposed to using 'Content here, content here', making it look like readable English.
+                    Many
+                    desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
+                    and a
+                    search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+                    evolved
+                    over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </p>
+                <p>
+                    It is a long established fact that a reader will be distracted by the readable content of a page
+                    when
+                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                    distribution
+                    of
+                    letters, as opposed to using 'Content here, content here', making it look like readable English.
+                    Many
+                    desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
+                    and a
+                    search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+                    evolved
+                    over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </p>
+            </article>
+        </div>
+    </div>
+    <footer id="footer">
+        &copy;2020-2021 SBS Academy Gwanju
+    </footer>
+</body>
+</html>

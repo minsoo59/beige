@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre><script>
+        // 조건 operator : The operator that return to the result value though result.
+        // Conditional expression : which is writen by compare operaotr and logical operator 
+
+
+        // expression 
+        // Conditional expression ? expresstion when it be true : expresstion when it return false. 
+        var a = 10;
+
+        // a is bigger than 10.
+        var res = a > 10;
+        document.writeln("a is bigger than 10 : " + res);
+
+        // a is not bigger than 10.
+        var res = a < 10;
+        document.writeln("a is not bigger than 10 : " + res);
+    </script></pre>
+
+    <pre><script>
+        var n1 = 20;
+        var n2 = 30;
+
+        // if the n1 is bigger than the n2 "the n1 is bigger than the n2"
+        // it would not, "the n1 is not bigger than the n2"
+
+        var result1 = n1 > n2 ? "the n1 is bigger than the n2" : "the n1 is not bigger than the n2";
+        document.writeln("n1 : " + n1);
+        document.writeln("n2 : " + n2);
+        document.writeln(result1);
+        
+        result1 = n1 > n2 ? "the n1 is bigger than the n2" : (n1 < n2 ? "the n1 is small" : "the n1 and the n2 is same.");
+    </script></pre>
+
+    <pre><script>
+        // After it saved 128 in variable B,
+        // if the variable B is be mutiple of 7, print "This is mutiple of 7",
+        // Write Javascript program that it would not the variable B to print "This is not mutiple of 7"
+
+        var b = 128;
+        var res3 = (b % 7 == 0) ? "This is mutiple of 7" : "This is not mutiple of 7";
+        document.writeln("res3 = " +res3);     
+    </script></pre>
+
+    <pre><script>
+        // As it saved 1191 in the variable C, print to "success" if the C value is mutiple of 3 and mutiple of 7
+        // if it's not, it would write javascript program to print "Fail" 
+
+        var c = 1191;
+        var res4 = (c % 3 == 0) && (c % 7 == 0) ? "succes" : "fail";
+        document.writeln("res4 = "+res4);
+    </script></pre>
+
+    <pre><script>
+        // As the score 88, 78, 91 save in the array, it would print to "Pass" if than average score 75,
+        // if it's not, it would write javascript program to print "Fail" 
+
+        var d = [88, 78, 91];
+        var total = d[0]+d[1]+d[2];
+        var aver = total / d.length;
+        var res5 = (aver > 75) ? "Pass" : "Fail";
+        document.writeln("res5 = "+res5);
+
+
+    </script></pre>
+</body>
+
+</html>

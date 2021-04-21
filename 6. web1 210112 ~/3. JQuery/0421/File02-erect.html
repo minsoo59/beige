@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>erect</title>
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 50px auto;
+        line-height: 300px;
+        text-align: center;
+
+        font-size: 1.2em;
+        font-weight: 900;
+      }
+
+      #box1 {
+        background-color: orange;
+        color: navy;
+      }
+
+      #buttons {
+        width: max-content;
+        margin: 10px auto;
+        font-size: 1.2em;
+      }
+
+      #box2 {
+        background-color: blueviolet;
+      }
+      #box3 {
+        background-color: firebrick;
+      }
+    </style>
+    <script>
+      $(function () {
+        let $box1 = $("#box1");
+        let $box2 = $("#box2");
+        let $box3 = $("#box3");
+        $("#box1-btn").on("click", () => {
+          $box1.toggle(2000, function () {
+            // complete 함수
+            // #box1 요소의 효과가 끝나면 수행되는 함수
+            // 즉 효과가 시작하고 2000ms뒤에 수행된다.
+            console.log("conplete!!!");
+          });
+          console.log("visible state : " + $box1.is(":visible"));
+        });
+        $("#box2-btn").on("click", function () {
+          $box2.slideToggle(2000, function () {
+            console.log("complete!!!!!!!!!!!!");
+          });
+        });
+        $("#box3-btn").on("click", function () {
+          $box3.fadeToggle(1000, function () {
+            console.log("complete!!!!!!!!!!!!");
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="buttons">
+      <button id="box1-btn">Box1 - show & hide</button>
+      <button id="box2-btn">Box1 - slide</button>
+      <button id="box3-btn">Box1 - fade</button>
+    </div>
+    <hr />
+    <div id="box1" class="box">Show & hide</div>
+    <hr />
+    <div id="box2" class="box">slide</div>
+    <hr />
+    <div id="box3" class="box">fade</div>
+  </body>
+</html>

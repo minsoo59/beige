@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            let $check = $("#check1")
+            let $check2 = $("#check2")
+            // checked와 같은 속성을 attr 메서드로 할 경우
+            // 'checked' or 'undefined'로 반환
+            console.log("attr : " + $check.attr("checked")) // checked
+            console.log("prop : " + $check.prop("checked")) // true
+            console.log("is : " + $check.is(":checked")) // true
+            console.log("attr : " + $check2.attr("checked")) // undefined
+            console.log("prop : " + $check2.prop("checked")) // fause
+            console.log("is : " + $check2.is(":checked")) // fause
+            // 요소에 속성을 설정
+            // $check2.attr("checked",true)
+            // jQuery 객체의 속성을 설정
+            $check2.prop("checked",true)
+
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1> check : <input type="checkbox" id="check1" name="check1" value="check1" checked></h1>
+        <h1> check : <input type="checkbox" id="check2" name="check2" value="check2">        </h1>
+    </div>
+</body>
+
+</html>

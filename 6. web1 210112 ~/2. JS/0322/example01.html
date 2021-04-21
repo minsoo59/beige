@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <title>example01</title>
+    <style>
+        #circle {
+            width: 300px;
+            height: 300px;
+            background-color: chartreuse;
+            margin: 10px 0;
+            color: black;
+            line-height: 300px;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: greenyellow;
+            position: relative;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list"></ul>
+
+    <script>
+        // 빈 ul 요소에 배열에 저장된 원소들을 1초마다각 항목으로 추가되도록 js프로그램 작성
+        const items = [
+            " Time is gold ",
+            " No sweat, no sweet ",
+            " Asking costs nothings ",
+            " Step by step goes a long way ",
+            " You will never know until you try "
+        ];
+
+        let list = document.getElementById("list");
+        let i = 0;
+        let timerId1 = window.setInterval(function () {
+            list.innerHTML += "<li>" + (i + 1) + ". " + items[i] + "</li>";
+            i++;
+            if (i == items.length) window.clearInterval(timerId1);
+        }, 1000);
+    </script>
+    <hr>
+
+    <h1 id="nice"> Nice to meet you! </h1>
+    <script>
+        window.setTimeout(function () {
+            document.getElementById("nice").style.color = "red";
+        }, 3000);
+    </script>
+    <hr>
+    <div id="circle">Circle</div>
+    <script>
+        window.setTimeout(function () {
+            let circle = document.getElementById("circle").style.borderRadius = "50%";
+        }, 3000);
+
+    </script>
+    <hr>
+    <!-- 다음HTML문서에서 h1 요소의 글자 색상을 2초마다 빨강, 파랑, 녹색, 노랑으롭 ㅏ꾸는 JS프로그램 작성 -->
+    <h1 id="best">DO YOUR BEST!</h1>
+    <script>
+        const colors = ["red", "blue", "green", "gold"];
+        let ii = 0;
+        let best = document.getElementById("best");
+        let bestTimer = window.setInterval(function () {
+            best.style.color = colors[ii % colors.length];
+            ii++;
+            // if(ii = colors.length) ii = 0;
+        }, 2000);
+
+    </script>
+    <hr>
+    <!-- 5초가 지난 후 h1요소가 화면에서 사라지도록 하는 JS프로그램 작성 -->
+    <id id="time"> Time is gold. </id>
+    <script>
+        let timeIsGold = document.getElementById("time");
+        window.setTimeout(function () {
+            timeIsGold.style.display = "none";
+        }, 5000);
+
+    </script>
+    <hr>
+    <h1 id="cost">Asking costs nothing.</h1>
+    <script>
+        let cost = document.getElementById("cost");
+        window.setTimeout(function () {
+            cost.style.transitionDuration = "1s";
+            cost.style.opacity = "0";
+            cost.style.visibility = "hidden";
+        }, 5000);
+    </script>
+    <hr>
+    <div id="box"></div>
+    <script>
+        let box = document.getElementById("box");
+        window.setTimeout(function () {
+            box.style.left = "400px";
+            box.style.transitionDuration = "1s";
+        }, 5000);
+    </script>
+    <hr>
+    <h2 class="words">Time is gold.</h2>
+    <h2 class="words">No sweat, no sweet.</h2>
+    <h2 class="words">Asking coasts nothing.</h2>
+    <script>
+        let words = document.getElementsByClassName("words");
+        const colorss = ["red", "blue", "green"];
+        window.setTimeout(function () {
+            // 컨텐츠를 기준으로 삼아서 조건을 만들 것.
+            for (i = 0; i < words.length; i++) {
+                words[i].style.color = colorss[i];
+            };
+        }, 5000);
+    </script>
+    <hr>
+    <ul id="favorites">
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Juice</li>
+    </ul>
+    <script>
+        let favlist = document.querySelectorAll("#favorites > li");
+        var n = 0;
+        let = timerid3 = window.setInterval(function(){
+                favlist[n].style.color = colorss[n];
+                n++
+                if(n == favlist.length) window.clearInterval(timerid3);
+            },2000);
+    </script>
+</body>
+
+</html>

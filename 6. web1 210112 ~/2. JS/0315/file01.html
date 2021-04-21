@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/theme.css">
+</head>
+
+<body>
+    <pre><script>
+        // Object
+        // The data set for express specific target
+        // -> The property that save for characteristic of specific target and
+        //    it's consist of method for implemented behaivor of specific target
+
+        let obj = {
+            // 식별자 : 데이터 [, 식별자 : 데이터 ..]
+            "simple-data": 100,
+            name: "Simple Data",
+            // 객체의 메서드
+            hello:  () => {
+                document.writeln("Hello World!")
+            }
+        };
+        console.log(obj);
+
+        //객체 내의 멤버 사용
+        // printWithValue("Name", obj.name);
+        // printVithValue("Simple Data", obj["simple-data"]);
+
+        obj.hello();
+
+        // 웹 퍼블리싱의 속성
+        // HtML : 속성Attribut) 
+        // CSS, Javascript : 속성(Property)
+
+    </script></pre>
+
+    <pre><script>
+        let box = {
+            width : 200,
+            height : 100,
+            margin : 10,
+            padding : 20,
+            "background-color" : "gold",
+            printInformation : () => {
+                printInformation("width", this.width);
+                printInformation("height", this.height);
+                printInformation("margin", this.margin);
+                printInformation("padding", this.padding);
+                // if own property or method use, it use keyword that mean 'this'
+                printInformation("background-color", this["background-color"]);
+            }
+        };
+        box.printInformation();
+    </script></pre>
+</body>
+
+</html>

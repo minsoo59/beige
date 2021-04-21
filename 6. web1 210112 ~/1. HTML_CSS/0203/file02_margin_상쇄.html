@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin</title>
+    <style>
+        #container {
+            border: 3px solid skyblue;
+        }
+
+        #container > div {
+            width: 100px;
+            height: 100px;
+            border: 3px solid blueviolet;
+            /* margin 중첩 -> margin이 맞닿게되면 발생함 float가 적용되면 겹치지않음. 패딩도 그럼*/
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

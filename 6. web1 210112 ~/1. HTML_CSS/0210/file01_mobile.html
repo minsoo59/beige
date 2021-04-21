@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mobile_display</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <style>
+        header {
+            position: relative;
+        }
+        header>h1 {
+            font-size: 2.2em;
+            font-weight: 900;
+            background-color: red;
+            padding: 0.8em 1em;
+            color: white;
+            text-align: center;
+        }
+        header>button {
+            position: absolute;
+
+            width: 40px;
+            height: 40px;
+
+            border:none;
+            background-color: transparent;
+            outline: none;
+
+            padding: 10px;
+            top: 10px;
+            right: 15px;
+
+            background: url(../images/2x/baseline_dashboard_white_24dp.png);
+
+        }
+        header>button>span{display: none;}
+
+        nav{
+            border-bottom: 1px solid red;
+        }
+        nav>ul>li {
+            float: left;
+
+        }
+        
+        nav>ul>li>a {
+            width: 10px auto;
+            float: left;
+            text-decoration: none;
+            font-size: 1.5em;
+            height: 30px;
+            padding: 0.8em 1em;
+            text-align: center;
+            color: black;
+            
+        }
+        nav::after{content: "";display: block; clear: both;}
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>Mobile Web</h1>
+            <button><span>list</span></button>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#HTML">HTML</a></li>
+                <li><a href="#CSS">CSS</a></li>
+                <li><a href="#Javascript">Javascript</a></li>
+                <li><a href="#jQuery">jQuery</a></li>
+            </ul>
+        </nav>
+        <div id="wrap">
+            <aside>
+                <ul>
+                    <li><a href="#HTML">HTML</a></li>
+                    <li><a href="#CSS">CSS</a></li>
+                    <li><a href="#Javascript">Javascript</a></li>
+                    <li><a href="#jQuery">jQuery</a></li>
+                </ul>
+            </aside>
+            <h4>Content Title</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <footer>Footer : Content Title</footer>
+    </div>
+</body>
+
+</html>

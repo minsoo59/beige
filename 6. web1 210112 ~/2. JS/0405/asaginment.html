@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asaginmenet</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+
+        body{
+            background-color: blueviolet;
+        }
+        #loginForm {
+            background-color: whitesmoke;
+            color: black;
+            width: 400px;
+            height: 360px;
+
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        #loginForm > h1 {
+            padding: 45px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        #login > input {
+            all: unset;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            width: 300px;
+            height: 40px;
+            margin: 5px auto;
+            text-align: left;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            all: unset;
+            background-color: blueviolet;
+            color: white;
+            width: 300px;
+            height: 40px;
+            margin: 5px auto;
+        }
+
+        p {
+            margin: 50px auto;
+            color: gray;
+        }
+        p > a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 로그인 양식 작성, 사용자가 아이디와 암호를 4글자 이하로 입력했을 때, 오류를 발생하는 js 프로그램 작성 -->
+    <!-- Write login form, and when user fill in account and password than less 4 character, write js program error happening. -->
+
+        <div id="loginForm">
+            <h1>Log in your account</h1>
+            <form action="/sever" method="post" id="login">
+                <input type="text" name="account" id="account" placeholder="Please write ID here"><br>
+                <input type="text" name="password" id="password" placeholder="Please write PW here"><br>
+                <button type="submit">Login</button>
+            </form>
+            <p>어쩌고 저쩌고 <a href="#login">log in</a> </p>
+        </div>
+    <hr>
+    <script>
+        const account = document.getElementById("account");
+        const password = document.getElementById("password");
+        const submit = document.getElementById("loginForm");
+
+        function focusing(){this.style.border = "1px solid blueviolet";}
+        function unFocusing(){this.removeAttribute("style")};
+        function init(){
+            account.addEventListener("focus", focusing);
+            account.addEventListener("blur", unFocusing);
+            password.addEventListener("focus", focusing);
+            password.addEventListener("blur", unFocusing);
+
+            submit.addEventListener("submit",function(event){
+                const minLength = 4;
+
+                if(account.value.length <= minLength){
+                    event.preventDefault();
+                    alert("Plz check ID again");
+                };
+                if(password.value.length <= minLength){
+                    event.preventDefault();
+                    alert("Plz check PW again");
+
+                };
+
+            });
+
+            
+        };
+
+        init();
+    </script>
+</body>
+</html>

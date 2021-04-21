@@ -1,0 +1,17 @@
+/* 어두운 테마 스타일 시트 */
+body {
+  font-size: 1.6em;
+  background-color: #333;
+  color: white;
+  padding: 1em;
+}
+
+pre,
+h1,
+div {
+  font: 1em / 1.6 Consolas, D2Coding, "나눔고딕", "맑은 고딕", monospace;
+  padding: 1em;
+  background-color: #555;
+  border-radius: 8px;
+  /* line-height: 1.6; */
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre><script>
+        // 1. Save 38 in variable A whether check mutiples of 3 or not and write it print true or false.
+        var a = 38; 
+        var res = (a % 3) == 0;
+        document.writeln(" a = "+ res );
+        // 2. 변수a에 400저장하고 100이상 200미만인지 검사해서 true, false로 출력되도록 작성
+        var a = 400; 
+        var res = (a >= 100 && a < 200);
+        document.writeln("  a = "+res);
+        // 3. 변수 a에 153을 저장하고 3의 배수이면서 7의 배수인지 검사해서 true, false로 출력되도록 작성
+        var a = 153; 
+        var res = (a % 3 == 0) && (a % 7 == 0);
+        document.writeln("   a = "+res);
+        // 4. 변수 a에 51을 저장하고 4의 배수이거나 7의 배수인지 검사해서 true, false로 출력되도록 작성.
+        var a = 51; 
+        var res = (a % 4 == 0) || (a % 7 == 0);
+        document.writeln("    a = "+res);
+    </script></pre>
+</body>
+
+</html>

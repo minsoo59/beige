@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop</title>
+</head>
+
+<body>
+    <pre><script>
+        // The a valse will became to increase by 1 from 1 to 10 , Write loop sentence to print the a value.
+
+        let a = 1;
+        while (a <= 10) {
+            document.writeln(a);
+            a += 1; //a++
+        }
+    </script></pre>
+    <br>
+    <pre><script>
+        // Write loop sentence to print the b value that number increase from 10 to 30.
+        const st = 10;
+        const en = 30;
+        for (let b = st; b <= en; b++) {
+            document.writeln(b);
+        }
+
+        // 1. 특정 횟수만큼(카운팅) 반복
+        let goal = 10;
+        for (let count = 0; count < goal; count++) {/*...*/ };
+        // 2. 특정 범위의 정수를 이용
+        const start = 10;
+        const end = 20;
+        for (let n = start; n <= end; n++) {
+            //running block
+        }
+
+
+    </script></pre>
+    <hr>
+    <pre><script>
+        // Write javascrit program to print only multiple of 3 in the number from 100 to 150
+        const sta = 100;
+        const e = 150;
+        for (let n = sta; n <= e; n++) {
+            if (n % 3 == 0) {
+                document.writeln(n);
+            }
+        }
+    </script></pre>
+    <hr>
+    <pre><script>
+        //Write javascrit program to print multiple of 3 or 7 in the number from 1 to 100
+        const star = 1;
+        const ed = 100;
+        for (let num = star; num <= ed; num++) {
+            if ((num % 3 == 0) || (num % 7 == 0)) {
+                document.writeln(num);
+            }
+        }
+
+    </script></pre>
+
+</body>
+
+</html>

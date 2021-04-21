@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>image slide</title>
+    <!-- img slide css-->
+    <style>
+        #container {
+            /* 이미지 하나를 보여주기 위한 너비설정 */
+            width: 800px;
+
+            border: 10px solid white;
+            margin: 10px auto;
+
+            overflow: hidden;
+
+        }
+        #slide {
+            /* float된 li 요소들을 나열이 될 수 있도록 너비를 설정 */
+            width: 500%;
+
+            position: relative;
+            left: 0;
+        }
+        #slide > li {
+            /* 모든 li 요소들을 일렬로 나열 */
+            float: left;
+
+            /* 모든 li요소들이 동등한 너비를 가지도록 설정 */
+            width :20%;
+            padding: 0;
+        }
+
+        #slide > li > img {
+            display: block;
+            
+            width: 100%;
+        }
+    </style>
+    <!-- img slide JS -->
+    <script>
+        $(function(){
+            // 0. element search
+            let $slide = $("#slide");
+            // 1. certain every time
+            setInterval(()=>{
+                // 1-1. #slide element move left than width of #container element 요소의 너비만큼 왼쪽으로 이동
+                $slide.css({
+                    transitionDuration: "400ms",
+                    left:"-100%"
+                })
+                // 1-2. #slide 요소의 움직임이 끝나면
+                setTimeout(()=>{
+                    // 1-2-1. #slide요소에 설정했던 스타일 속성을 제거하고
+                    // 1-2-2. #slide 요소의 첫번째 자식요소를 #slide요소의 마지막 요소로 이동.
+                    $slide.removeAttr("style").append($slide.children(":first"));
+                },400)
+            },2000)
+            // =========================================================================
+
+        });
+    </script>
+</head>
+<body>
+    <!-- img slide html -->
+    <div id="container">
+        <ul id="slide">
+            <li><img src="../../images/slide-11.png"></li>
+            <li><img src="../../images/slide-12.png"></li>
+            <li><img src="../../images/slide-13.png"></li>
+            <li><img src="../../images/slide-14.png"></li>
+            <li><img src="../../images/slide-15.png"></li>
+        </ul>
+    </div>
+</body>
+</html>

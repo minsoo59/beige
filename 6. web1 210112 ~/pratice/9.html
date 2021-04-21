@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+    <style>
+        ul>ul:first-of-type>li:first-child{
+            color: red;
+        }
+        ul>ul:first-of-type>li:not(:first-child), ul, ul>li{
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Web Publishing</h1>
+    <ul>
+        <li>HTML</li>
+        <ul>
+            <li>Tutorial</li>
+            <li>Example</li>
+            <li>Referance</li>
+        </ul>
+        <li>CSS</li>
+        <ul>
+            <li>Tutorial</li>
+            <li>Example</li>
+            <li>Referance</li>
+        </ul>
+        <li>Javascript</li>
+        <ul>
+            <li>Tutorial</li>
+            <li>Example</li>
+            <li>Referance</li>
+        </ul>
+        <li>jQuery</li>
+        <ul>
+            <li>Tutorial</li>
+            <li>Example</li>
+            <li>Referance</li>
+        </ul>
+    </ul>
+</body>
+
+</html>

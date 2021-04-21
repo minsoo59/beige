@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <script>
+        window.addEventListener("load",function(){
+            window.addEventListener("scroll",function(){
+                // 스크롤된 높이
+                let scrollTop = document.documentElement.scrollTop;
+
+                // 스크롤이 남은 높이 
+                //  = 문서의 높이 - (스크롤된 높이 + 뷰포트 높이)
+                let height = document.body.offsetHeight - (scrollTop + window.innerHeight);
+                console.log("scrollTop = " + scrollTop);
+                console.log("innerHeight = " + window.innerHeight);
+                console.log("height = " + height);
+                console.log("clientHeight = " + document.body.clientHeight);
+
+                // 남은 스크롤 높이가 100미만이면
+                if(height <= 100){
+                    for(let i = 0; i < 5; i++){
+                        let element = document.createElement("h1");
+                        element.innerText = "Dream comes true!";
+                        document.body.appendChild(element);
+                    }
+                }else{
+                    
+                }
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- HTML 문서를 스크롤해서 문서의 끝부분에 거의 다다르면 새로운 h1요소 5개를 -->
+    <!-- 추가하는 js프로그램 작성 -->
+    <!-- * 스크롤하기 전에 30개의 h1요소를 미리 추가 -->
+    <div id="scroll">
+        <h1>타이틀1</h1>
+        <h1>타이틀2</h1>
+        <h1>타이틀3</h1>
+        <h1>타이틀4</h1>
+        <h1>타이틀5</h1>
+        <h1 class="none">추가된타이틀1</h1>
+        <h1 class="none">추가된타이틀2</h1>
+        <h1 class="none">추가된타이틀3</h1>
+        <h1 class="none">추가된타이틀4</h1>
+        <h1 class="none">추가된타이틀5</h1>
+        <h1 class="none">추가된타이틀6</h1>
+        <h1 class="none">추가된타이틀7</h1>
+        <h1 class="none">추가된타이틀8</h1>
+        <h1 class="none">추가된타이틀9</h1>
+        <h1 class="none">추가된타이틀10</h1>
+        <h1 class="none">추가된타이틀11</h1>
+        <h1 class="none">추가된타이틀12</h1>
+        <h1 class="none">추가된타이틀13</h1>
+        <h1 class="none">추가된타이틀14</h1>
+        <h1 class="none">추가된타이틀15</h1>
+        <h1 class="none">추가된타이틀16</h1>
+        <h1 class="none">추가된타이틀17</h1>
+        <h1 class="none">추가된타이틀18</h1>
+        <h1 class="none">추가된타이틀19</h1>
+        <h1 class="none">추가된타이틀20</h1>
+        <h1 class="none">추가된타이틀21</h1>
+        <h1 class="none">추가된타이틀22</h1>
+        <h1 class="none">추가된타이틀23</h1>
+        <h1 class="none">추가된타이틀24</h1>
+        <h1 class="none">추가된타이틀25</h1>
+        <h1 class="none">추가된타이틀26</h1>
+        <h1 class="none">추가된타이틀27</h1>
+        <h1 class="none">추가된타이틀28</h1>
+        <h1 class="none">추가된타이틀29</h1>
+        <h1 class="none">추가된타이틀30</h1>
+    </div>
+</body>
+</html>

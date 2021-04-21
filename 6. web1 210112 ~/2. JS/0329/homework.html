@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Againment</title>
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        #container {
+            width: 300px;
+            height: 2em;
+            border: 1px solid white;
+            overflow: hidden;
+
+            margin: 3em auto;
+        }
+
+        #rolling {
+            margin: 0;
+            /* Set up relative value for move up element. */
+            position: relative;
+            top: 0;
+            /* percentage : The standard that contants area of containing block */
+            /* top:-100%; */
+
+            /* transition-duration: 1400ms; */
+        }
+
+        #rolling>li {
+            height: 2em;
+            padding-left: 1em;
+            line-height: 2em;
+        }
+
+        #best {
+            font-weight: 900;
+            font-size: 1.3em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <ul id="rolling">
+            <li> 1. Time is gold.</li>
+            <li> 2. No sweat, no sweet.</li>
+            <li> 3. Asking coasts nothing.</li>
+            <li> 4. Step by stey goes a long way.</li>
+            <li> 5. You will never know until you try.</li>
+        </ul>
+    </div>
+
+    <script>
+        // 네이버 첫 화면의 "인기 검색어"와 비슷하게 여러 항목 중 한 항목만 특정영역에 나오도록 작성.
+        // 여러 항목들이 특정 영역 안에서 순차적으로 돌아가는 JS 프롤그램 작성
+        // transsition 스타일 속성을 사용해 부드럽게 움직이도록 작성.
+
+        // 0. 요소 탐색
+        let itemList = document.getElementById("rolling");
+        // li 요소의 개수
+        console.log(itemList.childElementCount);
+        let count = itemList.childElementCount;
+        // top 의 증가량
+        let step = 1;
+        // 롤링이 되어지는 시간
+        let duration = 400; // 단위(ms)
+        // 1. every several time 일정시간 마다
+        window.setInterval(function () {
+            // 2. #rolling요소를 #container 요소의 높이만큼 위로 이동
+            // rolling.style.top = (-100*(step%count))+"%";
+            rolling.style.top = "-100%";
+            rolling.style.transitionDuration = duration + "ms";
+            step++;
+            // 3. 위로 이동을 다 한 다음
+            window.setTimeout(function () {
+                // 3-1. #rolling 요소의 첫번째 자식 요소를 #rolling 요소의 마지막으로 이동
+                rolling.appendChild(rolling.firstElementChild);
+                // 3-2. #rolling 요소의 높이를 원래대로 되돌린다.
+                // rolling.style.transitionDuration = "0ms";
+                // rolling.style.top = "0";
+                rolling.removeAttribute("style");
+            }, duration);
+        }, 2000);
+    </script>
+    <hr>
+    <h1 id="best"> DO YOUR BEST! </h1>
+    <script>
+        // HTML문서에서 h1 요소를 클릭하면 그 요소가 1초에 걸쳐 점차 흐릿해져 사라지도록 하는 JS프로그램 작성.
+        let best = document.getElementById("best");
+
+        // // onClick : 요소가 클릭됐을 때 발생하는 이벤트 속성
+        // best.onclick = function () {
+        //     // 이벤트 핸들러 : 이벤트가 발생했을 때 수행할 함수
+
+        //     // this = 클릭이 되어진 요소
+        //     // 흐려지는 효과 opacity
+        //     this.style.opacity = "0";
+        //     // 사라지고 난후 마우스로 존재감 존재하지 않게 하는 효과
+        //     this.style.visibility = "hidden";
+        //     // 1초
+        //     this.style.transitionDuration = "1s";
+        // }
+
+        best.addEventListener("click", function(){
+            this.style.opacity = "0";
+            this.style.visibility = "hidden";
+            this.style.transitionDuration = "1s";
+        })
+    </script>
+
+    <hr>
+    <h1 id="dream">Dream comes true!</h1>
+    <p>
+        <button id="bg">background-color:yellowgreen</button>
+        <button id="color">color:navy</button>
+        <button id="reset">RESET</button>
+    </p>
+    <script>
+        let dream = document.getElementById("dream");
+
+        let bg = document.getElementById("bg");
+        let color = document.getElementById("color");
+        let reset = document.getElementById("reset");
+
+        bg.onclick = function(){
+            dream.style.backgroundColor = "yellowgreen";
+        }
+        color.onclick = function(){
+            dream.style.color = "navy";
+        }
+        reset.onclick = function(){
+            dream.removeAttribute("style");
+        }
+    </script>
+    <hr>
+    <h1 id="step">Step by step goes a long way.</h1>
+    <p>
+        <button id="change">CHANGE</button>
+    </p>
+    <script>
+        let stepElement = document.getElementById("step");
+        let change = document.getElementById("change");
+
+        const colors = ["red", "blue", "green", "gold"];
+        let colorIndex = 0;
+        change.onclick = function(){
+            stepElement.style.color = colors[colorIndex++];
+            colorIndex %= colors.length;
+        };
+    </script>
+    <hr>
+    <h1 id="asking">Asking costs nothing.</h1>
+    <p>
+        <button id="toggle">TOGGLE</button>
+    </p>
+    <script>
+        // 토글 기능 = 스위치 기능
+        // 1. 조건을 이용
+        // 2. flag 변수를 이용
+
+        let asking = document.getElementById("asking");
+        let toggle = document.getElementById("toggle");
+
+        toggle.addEventListener("click", function(){
+            if(this.innerHTML == "TOGGLE") {
+                asking.style.color = "red";
+                this.innerHTML = "RESET";
+            }else if (this.innerHTML == "RESET") {
+                asking.removeAttribute("style");
+                this.innerHTML = "TOGGLE";
+            }
+        });
+    </script>
+    <hr>
+    <h1 id="try">You will never know until you try</h1>
+    <p>
+        <button id="change2">CHANGE</button>
+    </p>
+
+    <script>
+        let tryElement = document.getElementById("try");
+        let change2 = document.getElementById("change2");
+        let color2 = ["red", "blue", "green", "gold"];
+        let colorIndex2 = 0;
+
+        change2.addEventListener("click", function(){
+            tryElement.style.color = color2[colorIndex2++];
+            colorIndex2 %= color2.length;
+        });
+
+    </script>
+</body>
+
+</html>

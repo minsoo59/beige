@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>22</title>
+    <style>
+        ul {
+            
+            list-style: none;
+            font-family: Tahoma, sans-serif;
+            font-size: 24px;
+        }
+        ul > li {
+            width: max-content;
+            background-color: #eee;
+            border: 1px solid #999;
+            float: left;
+        }
+
+        ul > li:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+        ul > li:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+        ul > li:not(:first-child){
+            border-left: none;
+        }
+        
+        ul > li > a {
+            display: block;
+            text-decoration: blue;
+            padding: 10px 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#javascript">Javascript</a></li>
+        <li><a href="#jquery">jQuery</a></li>
+    </ul>
+</body>
+
+</html>

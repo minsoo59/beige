@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example01</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: orange;
+            margin: 10px auto;
+        }
+
+        ;
+    </style>
+    <script>
+        $(function () {
+            // Event handler : the function that happend ready event of document element.
+            //  -> HTML 문서를 읽어들인 후 해석하고 DOM 구축을 끝낸 이후에 발생하는 이벤트.
+            //  -> window 객체의 load 이벤트와 비슷한 시점에 발생.
+
+            window.setTimeout(() => {
+                // #box 요소를 작게 만들어 사라지도록 한다.
+                $("#box")
+                    .css("transition-duration", "1s")
+                    .css("border-radius", "50%")
+                    .css("transform", "scale(0)");
+            }, 3000);
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#hello").on("click", () => {
+                // when #hello element click, it gonna be function 
+
+                // this : element object
+                // 따라서 jQuery 객체로 사용하려면 jQuery 함수로 반환해서 사용해야한다.
+
+                window.setTimeout(() => {
+                    
+                    $("#hello")
+                        .css("transition-duration", "1s")
+                        .css("opacity","0")
+                        .css("visibility","hidden");
+
+                    // var $this = $(this);
+                    // $this
+                    //     .css("transition-duration", "1s")
+                    //     .css("opacity", "0")
+                    //     .css("visibility", "hidden");    
+                }, 1000);
+            });
+        });
+    </script>
+    <script>
+        // $(function(){
+        //     $("#carpe").on("click",function(){
+        //         // 이동거리 : 클릭한 요소의 수직 위치 + 클릭한 요소의 높이 + 여유분
+        //         let distance = this.offsetTop + this.offsetHeight + 20;
+        //         $(this)
+        //             .css("transition-duration","1s")
+        //             .css("transform", "translateY(-"+distance+"px)");
+        //     });
+        // });
+        $(() => {
+            $("#carpe").on("click", () => {
+                $("#carpe")
+                    .css("margin-top", "-100%")
+                    .css("transition-duration", "2s")
+                    .css("opacity", "0");
+            });
+        });
+        
+    </script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <hr>
+    <!-- hello 요소를 클릭하면 1초에 걸쳐 사라지도록 프로그램 ㅈ가성 -->
+    <div id="hello">hello</div>
+    <hr>
+    <!-- h1요소를 클릭하면, h1요소가 화면 위로 올라가 사라지도록하는 jQuery 작성 -->
+    <h1 id="carpe">Carpe diem</h1>
+</body>
+
+</html>

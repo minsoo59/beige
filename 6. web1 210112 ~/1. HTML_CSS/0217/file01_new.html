@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <title>New headline</title>
+    <style>
+        #container {
+            width: 640px;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            margin: 100px auto;
+            padding: 20px 0;
+        }
+        #container > h1 {
+            font-size: 1.6em;
+            font-weight: 900;
+            margin-bottom: 0.8em;
+        }
+        #wrap > div {
+            width: 200px;
+            height: 360px;
+            float: left;
+            
+        }
+        #wrap::after{content: ""; display: block; clear: both;}
+        .headline {
+            margin-right: 20px;
+            /* The position property value sep up 'relative' for designate as containing block of 구분선*/
+            position: relative;
+        }
+        /* The virual element for explain 구분선 */
+        .headline::after{
+            content: "";
+            /* The position value sep up 'absolute' that for placed from outside right '.headline element' as bace*/
+            position: absolute;
+
+            right: -10px;
+            top: 10px;
+            bottom: 10px;
+            border-right: 1px solid #333;
+        }
+
+        /* thumnail */
+        .thumnail {
+            /* fixed image and designate by block form for made */
+            display: block;
+            width: 200px;
+            height: 120px;
+            margin-bottom: 8px;
+        }
+        .section {
+            font-size: smaller;
+            color: gray;
+            margin-bottom: 8px;
+        }
+        .article-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .summary {
+            line-height: 1.3;
+        }
+
+        /* Section headline area */
+        #section-headline > div {
+            height: 120px;
+            padding-top: 1em;
+            box-sizing: border-box;
+        }
+        #section-headline > div:not(:last-child) {
+            border-bottom: 1px solid gray;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- The container for explain all of article -->
+    <div id="container">
+        <h1>News</h1>
+        <!-- The container block that article is hugging arear that place to array 기사들이 나란히 배치되는 영역을 감싸는-->
+        <div id="wrap">
+            <!-- The first headline article -->
+            <div class="headline">
+                <!-- thumbnail of article -->
+                <img class="thumbnail" src="http:placehold.it/200x120" alt="thumbnail">
+                <!-- section of article -->
+                <h2 class="section">International</h2>
+                <!-- title of article -->
+                <h3 class="article-title"> asjdpoiajsoid </h3>
+                <!-- point of article -->
+                <p class="summary">
+                    asdiopajsiodjaoisdjoiajsdiaojsod
+                    ijaoisdjoiasjdoiajsdoiajsiodjaoisdjoiasjdasd
+                    asdasdasdasdasdasjdoiajsoidj
+                    oaijsdiojaosdjoijoi
+                </p>
+            </div> <!-- .first article -->
+
+            <!-- The Second headline article -->
+            <div class="headline">
+                <!-- thumbnail of article -->
+                <img class="thumbnail" src="http:placehold.it/200x120" alt="thumbnail">
+                <h2 class="section">Science</h2>
+                <h3 class="article-title"> asjdpo </h3>
+                <p class="summary">
+                    asdiopajsiodjaoisdjoiajsdiaojsodijaoisdjoiasjdoiajsdoiajsiodjaoisdjoiasjdasd
+                    asdasdasdasdasdasjdoiajsoidjoaijsdiojaosdjoijoi
+                </p>
+            </div> <!-- .second article -->
+            <!-- The Section headline article -->
+            <div id="section-headline">
+                <div>
+                    <h2 class="section">Science</h2>
+                    <h3 class="article-title">asdwqeasdascasd</h3>
+                </div>
+                <div>
+                    <h2 class="section">Society</h2>
+                    <h3 class="article-title">asdasdqweqweqweqw</h3>
+                </div>
+                <div>
+                    <h2 class="section">International</h2>
+                    <h3 class="article-title">asdasdqwdqwdqwd</h3>
+                </div>
+            </div> <!-- #section article -->
+        </div> <!-- #wrap -->
+    </div><!--#container -->
+</body>
+</html>

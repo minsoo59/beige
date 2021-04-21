@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <title>Document</title>
+    <style>
+        body {
+            all: unset;
+            font-size: 1.2em;
+        }
+        #container1 {
+            width: 400px;
+            /* #container1 요소 영역에 li 요소 하나만 표시되도록 */
+            /* 높이를 설정 */
+            height: 2em;
+            border: 10px solid gold;
+            overflow: hidden;
+        }
+
+        #rolling1 > li {
+            /* li 요소의 높이를 #container1 요소의 높이만큼 지정 */
+            height: 2em;
+            line-height: 2em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Rolling function -->
+    <div id="container1">
+        <ul id="rolling1">
+            <li> 1. Time is gold.</li>
+            <li> 2. No sweat, no sweet. </li>
+            <li> 3. Asking costs nothings. </li>
+            <li> 4. Step by step goes a long way. </li>
+            <li> 5. You will never know until you cry. </li>
+        </ul>
+    </div>
+    <script>
+        // 구현 rolling function 
+        let rolling1 = document.getElementById("rolling1");
+        // let count = rolling1.getElementsByTagName("li").length;
+        let count = rolling1.childElementCount;
+
+        let j = 1;
+
+        // 2초마다 #rolling1 요소의 위치를 위로 이동시킨다.
+        // HTML 요소의 위치를 이동시키는 방법
+        // 1. margin 스타일 속성을 이용
+        // 2. position 스타일 속성을 설정한 후, 위치 속성을 이용
+        // 3. transfrom 스타일 속성의 translate함수를 이용
+        let rollingRoll = window.setInterval(function () {
+            // #rolling1 요소를 li요소의 높이만큼 위로 이동
+            // rolling1.style.marginTop = (-2*j) +"em";
+            // j++;
+            // if(j == count) j = 0;
+            rolling1.style.marginTop = (-2*(j%count)) +"em";
+            j++;
+        }, 2000);
+
+
+    </script>
+</body>
+</html>

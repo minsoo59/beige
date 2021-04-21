@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>overlay</title>
+    <style>
+      #gallery {
+        width: max-content;
+        margin: 10px auto;
+      }
+      #gallery > li {
+        /* li요소들을 나란히 나열 */
+        float: left;
+        margin: 0 5px;
+      }
+      #gallery > li > a {
+        /* 버튼버처럼 사용하기 위해서 블록 처리 */
+        display: block;
+        border: 5px solid white;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+      }
+      #gallery > li > a > img {
+        display: block;
+        width: 200px;
+      }
+
+      /* overlay */
+      #overlay {
+        /* 뷰포트를 기준으로 전체를 차지하도록 설정 */
+        /* position 속성의 값이 static이 아니기때문에 이미 #photo요소의 컨테이닝 블록이다. */
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: rgba(0, 0, 0, 0.8);
+
+        /* transition-duration: 400ms; */
+        /* ovelay가 보이지않도록 설정 */
+        /* visibility: hidden;
+        opacity: 0; */
+        display: none;
+      }
+      /* overlay > photo */
+      #photo {
+        /* #overlay 요소의 영역을 기준으로 중앙에 배치 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* 최대 너비 설정 */
+        max-width: 80%;
+        border: 10px solid white;
+
+        /* transition-duration: 400ms; */
+        /* ovelay가 보이지않도록 설정 */
+        /* visibility: hidden;
+        opacity: 0; */
+        display: none;
+      }
+
+      #close-btn {
+        /* #overlay 기준으로 우측 상단에 배치 */
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        width: 50px;
+        height: 50px;
+
+        background: url(../../images/close.png) no-repeat center;
+
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding: 0%;
+        cursor: pointer;
+      }
+
+      #close-btn > span {
+        display: none;
+      }
+
+      /* #overlay와 #photo 요소를 화면에 나타나게 하기 위한 class */
+      #overlay.show,
+      #photo.show {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+    <script>
+      $(function () {
+        // 0. 요소 탐색 및 변수 선언
+        let $photo = $("#photo");
+        let $overlay = $("#overlay");
+        const removeTime = 300;
+        // 1. #gallery 요소의 a 요소를 클릭하면
+        $("#gallery > li > a").on("click", function (event) {
+          // a요소의 기본 이벤트(href 속성에 지정된 곳으로 문서이동)
+          // 따라서 a 요소를 클릭하면 오버레이가 보여야하기 떄문에 기본이벤트 제거
+          event.preventDefault();
+          // 1-1. #photo 요소의 src 속성에 클릭한 요소의 href 속성의 값으로 설정
+          let imgSrc = $(this).attr("href");
+          $photo.attr("src", imgSrc);
+          // 1-2. #overlay 요소를 페이딩 효과로 화면에 나타나게 한다.
+          // 1-3. #overlay 요소가 화면에 완전히 나타난 다음
+          $overlay.fadeIn(400, function () {
+            // 1-3-1. #photo 요소를 페이딩 효과로 화면에 나타나게 한다.
+            $photo.fadeIn(400);
+          });
+        });
+        // 2. #close-btn 요소를 클릭하면
+        $("#close-btn")
+          // 2-1. #overlay 요소를 클릭하면
+          .add($overlay)
+          .on("click", function () {
+            // 2-1-1. #photo 요소를 페이딩 효과로 화면에서 사라지게 한다.
+            // 2-2. #photo 요소가 화면에서 완전히 사라진 다음
+            $photo.fadeOut(400, () => {
+              // 2-2-1. #overlay 요소를 페이딩 효과로 화면에서 사라지게 한다.
+              $overlay.fadeOut(400);
+            });
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <ul id="gallery">
+      <!-- 다수의 이미지를 보여주기 위한 섬네일은 옹량이 큰 원본 이미지로 보여줄 필요가 없다. -->
+      <!-- <li>
+        <a href="이미지">
+          <img src="섬네일용 이미지" alt="" />
+        </a>
+      </li> -->
+      <li>
+        <a href="../../images/photo-83.jpg">
+          <img src="../../images/thumbnail-83.jpg" alt="thumbnail" />
+        </a>
+      </li>
+      <li>
+        <a href="../../images/photo-52.jpg">
+          <img src="../../images/thumbnail-52.jpg" alt="thumbnail" />
+        </a>
+      </li>
+      <li>
+        <a href="../../images/photo-53.jpg">
+          <img src="../../images/thumbnail-53.jpg" alt="thumbnail" />
+        </a>
+      </li>
+      <li>
+        <a href="../../images/photo-54.jpg">
+          <img src="../../images/thumbnail-54.jpg" alt="thumbnail" />
+        </a>
+      </li>
+      <li>
+        <a href="../../images/photo-55.jpg">
+          <img src="../../images/thumbnail-55.jpg" alt="thumbnail" />
+        </a>
+      </li>
+    </ul>
+
+    <!-- overlay -->
+    <div id="overlay">
+      <!-- 클릭한 썸네일의 원본 이미지 -->
+      <img src="../../images/photo-83.jpg" alt="photo`" id="photo" />
+      <button id="close-btn">
+        <span>Close</span>
+      </button>
+    </div>
+  </body>
+</html>

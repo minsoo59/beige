@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+</head>
+
+<body>
+    <h1>회원 가입</h1>
+    <form action="/server/login" method="GET">
+        ID : <input type="text" placeholder="Please write your ID here."><br>
+        PW : <input type="text" placeholder="Please write your password here"><br>
+        이름 : <input type="text" placeholder="Please write your name"><br>
+        성별 :
+        <label for="male">
+            남자 <input type="checkbox" name="male" id="male">
+        </label>
+        <label for="female">
+            여자 <input type="checkbox" name="female" id="female"><br>
+        </label>
+        자기소개<br>
+        <input type="text" width="400px" height="400px"> 
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>

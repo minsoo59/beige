@@ -1,0 +1,105 @@
+<!-- http://www.roblaplaca.com/examples/bezierBuilder/  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition property</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+        #box{
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
+            background-color:springgreen;
+
+            /* Element is seem it that is becamed transition */
+            transition-duration: 0.2s;
+            /* 트랜지션 속도 */
+            transition-timing-function: linear;
+            /* 트랜지션 적용 속성 */
+            transition-property: all;
+            /* 트랜지션 지연 시간 */
+            transition-delay: 1500ms;
+        }
+        #box:hover{
+            width: 301px;
+            height: 301px;
+            background-color: wheat;
+        }
+
+        /* ==================================================================== */
+
+        #graph {
+            width: 90%;
+            border: 3px solid black;
+            margin: 50px auto;
+        }
+        .bar {
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+            padding-right: 10px;
+            box-sizing: border-box;
+            background-color: cornflowerblue;
+
+            line-height: 50px;
+            color: whitesmoke;
+            text-align: right;
+
+            transition-duration: 2s;
+        }
+
+        .bar:nth-child(1) {
+            transition-timing-function: linear;
+        }
+        .bar:nth-child(2) {
+            transition-timing-function: ease;
+        }
+        .bar:nth-child(3) {
+            transition-timing-function: ease-in;
+        }
+        .bar:nth-child(4) {
+            transition-timing-function: ease-out;
+        }
+        .bar:nth-child(5) {
+            transition-timing-function: ease-in-out;
+        }
+
+        #graph:hover > .bar {
+            width: 99%;
+        }
+        #graph:hover > .bar:nth-child(1){
+            background-color: tan;
+        }
+        #graph:hover > .bar:nth-child(2){
+            background-color: teal;
+        }
+        #graph:hover > .bar:nth-child(3){
+            background-color: turquoise;
+        }
+        #graph:hover > .bar:nth-child(4){
+            background-color: wheat;
+        }
+        #graph:hover > .bar:nth-child(5){
+            background-color: aquamarine;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <hr>
+    <div id="graph">
+        <div class="bar">Linear</div>
+        <div class="bar">ease</div>
+        <div class="bar">ease-in</div>
+        <div class="bar">ease-out</div>
+        <div class="bar">ease-in-out</div>
+    </div>
+
+</body>
+</html>

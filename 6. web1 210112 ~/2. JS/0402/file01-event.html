@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js - event</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <style>
+        #box {
+            border: 10px solid gold;
+            width: 200px;
+            height: 100px;
+            margin-top: 1200px;
+            margin-left: 200px;
+
+            transition-duration: 400ms;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            let input = document.getElementById("input-text");
+            let comment = document.getElementById("comment");
+
+            input.addEventListener("keydown", function (event) {
+                // comment.innerHTML = input.value;
+                console.log("keydown = " + event.key)
+            });
+            // keypress -> 기능과 한글관련키는 이벤트 발생 x
+            input.addEventListener("keypress", function (event) {
+                // comment.innerHTML = input.value;
+                console.log("keypress = " + event.key)
+            });
+
+            input.addEventListener("keyup", function (event) {
+                comment.innerHTML = input.value.length + "/1000";
+                console.log("keyup = " + event.key)
+            });
+        });
+    </script>
+    <script>
+        window.addEventListener("load", function () {
+            let box = document.getElementById("box");
+
+            console.log("box top =" + box.offsetTop);
+
+            // when browser scroll
+            window.addEventListener("scroll", function () {
+                console.log("browser scrollY  = " + window.scrollY); // browser
+                // console.log("body scrollTop = " + document.body.scrollTop); // body
+                // console.log("html scrollY = " + document.documentElement.scrollTop); // html
+                if (box.offsetTop <= window.scrollY) {
+                    box.style.borderColor = "yellowgreen";
+                    box.style.marginLeft = "600px";
+                } else {
+                    box.removeAttribute("style");
+                };
+            });
+        });
+    </script>
+
+    <script>
+        window.addEventListener("load",function(){
+            let account = document.getElementById("account");
+            let password = document.getElementById("password");
+            let loginForm = document.getElementById("login");
+
+            function focusing(){
+                this.style.border = "10px solid red";
+            }
+            function unFocusing(){
+                this.removeAttribute("style");
+            }
+
+            account.addEventListener("focus", focusing);
+            account.addEventListener("blur", unFocusing);
+            password.addEventListener("focus", focusing);
+            password.addEventListener("blur", unFocusing);
+
+            loginForm.addEventListener("submit", function(event){
+                if(account.value.length == 0){
+                    event.preventDefault();
+                    window.alert("계정을 입력해주세요.");
+                }
+                if(password.value.length == 0){
+                    event.preventDefault();
+                    window.alert("비밀번호을 입력해주세요.");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="input-text">
+        <p id="comment"></p>
+    </div>
+    <hr>
+    <form action="/sever" method="POST" id="login">
+        Account <input type="text" id="account">
+        Password <input type="text" id="password">
+
+        <button type="submit">submit</button>
+    </form>
+    <hr>
+    <div id="box"></div>
+</body>
+
+</html>

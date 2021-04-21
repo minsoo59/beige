@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <title>window</title>
+</head>
+
+<body>
+    // The window object property size which be related to
+    <pre><script>
+        document.writeln("InnerWidth : " + window.innerWidth);
+        document.writeln("InnerHeight : " + window.innerHeight);
+
+        document.writeln("OuterWidth : " + window.outerWidth);
+        document.writeln("OuterHeight : " + window.outerHeight);
+
+        document.writeln("pageXOffset : " + window.pageXOffset);
+        document.writeln("pageYOffset : " + window.pageYOffset);
+
+        document.writeln("scollX : " + window.scrollX);
+        document.writeln("scolly : " + window.scrollY);
+    </script></pre>
+
+    // The window object property which time be related to
+    <pre><script>
+        // setTimeout : Register for timer that doing the function after constant time
+        // Because it's not doing function, 함수 실행이 아니라 전달이기때문에 뒤에 ()를 안쓴다.
+        window.setTimeout(active, 1000);
+        // this is doing after constant time
+        function active() {
+
+            console.log("Timeout!!!");
+        }
+
+        // As the funtionc that doing timer go over function code,
+        // it's not used more function, delivered by anonymous(익명) function
+        window.setTimeout(function () {
+            // 일정 시간 뒤에 수행할 기능
+            console.log("Second TImeout!!");
+        }, 3000);
+
+// ==============================================================================
+
+        //setInteral : 일정 시간마다 기능을 수행하는 타이머를 등록
+        let timerId = window.setInterval(function(){
+            // 일정 시간마다 수행할 기능
+            console.log("interal!!")
+        },1000)
+
+        // setInteral로 등록된 타이머를 종료
+        // 타이머를 종료하기 위해선 타이머의 ID필요
+        window.clearInterval(timerId);
+       
+    </script></pre>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+    <script>
+      $(function () {
+        $("#list > li").each(function (index, item) {
+          // 각각의 요소마다 수행할 함수
+          let $item = $(item);
+          //   요소의 title
+          let title = $item.attr("title");
+          console.log(index + " title : " + title);
+          // title 속성의 값을 내부 문자로 가진 strong 요소
+          let $strong = $("<strong> </strong>").html(title);
+          // 해당 요소에 strong 태그를 추가하고 title 속성을 제거
+          $item.append($strong).removeAttr("title");
+          //   ===========================================
+          //   메서드 체이닝 하다보면 이렇게 제이쿼리 메서드체이닝이 편하게 되게됨
+          //   $item
+          //     .append($("<strong></strong>").html($item.attr("title")))
+          //     .removeAttr("title");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul id="list">
+      <li title="HTML">course 1</li>
+      <li title="CSS">course 2</li>
+      <li title="js">course 3</li>
+      <li title="jQuery">course 4</li>
+    </ul>
+  </body>
+</html>

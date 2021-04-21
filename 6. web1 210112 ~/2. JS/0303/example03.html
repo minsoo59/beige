@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/theme.css">
+    <title>Document</title>
+</head>
+<body>
+    <pre><script>
+        // Write javascript program that Next variable a and b save 15 and 20 each other,
+        // if a is bigger, print "a가 더 큽니다." it's not, print "a가 작습니다."
+        let a = 15;
+        let b = 20;
+        let res = a>b ? "The A is bigger": "The A is smaller";
+        document.writeln(res);
+        // 2. 변수c에 129를 저장한 다음에 c가 3의 배수이면 "3의 배수입니다."를 출력하고
+        // 그렇지 않으면 "3의 배수가 아닙니다."를 출력하는 javasctipt프로그램을 작성
+        let c = 129;
+        // 아래처럼 사용은 가능하나, 코드 관리 또는 가독성 면에서 떨어진다.
+        // true -> 1 , false ->0 
+        // 0외의 정수->true, 0->false
+        // let restwo = c%3 ? "The C is not mutiple of 3":"The C is mutiple of 3";
+        let restwo = c%3 == 0 ? "The C is mutiple of 3" : "The C is not mutiple of 3";
+        document.writeln(restwo);
+    </script></pre>
+</body>
+</html>

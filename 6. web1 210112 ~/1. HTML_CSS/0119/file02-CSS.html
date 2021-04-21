@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- outter style tag -->
+    <!-- There is how to load written CSS file in HTML document outter-->
+    <link rel="stylesheet" href="myStyle.css">
+    <title>Apply CSS</title>
+    <!-- inner style tag -->
+    <!-- it can designate though style tag at element of body into head tag. -->
+    <style>
+        /* Style sheet : Collection of CSS blocks */
+        /* CSS block make into style tag */
+        
+        /* The CSS block that apply style in h1 element */
+        /* Letter color set up red color and background color establih yellow color in h1 element */
+        h1 {
+            /* Letter color designate red color  */
+            color:red;    
+            /* Backgroung color designate yellow color */
+            background-color: yellow;
+        }
+
+        /* ID selector */
+        /* Select though value of id reference of element */
+        /* Value of ID reference write with '#' */
+        #Item1 {
+            
+            color:violet ;
+        }
+        /* Class selector */
+        /* Select though value of class reference of element */
+        /* Value of ID reference write with '.' */
+        .item{
+            background-color: skyblue ;
+        }
+        .select{
+            /* 일반 스타일 속성보다 우선순위가 높다.(!중요) */
+            background-color: slateblue !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>apply CSS</h1>
+    <h2>asdasdasd</h2>
+    <!-- inline style -->
+    <!-- if you want to designate style at h3 element, 
+        you can designate style though style reference into its tag -->
+    <h3 style="color: tomato;">h3h3h3h3h3h3</h3>
+<hr>
+    <ul>
+        <!-- Id reference : it must only value of HTML element -->
+        <!-- class reference : Reference for collect multie one group  -->
+        <!-- one element include most of group. -->
+        <!-- when it designate most of class value, null array by consist of 공백을 구분으로 나열 -->
+        <li id="Item1" class="item">Item1</li>
+        <li>Item2</li>
+        <li class="item select">Item3</li>
+        <!-- Selected id element is designated two value of class reference 'item' and 'select' -->
+        
+        <li>Item4</li>
+    </ul>
+</body>
+</html>

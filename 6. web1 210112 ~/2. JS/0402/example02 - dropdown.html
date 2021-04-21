@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example02 - dropdown</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <style>
+        #container{
+            width: 400px;
+            height: 2em;
+            border: 10px solid yellow;
+            margin: 50px auto;
+
+            overflow: hidden;
+        }
+        #rolling{
+            position: relative;
+            top: 0;
+        }
+
+        #rolling > li {
+            height: 2em;
+            line-height: 2em;
+            padding: 0 1em;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", function(){
+            let container = document.getElementById("container");
+            let rolling = document.getElementById("rolling");
+
+            function doRolling(){
+                rolling.style.transitionDuration = "400ms";
+                rolling.style.top = "-100%";
+                window.setTimeout(function(){
+                    rolling.style.removeAttribute("style");
+
+                    rolling.appendChild(rolling.firstElementChild);
+                },400);
+            };
+
+            let timerId = window.setInterval(doRolling, 2000);
+
+
+            container.addEventListener("mouseenter", function(){
+                window.clearInterval(timerId);
+            });
+            container.addEventListener("mouseleave", function(){
+                window.setInterval(doRolling, 2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <ul id="rolling">
+            <li>1. Time is gold.</li>
+            <li>2. No sweat, no sweet.</li>
+            <li>3. Asking costs nothing.</li>
+            <li>4. Step by step goes a long way.</li>
+            <li>5. You will never know until you try.</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/6. web1 210112 ~/css/reset.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        #container {
+            width: 450px;
+            height: 2em;
+            border: 1px solid white;
+            border-radius: 10px;
+            overflow: hidden;
+
+            margin: 3em auto;
+        }
+
+        #rolling {
+            margin: 0;
+            /* Set up relative value for move up element. */
+            position: relative;
+            top: 0;
+            /* percentage : The standard that contants area of containing block */
+            /* top:-100%; */
+
+            /* transition-duration: 1400ms; */
+            
+        }
+
+        #rolling>li{
+            height: 2em;
+            padding-left: 0.6em;
+            line-height: 2em;
+        }
+    </style>
+    <script>
+        $(function(){
+            let step = 1;
+            let count = $("#rolling > li").length;
+            window.setInterval(function(){
+                $("#rolling")
+                    .css("top","-100"*(step%count)+"%")
+                    .css("transition-duration","2s");
+                step++;    
+                if(step == 5){
+                    window.setTimeout(function(){
+                        $("#rolling").removeAttr;
+                    },4000);
+                };
+            },2000 );
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <ul id="rolling">
+            <li> 1. Time is gold.                       </li>
+            <li> 2. No sweat, no sweet.                 </li>
+            <li> 3. Asking coasts nothing.              </li>
+            <li> 4. Step by stey goes a long way.       </li>
+            <li> 5. You will never know until you try.  </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>23</title>
+    <style>
+        body {
+            background-color: #cccccc;
+        }
+
+        #container {
+            width: max-content;
+            height: 220px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: white;
+            font-weight: bold;
+        }
+
+        #container>div {
+            width: 200px;
+            float: left;
+            /* background-color: grey; */
+        }
+
+        #content_box1 {
+            height: 220px;
+            background-color: gold;
+            line-height: 220px;
+        }
+
+        #content_box2 {
+            margin: 0 20px;
+        }
+
+        #content_box2>div,
+        #content_box3>div {
+            height: 100px;
+            line-height: 100px;
+        }
+
+        #content_box2>div:nth-child(1) {
+            background-color: pink;
+            margin-bottom: 20px;
+        }
+
+        #content_box2>div:nth-child(2) {
+            background-color: gray;
+        }
+
+        #content_box3>div:nth-child(1) {
+            background-color: yellowgreen;
+            margin-bottom: 20px;
+        }
+
+        #content_box3>div:nth-child(2) {
+            background-color: cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="content_box1">gold</div>
+        <div id="content_box2">
+            <div>pink</div>
+            <div>gray</div>
+        </div>
+        <div id="content_box3">
+            <div>yellowgreen</div>
+            <div>cyan</div>
+        </div>
+    </div>
+</body>
+
+</html>

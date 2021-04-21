@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event_listener</title>
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+    <h1 id="hello">Hello world!</h1>
+    <script>
+        let hello = document.getElementById("hello");
+
+        // #hello 요소를 클릭하면 사라지도록 프로그램을 작성
+        // hello.onclick = function(){
+        //     this.style.display = none;
+        // };
+
+        // 이벤트 리스너에 의해 동작하기 때문에 같은 이벤트의 리스너를 다수개 추가할 수 있다.
+        hello.addEventListener("click",function(){
+            this.style.display = "none";
+        });
+        hello.addEventListener("click",function(){
+            console.log("clicked!");
+        });
+    </script>
+</body>
+</html>

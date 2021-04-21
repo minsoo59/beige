@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYLE>
+        /* 
+        it select virtual element of going up that mouse pointer of li element in child element of ul element
+        it select virtual element of going up mouse pointer element of 'li element' that child element of ul element.
+        ul 요소의 자식 요소인 li 요소 중에 마우스 포인터가 올라간 요소의 가상요소를 선택 */
+        ul > li:hover::after {
+            content: " ★";
+            color: yellow;
+        }
+    </STYLE>
+</head>
+<body>
+    <ul id="hText">
+        <li>H1</li>
+        <li>H2</li>
+        <li>H3</li>
+        <li>H4</li>
+        <li>H5</li>
+        <li>H6</li>
+        <li>H7</li>
+        <li>H8</li>
+        <li>H9</li>
+        <li>H10</li>
+    </ul>
+</body>
+</html>

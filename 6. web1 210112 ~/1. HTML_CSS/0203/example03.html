@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example03</title>
+    <style>
+        #content {
+            /* (inner square width)*2 + (margin)*2 */
+            width: 440px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        #content::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #content > div {
+            margin: 10px;
+            float: left;
+        }
+        #content > div:nth-last-child(1){
+            background-color: yellowgreen;
+            width: 200px;
+            height: 220px;
+        }
+        #content > div:nth-last-child(2){
+            background-color: gold;
+            width: 200px;
+            height: 100px;
+        }
+        #content > div:nth-last-child(3){
+            background-color: pink;
+            width: 200px;
+            height: 100px;
+        }
+
+        #wrap {
+            width: 440px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        #wrap > div {
+            width: 200px;
+            height: 220px;
+            margin: 10px;
+            float: left;
+        }
+        /* There is 0 height because it has 'float property' of child element*/
+        #wrap::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #wrap > div:nth-last-child(1){
+            background-color: gold;
+        }
+
+        #wrap1 > div {
+            height: 100px;
+        }
+
+        #wrap1 > :nth-last-child(1){
+            background-color: yellowgreen;
+        }
+        #wrap1 > :nth-last-child(2){
+            background-color: pink;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+            <div>pink</div>
+            <div>gold</div>
+        <div>yellowgreen</div>
+    </div>
+<hr>
+    <div id="wrap">
+        <div id="wrap1">
+            <div>pink</div>
+            <div>yellowgreen</div>
+        </div>
+        <div>gold</div>
+    </div>
+</body>
+</html>
