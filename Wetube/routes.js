@@ -8,8 +8,8 @@ const SEARCH = "/search";
 //Users
 const USERS = "/users";
 const USER_DETAIL = "/:id";
-const EDIT_PROFILE = "/:id/edit_Profile";
-const CHANGE_PASSWORD = "/:id/change-Password"; //
+const EDIT_PROFILE = "/edit-Profile";
+const CHANGE_PASSWORD = "/change-Password"; //
 
 // Videos
 const VIDEOS = "/videos";

@@ -1,6 +1,9 @@
+import { videos } from "../db";
 // pug쓸려면 send 대신 render그리고 함수의 인자로 안에는 템플릿 파일명을 입력하면됨
-export const home = (req, res) =>
-  res.render("home", { pageTitle: "Home", chicken: 1234 });
+export const home = (req, res) => {
+  res.render("home", { pageTitle: "Home", chicken: 1234, videos });
+};
+
 export const search = (req, res) => {
   // const searchingBy = req.query.term; //ES6이전 코딩 방식
   const {
@@ -8,8 +11,7 @@ export const search = (req, res) => {
   } = req;
   res.render("search", { pageTitle: "Search", searchingBy });
 };
-export const videos = (req, res) =>
-  res.render("videos", { pageTitle: "Videos" });
+
 export const upload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
 export const videosDetail = (req, res) =>

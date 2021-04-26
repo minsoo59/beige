@@ -4,5 +4,6 @@
 extends layouts/main.pug 
 //- block content가 들어가는 자리에 내용들을 채워줄수 있음 extends 경로하면 ㅇㅇ
 block content 
-    p home
-    p #{chicken}
+    .videos     
+        each video in videos 
+            h1=video.title

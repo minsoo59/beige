@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: gold;
+        position: relative;
+      }
+    </style>
+    <script>
+      $(function () {
+        let $box = $(".box");
+        $box.on("click", function () {
+          setTimeout(() => {
+            // .box 요소의 애니메이션 큐에 저장된 animate 메서드 모두 제거
+            $box.clearQueue();
+            console.log("clearQueue!!!!!");
+          }, 2000);
+          $box.animate(
+            {
+              left: 300,
+            },
+            800,
+            function () {
+              // conplete 함수
+              console.log("finish!!!!!!!!!!!");
+            }.delay(2000) //다음 효과까지 2초 지연시간 효과
+          );
+        });
+        $box.eq(1).on("click", function () {
+          $(this)
+            .animate({ left: 200 }, 1000)
+            .animate({ top: 200 }, 500)
+            .queue(function () {
+              $(this).css("background-color", "white");
+              //   queue 로 등록된 함수내에서
+              // dequeue 를 호출해야한다
+              $(this).dequeue();
+            })
+            .animate({ left: 400 });
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+  <div class="box"></div>
+</html>

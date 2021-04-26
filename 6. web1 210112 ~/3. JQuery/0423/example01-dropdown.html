@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dropdown</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+      #header > h1 {
+        font-size: 2.4em;
+        font-weight: 900;
+        padding: 0.5px 1px;
+        text-shadow: rgba(0, 0, 0, 0.4);
+      }
+      #nav {
+        background-color: #555;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+        margin-bottom: 5px;
+      }
+      #nav::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      #nav > ul:first-child {
+        float: left;
+      }
+      #nav > ul:last-child {
+        float: right;
+      }
+      #nav > ul > li {
+        float: left;
+        position: relative;
+      }
+      #nav > ul > li > a {
+        display: block;
+        padding: 1em 2em;
+        text-decoration: none;
+        color: white;
+      }
+      #nav > ul > li > a:hover {
+        background-color: yellowgreen;
+      }
+
+      /* drop down */
+      .dropdown {
+        /* li요소를 기준으로 배치 */
+        position: absolute;
+        top: 105%;
+        left: 0;
+        background-color: #555;
+        padding: 1em;
+        border-radius: 8px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+
+        display: none;
+      }
+      .dropdown > li > a {
+        display: block;
+        padding: 0.4em 1em;
+        text-decoration: none;
+        color: white;
+      }
+
+      #wrap-container {
+        overflow: hidden;
+      }
+      #sidebar {
+        float: left;
+        width: 200px;
+        padding-top: 1em;
+      }
+      #sidebar > ul > li > a {
+        display: block;
+        padding: 0.4em 1em;
+        text-decoration: none;
+        color: black;
+      }
+      #sidebar > ul > li > a:hover {
+        background-color: #ccc;
+      }
+      #wrap {
+        float: left;
+        width: 100%;
+        margin-right: -200px;
+      }
+      #content {
+        margin-right: 300px;
+        padding: 1em;
+        border-left: 1px solid #aaa;
+      }
+      #content > h2 {
+        font-size: 1.6em;
+        font-weight: bold;
+        margin-bottom: 0.7em;
+      }
+      #content > p {
+        line-height: 1.6;
+        margin-bottom: 1em;
+      }
+      #footer {
+        border-top: 1px solid #aaa;
+        padding: 3em;
+        text-align: right;
+      }
+    </style>
+    <script>
+      $(function () {
+        // 0. 요소 탐색
+        let $dropDownMenus = $(".dropdown");
+        // 1. .menu-item 요소를 클릭하면
+        $(".menu-item").on("click",(){
+            let $dropdown = $(this).next(".dropdown");
+            console.log($dropdown);
+            // 1-1. 클릭한 요소의 다음 .dropdown 요소가 보여지고 있는 상태이면
+            // if($dropdown.is(":visible")){
+            //     // 1-1-1. 클릭한 요소의 다음 .dropdown 요소를 화면에 숨긴다.
+            //     $dropdown.slideUp();
+            // }else{
+            //     // 1-2. 클릭한 요소의 다음 .dropdown 요소가 숨겨지고 있는 상태이면
+            //     // $dropDownMenus.filter(":visible").slideUp();
+            //     // 1-2-1. 기존에 보여지고 있던 dropdown 요소를 화면에서 숨긴다.
+            //     // $dropDownMenus.slideUp();
+            //     // 1-2-2. 클릭한 요소의 다음 .dropdown 요소를 화면에 보이게 한다.
+            //     // $dropdown.slideDown();
+            // }
+            if($dropdown.is(":hidden")){
+                $dropDownMenus.slideUp();
+            }
+            $dropdown.slideToggle();
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <header id="header">
+      <h1>Dropdown Menu</h1>
+    </header>
+    <nav id="nav">
+      <!-- 좌측 메뉴 -->
+      <ul>
+        <li><a href="#home">home</a></li>
+        <li>
+          <a href="html">html</a>
+          <!-- 드롭다운 메뉴 -->
+          <ul class="dropdown">
+            <li><a href="#html-tutorial">Tutorial</a></li>
+            <li><a href="#html-reference">reference</a></li>
+            <li><a href="#html-examples">examples</a></li>
+            <li><a href="#html-FAQ">FAQ</a></li>
+            <li><a href="#html-exercise">exercise</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="CSS">CSS</a>
+          <!-- 드롭다운 메뉴 -->
+          <ul class="dropdown">
+            <li><a href="#css-tutorial">Tutorial</a></li>
+            <li><a href="#css-reference">reference</a></li>
+            <li><a href="#css-examples">examples</a></li>
+            <li><a href="#css-FAQ">FAQ</a></li>
+            <li><a href="#css-exercise">exercise</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#JS">JS</a>
+          <!-- 드롭다운 메뉴 -->
+          <ul class="dropdown">
+            <li><a href="#JS-tutorial">Tutorial</a></li>
+            <li><a href="#JS-reference">reference</a></li>
+            <li><a href="#JS-examples">examples</a></li>
+            <li><a href="#JS-FAQ">FAQ</a></li>
+            <li><a href="#JS-exercise">exercise</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="JQuery">JQuery</a>
+          <!-- 드롭다운 메뉴 -->
+          <ul class="dropdown">
+            <li><a href="#JQuery-tutorial">Tutorial</a></li>
+            <li><a href="#JQuery-reference">reference</a></li>
+            <li><a href="#JQuery-examples">examples</a></li>
+            <li><a href="#JQuery-FAQ">FAQ</a></li>
+            <li><a href="#JQuery-exercise">exercise</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!--/좌측메뉴-->
+      <!-- 우측메뉴 -->
+      <ul>
+        <li><a href="#login">login</a></li>
+        <li><a href="#signup">signup</a></li>
+      </ul>
+    </nav>
+    <div id="wrap-container">
+      <!-- 사이드바 -->
+      <aside id="sidebar">
+        <ul>
+          <li><a href="#home">home</a></li>
+          <li><a href="#html">html</a></li>
+          <li><a href="#css">css</a></li>
+          <li><a href="#js">js</a></li>
+          <li><a href="#jQuery">jQuery</a></li>
+        </ul>
+      </aside>
+      <!-- 봄ㄴ문 -->
+      <div id="wrap">
+        <article id="content">
+          <h2>What is Lorem Ipsum?</h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+        </article>
+      </div>
+      <!--/wrap-->
+    </div>
+    <!--/#wrap-continaer -->
+    <footer id="footer">&copy; 2020-2021 Academy Gwangju</footer>
+  </body>
+</html>

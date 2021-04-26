@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <!-- <link rel="stylesheet" href="../../css/theme.css" /> -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+    <style>
+      body {
+        font-size: 1.4em;
+        background-color: #e8e8de;
+      }
+      #header,
+      #nav > ul,
+      #content {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      #header > h1 {
+        font-size: 3em;
+        font-weight: 900;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+        padding: 0.5em 0;
+        text-align: center;
+      }
+      #nav {
+        border: 3px solid #333;
+        border-style: solid none;
+
+        /* #dropdown-box 요소를 컨테이닝 블록지정 */
+        position: relative;
+      }
+      #nav > ul > li {
+        float: left;
+        width: 25%;
+
+        position: relative;
+      }
+      #nav::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      #nav > ul > li > a {
+        display: block;
+        padding: 0.7em 0;
+
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        /* #dropdown-box보다 앞으로 하기위해 */
+        z-index: 10;
+      }
+      .sub-menu > li {
+        width: 80%;
+        margin: 0 auto;
+      }
+      .sub-menu > li > a {
+        display: block;
+        padding: 0.5em 0;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+      }
+
+      #dropdown-box {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(51, 51, 51, 0.95);
+        height: 230px;
+      }
+      .dropdown {
+        display: none;
+      }
+      #content {
+        padding: 2em 0;
+        text-align: justify; /* 양쪽 정렬 방식 */
+      }
+      #content > p {
+        line-height: 1.8;
+        margin-bottom: 1em;
+      }
+    </style>
+
+    <script>
+      $(function () {
+        // 0. 요소 탐색
+        let $dropdown = $(".dropdown");
+        $("#nav > ul > li > a").on("click", function (event) {
+          event.preventDefault();
+          // 1-1 #dropdown 요소가 보여지고 있지 않으면 #dropdown 요소가 슬라이드 효과로 화면에 보여지게 한다.
+          // 1-2 #dropdown 요소가 보여지고 있으면 #dropdown 요소가 슬라이드 효과로 화면에 사라지게 한다.
+          $dropdown.slideToggle();
+        });
+        // 2. #nav 요소의 영역에서 마우스 포인터가 빠져나가면
+        $("#nav").on("mouseleave", function () {
+          $dropdown.slideUp();
+        });
+        // 2-1 #dropdown 요소가 슬라이드 효과로 화면에서 사라지게 한다.
+      });
+    </script>
+  </head>
+  <body>
+    <header id="header"><h1>My work</h1></header>
+    <nav id="nav">
+      <ul>
+        <li>
+          <a href="#HTML">HTML</a>
+          <ul class="dropdown sub-menu">
+            <li><a href="#html-tutorial"> HTML tutorial</a></li>
+            <li><a href="#html-tutorial"> HTML Reference</a></li>
+            <li><a href="#html-tutorial"> HTML Example</a></li>
+            <li><a href="#html-tutorial"> HTML FQA</a></li>
+            <li><a href="#html-tutorial"> HTML Experience</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="CSS">CSS</a>
+          <ul class="dropdown sub-menu">
+            <li><a href="#CSS-tutorial"> CSS tutorial</a></li>
+            <li><a href="#CSS-tutorial"> CSS Reference</a></li>
+            <li><a href="#CSS-tutorial"> CSS Example</a></li>
+            <li><a href="#CSS-tutorial"> CSS FQA</a></li>
+            <li><a href="#CSS-tutorial"> CSS Experience</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="javscript">javscript</a>
+          <ul class="dropdown sub-menu">
+            <li><a href="#Javascript-tutorial"> Javscript tutorial</a></li>
+            <li><a href="#Javascript-tutorial"> Javscript Reference</a></li>
+            <li><a href="#Javascript-tutorial"> Javscript Example</a></li>
+            <li><a href="#Javascript-tutorial"> Javscript FQA</a></li>
+            <li><a href="#Javascript-tutorial"> Javscript Experience</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="jQuery">jQuery</a>
+          <ul class="dropdown sub-menu">
+            <li><a href="#JQuery-tutorial"> JQuery tutorial</a></li>
+            <li><a href="#JQuery-tutorial"> JQuery Reference</a></li>
+            <li><a href="#JQuery-tutorial"> JQuery Example</a></li>
+            <li><a href="#JQuery-tutorial"> JQuery FQA</a></li>
+            <li><a href="#JQuery-tutorial"> JQuery Experience</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!--background of dropdown menu -->
+    <div id="dropdown-box" class="dropdown"></div>
+    <article id="content">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+      </p>
+    </article>
+  </body>
+</html>

@@ -10,3 +10,5 @@ export const editProfile = (req, res) =>
   res.render("editProfile", { pageTitle: "Edit Profile" });
 export const changePassword = (req, res) =>
   res.render("changePassword", { pageTitle: "Change Password" });
+export const videos = (req, res) =>
+  res.render("videos", { pageTitle: "Videos" });

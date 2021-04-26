@@ -13,9 +13,9 @@ const userRouter = express.Router();
 // 그럼 주소가 /user/~~~ /video/ ~~~ 이런식으로 나뉠 수 있음.
 // 함수 만드는 방법(handleHome)이랑 익명함수만드는것 두가지방법이 있음.
 
-userRouter.get(routes.users, users);
-userRouter.get(routes.userDetail, userDetail);
+// userRouter.get(routes.users, users);
 userRouter.get(routes.editProfile, editProfile);
 userRouter.get(routes.changePassword, changePassword);
+userRouter.get(routes.userDetail, userDetail);
 
 export default userRouter;
