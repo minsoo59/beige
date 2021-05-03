@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>example03 - imageSlide</title>
+    <style>
+      #container {
+        width: 1200px;
+        border: 10px solid whitesmoke;
+        margin: 50px auto;
+        overflow: hidden;
+
+        position: relative;
+      }
+      #slide {
+        width: 500%;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      #slide::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      #slide > li {
+        float: left;
+        width: 20%;
+
+        padding: 0;
+      }
+      #slide > li > img {
+        display: block;
+        width: 100%;
+      }
+    </style>
+    <style>
+      #bullets {
+        /* #container 요소를 기준으로 배치 */
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #bullets > li {
+        float: left;
+        margin: 0 5px;
+      }
+      #bullets > li > a {
+        display: block;
+        text-decoration: none;
+        color: transparent;
+
+        width: 20px;
+        height: 20px;
+        border: 6px solid white;
+        border-radius: 50%;
+        transition-duration: 400ms;
+      }
+      #bullets > li > a.on {
+        background-color: white;
+      }
+    </style>
+    <script>
+      $(function () {
+        // 0. 요소 탐색 및 변수 설정
+        let $slide = $("#slide");
+        let $container = $("#container");
+        let timerId = 0;
+        let offsetTime = 2000;
+        let duration = 400;
+        let photoIndex = 0;
+        let photoLength = $slide.children().length;
+
+        // 블릿을 표현할 ul 요소를 생성
+        let $bullets = $("<ul></ul>")
+          .attr("id", "bullets")
+          .appendTo($container);
+        for (let i = 0; i < photoLength; i++) {
+          // #bullets 요소안에 lt요소를 추가
+          // li요소 안에도 a요소 추가
+          let a = $("<a></a>").attr("href", "#").html(i);
+          $("<li></li>").append(a).appendTo($bullets);
+        }
+        let $bulletsList = $bullets.find("a");
+        $bulletsList.eq(0).addClass("on");
+
+        $bulletsList.on("click", function (event) {
+          console.log(event.target);
+          $slide.removeAttr("style");
+        });
+
+        function ImageSlide() {
+          photoIndex++;
+          photoIndex %= photoLength;
+
+          $bulletsList.removeClass("on").eq(photoIndex).addClass("on");
+          $slide.animate({ left: "-100%" }, duration, function () {
+            $slide.removeAttr("style").children(":first").appendTo($slide);
+          });
+        }
+
+        timerId = setInterval(ImageSlide, offsetTime);
+        $slide.hover(
+          () => {
+            clearInterval(timerId);
+          },
+          () => {
+            timerId = setInterval(ImageSlide, offsetTime);
+          }
+        );
+        // ====================================================================
+      });
+    </script>
+  </head>
+  <body>
+    <!-- img slide html -->
+    <div id="container">
+      <ul id="slide">
+        <li><img src="../../images/slide-11.png" alt="imgage" /></li>
+        <li><img src="../../images/slide-12.png" alt="imgage" /></li>
+        <li><img src="../../images/slide-13.png" alt="imgage" /></li>
+        <li><img src="../../images/slide-14.png" alt="imgage" /></li>
+        <li><img src="../../images/slide-15.png" alt="imgage" /></li>
+      </ul>
+    </div>
+  </body>
+</html>

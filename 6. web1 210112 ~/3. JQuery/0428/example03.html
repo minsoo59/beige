@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>example03 - imageSlide</title>
+    <style>
+      #container {
+        width: 800px;
+        overflow: hidden;
+        border: 10px solid whitesmoke;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #slide {
+        width: 500%;
+        position: relative;
+        top: 0;
+        /* 첫번째 사진이 보이도록 초기위치 설정 */
+        left: 0;
+      }
+      #slide::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      #slide > li {
+        float: left;
+        width: 20%;
+
+        padding: 0;
+      }
+      #slide > li > img {
+        display: block;
+        width: 100%;
+      }
+
+      #prev,
+      #next {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        opacity: 0.4;
+        transition-duration: 400ms;
+      }
+      #prev:hover,
+      #next:hover {
+        opacity: 1;
+      }
+      #prev {
+        left: 10px;
+        background: url(../../images/prev.png) no-repeat center;
+      }
+      #next {
+        right: 10px;
+        background: url(../../images/next.png) no-repeat center;
+      }
+      button > span {
+        display: none;
+      }
+    </style>
+    <script>
+      $(function () {
+        // 0. 요소 탐색 및 변수 설정
+        let $slide = $("#slide");
+        let $container = $("#container");
+        let $prev = $("#prev");
+        let $next = $("#next");
+        let timerId = 0;
+        let offsetTime = 3000;
+        let duration = 1000;
+
+        function nextImageSlide() {
+          $slide.animate({ left: "-100%" }, duration, function () {
+            $slide.removeAttr("style").children(":first").appendTo($slide);
+          });
+        }
+        function prevImageSilde() {
+          $slide
+            .prepend($slide.children(":last"))
+            .css({ left: "-100%" })
+            .animate({ left: 0 }, duration);
+        }
+        timerId = setInterval(nextImageSlide, offsetTime);
+
+        $container.hover(
+          () => clearInterval(timerId),
+          () => (timerId = setInterval(nextImageSlide, offsetTime))
+        );
+        $next.on("click", function () {
+          if ($slide.is(":animated")) return;
+          clearInterval(timerId);
+          nextImageSlide();
+          timerId = setInterval(nextImageSlide, offsetTime);
+        });
+        $prev.on("click", function () {
+          if ($slide.is(":animated")) return;
+          clearInterval(timerId);
+          prevImageSilde();
+          timerId = setInterval(prevImageSilde, offsetTime);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- img slide html -->
+    <div id="container">
+      <ul id="slide">
+        <li><img src="../../images/slide-11.png" alt="imgage" /></li>
+        <li><img src="../../images/slide-12.png" alt="imgage" /></li>
+        <li><img src="../../images/slide-13.png" alt="imgage" /></li>
+        <li><img src="../../images/slide-14.png" alt="imgage" /></li>
+        <li><img src="../../images/slide-15.png" alt="imgage" /></li>
+      </ul>
+    </div>
+    <button id="prev"><span>Previous Btn</span></button>
+    <button id="next"><span>Next Btn</span></button>
+  </body>
+</html>
